@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4558375698378062722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4558375698378062723}
+  - component: {fileID: 4558375698378062724}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4558375698378062723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558375698378062722}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -10.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4558375698378062724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558375698378062722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978d1557b3ed9d241a6f78d11dd0b687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlController: {fileID: 0}
+  enemies:
+  - {fileID: 3157165038287850257, guid: 860d5552d5a042f42a9b51b7c3586767, type: 3}
+  - {fileID: 1905136027879237850, guid: 1d5e19d592f876243bfaad10000c96a6, type: 3}
+  - {fileID: 198281370506949876, guid: 98d7d09d7b6cda643a93a29f4bdc6929, type: 3}
+  - {fileID: 198281370506949876, guid: a6ad2721f8f4ade4990d6f60d4901f13, type: 3}
+  - {fileID: 3157165038287850257, guid: 6e215c1e25dd1694e9432c5d15100604, type: 3}
+  - {fileID: 3157165038287850257, guid: d52368567fab0d0458cd7c8bda5c8e52, type: 3}
+  - {fileID: 1905136027879237850, guid: d56b6ad4fc19fcf47b4e6d84ed1dc1fb, type: 3}
+  - {fileID: 198281370506949876, guid: 07f93065fd6c4884e93ecb2fd6bef5f2, type: 3}
+  - {fileID: 198281370506949876, guid: 7d7cbb1337683dd44b83713bc6521547, type: 3}
+  spawnRate: 7

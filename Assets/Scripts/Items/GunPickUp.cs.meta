@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a85f032157c0df44ea7ea01cf945d686
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - outlinedSprite: {instanceID: 0}
+  - defaultSprite: {instanceID: 0}
+  - itemCanvas: {fileID: 6154623135432961523, guid: 6c8ff7ded091b084bb277e3ca8990cb9, type: 3}
+  - gunProperties: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
