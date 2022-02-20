@@ -5423,18 +5423,13 @@ MonoBehaviour:
   recoilForceModifier: 0
   bulletSpeedModifier: 1
   rechargeSpeedModifier: 1
-  damageModifier: 0.7
+  damageModifier: 3
   rechargeSpeed: 2
   bulletSpeed: 15
   _bulletLifetime: 0
   damage: 10
   gun: {fileID: 1311371270038470207}
   gunScript: {fileID: 1311371270038470205}
-  weapons:
-  - {fileID: 9098946617528409337, guid: fa532ae75399d2b40ba0b2bee4904e9a, type: 3}
-  - {fileID: 9098946617528409337, guid: ed2b842db7be8a545b13ee49dbc4e6ea, type: 3}
-  - {fileID: 7602995759612751143, guid: bc4fe19cd1b74e041b5a57b418d22ffd, type: 3}
-  - {fileID: 9098946617528409337, guid: e0cbe051a2d12b44bb2cc43677e296cb, type: 3}
   shotParticle: {fileID: 5536939204925810771, guid: 194272f4852772e4694734a9e36dfe95, type: 3}
   isRecharged: 1
 --- !u!114 &3157165038287850267

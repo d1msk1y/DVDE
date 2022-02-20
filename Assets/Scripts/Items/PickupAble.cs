@@ -23,7 +23,7 @@ public class PickupAble : Interactable
 
     [Header("Buyable")]
     public int isUnlocked;//0 - isn't buyable; 1 - buyable
-    public int cost;
+    public int price;
     public string BoughtPrefsKey;
     public int isBought;//0 - isn't bougt; 1 - bought
 
@@ -58,7 +58,7 @@ public class PickupAble : Interactable
             itemType == PickupType.UpgradeAble && isUnlocked == 1)
         {
             itemCanvas = Instantiate(itemCanvas, transform.position, Quaternion.identity, transform);
-            itemCanvas.GetComponentInChildren<Text>().text = cost + "$";
+            itemCanvas.GetComponentInChildren<Text>().text = price + "$";
         }
 
         startScale = transform.localScale;
@@ -149,7 +149,7 @@ public class PickupAble : Interactable
                 particle.transform.localScale = particle.transform.localScale * 1.5f;
             }
         }
-        if (isUnlocked == 1 && isBought == 0 && GameManager.instance.scoreManager.totalCoins >= cost)
+        if (isUnlocked == 1 && isBought == 0 && GameManager.instance.scoreManager.totalCoins >= price)
         {
             Buy();
 
@@ -165,10 +165,11 @@ public class PickupAble : Interactable
 
     public virtual void Buy()
     {
-        GameManager.instance.scoreManager.totalCoins -= cost;
-        GameManager.instance.statsManager.spentCoins += cost;
+        GameManager.instance.scoreManager.totalCoins -= price;
+        GameManager.instance.statsManager.spentCoins += price;
         GameManager.instance.UiManager.UpdateCostTxts();
 
+        GameManager.instance.UiManager.UpdateCostTxts();
         PlayerPrefs.SetInt(GameManager.instance.statsManager.keys[2], GameManager.instance.statsManager.spentCoins);
 
         GameManager.instance.statsManager.UpdateStats();

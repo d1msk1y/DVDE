@@ -18,7 +18,7 @@ public class GunPickUp : PickupAble
 
     public override void PickUp()
     {
-        if(itemType == PickupType.Buyable && GameManager.instance.scoreManager.totalCoins < cost)
+        if(itemType == PickupType.Buyable && GameManager.instance.scoreManager.totalCoins < price)
             return;
 
         base.PickUp();

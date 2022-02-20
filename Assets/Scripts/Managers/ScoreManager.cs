@@ -39,9 +39,9 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
-        if (PlayerPrefs.HasKey("HighScore"))
+        if (PlayerPrefs.HasKey(GameManager.instance.statsManager.keys[6]))
         {
-            maxReceivedScore = PlayerPrefs.GetInt("HighScore");
+            maxReceivedScore = PlayerPrefs.GetInt(GameManager.instance.statsManager.keys[6]);
         }
         if (PlayerPrefs.HasKey("Total score"))
         {

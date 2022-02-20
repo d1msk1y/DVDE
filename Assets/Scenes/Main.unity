@@ -1133,13 +1133,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: b472845715a859c489e3a8807d200437, type: 3}
   defaultSprite: {fileID: 21300000, guid: b472845715a859c489e3a8807d200437, type: 3}
   isUnlocked: 1
-  cost: 10
+  price: 10
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 496314562}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _costModifier: 1.5
+  _priceModifier: 1.5
   _upgradeStages:
   - 0
   - 25
@@ -1154,6 +1154,7 @@ MonoBehaviour:
   upgradeType: 1
   upgradePrefsIndex: 1
   stagePrefsKey: Max shield stage
+  pricePrefsKey: Shield price
   speech: 'SHIELD
 
     +25 to your shield.'
@@ -7331,13 +7332,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   defaultSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   isUnlocked: 1
-  cost: 10
+  price: 10
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 662523013}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _costModifier: 1.5
+  _priceModifier: 1.5
   _upgradeStages:
   - 15
   - 12
@@ -7352,6 +7353,7 @@ MonoBehaviour:
   upgradeType: 1
   upgradePrefsIndex: 6
   stagePrefsKey: Critical damage stage
+  pricePrefsKey: Critical damage price
   speech: "Critical damage chance\n+5% chance to give a \ncritical damage"
   speechNPC: {fileID: 288737372}
 --- !u!1 &175060117
@@ -11242,7 +11244,7 @@ MonoBehaviour:
   scoreMultiplierParticles: {fileID: 3623291629530755474, guid: 606ecffc3e9b67c41b982f182f5b10b3, type: 3}
   doubleKillParticles: {fileID: 3623291629530755474, guid: 606ecffc3e9b67c41b982f182f5b10b3, type: 3}
   receivedCoins: 0
-  totalCoins: 0
+  totalCoins: 10000
   enemiesKilled: 0
 --- !u!114 &416460881
 MonoBehaviour:
@@ -18733,13 +18735,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   defaultSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   isUnlocked: 1
-  cost: 10
+  price: 0
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 711346791}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _costModifier: 1.5
+  _priceModifier: 0
   _upgradeStages:
   - 3
   - 4
@@ -18754,6 +18756,7 @@ MonoBehaviour:
   upgradeType: 0
   upgradePrefsIndex: 2
   stagePrefsKey: Rage
+  pricePrefsKey: 
   speech: "SLOW MO\nSlow down the time \nafter a killing streak(SOMETIMES)"
   speechNPC: {fileID: 618328301}
 --- !u!1 &644645793
@@ -33752,13 +33755,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   defaultSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   isUnlocked: 1
-  cost: 10
+  price: 10
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 1113188934}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _costModifier: 1.5
+  _priceModifier: 1.5
   _upgradeStages:
   - 4
   - 7
@@ -33773,6 +33776,7 @@ MonoBehaviour:
   upgradeType: 1
   upgradePrefsIndex: 5
   stagePrefsKey: Max combo stage
+  pricePrefsKey: Max combo price
   speech: 'Max combo
 
     +2 to your max combo'
@@ -38433,13 +38437,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   defaultSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   isUnlocked: 1
-  cost: 10
+  price: 0
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 711346791}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _costModifier: 1.5
+  _priceModifier: 0
   _upgradeStages:
   - 3
   - 4
@@ -38454,6 +38458,7 @@ MonoBehaviour:
   upgradeType: 0
   upgradePrefsIndex: 1
   stagePrefsKey: Rage
+  pricePrefsKey: 
   speech: "RAGE\nRage allows you to\nkill your enemies by \none shot"
   speechNPC: {fileID: 618328301}
 --- !u!4 &1408279731 stripped
@@ -43127,13 +43132,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   defaultSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   isUnlocked: 1
-  cost: 10
+  price: 10
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 694922407}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _costModifier: 1.5
+  _priceModifier: 1.5
   _upgradeStages:
   - 0
   - 15
@@ -43148,6 +43153,7 @@ MonoBehaviour:
   upgradeType: 1
   upgradePrefsIndex: 3
   stagePrefsKey: Extra ammo stage
+  pricePrefsKey: Extra ammos price
   speech: 'EXTRA AMMOS
 
     +25% extra ammos
@@ -43537,13 +43543,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   defaultSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   isUnlocked: 1
-  cost: 10
+  price: 0
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 711346791}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _costModifier: 1.5
+  _priceModifier: 0
   _upgradeStages:
   - 0
   - 9
@@ -43558,6 +43564,7 @@ MonoBehaviour:
   upgradeType: 0
   upgradePrefsIndex: 0
   stagePrefsKey: Second life stage
+  pricePrefsKey: 
   speech: 'SECOND LIFE
 
     Increase your chances for second life'
@@ -46554,13 +46561,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   defaultSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   isUnlocked: 1
-  cost: 10
+  price: 10
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 428384205}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _costModifier: 1.7
+  _priceModifier: 1.5
   _upgradeStages:
   - 25
   - 35
@@ -46575,6 +46582,7 @@ MonoBehaviour:
   upgradeType: 1
   upgradePrefsIndex: 4
   stagePrefsKey: Heal useful stage
+  pricePrefsKey: Heal useful price
   speech: 'Score multiplier
 
     Multiplier of your received score'
@@ -49189,13 +49197,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 4f3fe90eba019a2489c39fb05a2df3b4, type: 3}
   defaultSprite: {fileID: 21300000, guid: 4f3fe90eba019a2489c39fb05a2df3b4, type: 3}
   isUnlocked: 1
-  cost: 10
+  price: 10
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 1271388016}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _costModifier: 1.5
+  _priceModifier: 1.5
   _upgradeStages:
   - 1
   - 1.1
@@ -49210,6 +49218,7 @@ MonoBehaviour:
   upgradeType: 1
   upgradePrefsIndex: 2
   stagePrefsKey: Damage stage
+  pricePrefsKey: Damage price
   speech: 'HERO DAMAGE
 
     Improve your hero damage'
@@ -51675,7 +51684,7 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 9c0cb3188fe0f5a46beededdd8b97bd2, type: 3}
   defaultSprite: {fileID: 21300000, guid: 9c0cb3188fe0f5a46beededdd8b97bd2, type: 3}
   isUnlocked: 1
-  cost: 10
+  price: 0
   BoughtPrefsKey: 
   isBought: 1
   spriteRenderer: {fileID: 0}
@@ -58695,13 +58704,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   defaultSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   isUnlocked: 1
-  cost: 10
+  price: 10
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 711346791}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _costModifier: 1.5
+  _priceModifier: 1.5
   _upgradeStages:
   - 50
   - 75
@@ -58716,6 +58725,7 @@ MonoBehaviour:
   upgradeType: 1
   upgradePrefsIndex: 0
   stagePrefsKey: Max health stage
+  pricePrefsKey: Max health price
   speech: 'MAX HEALTH
 
     +25 to hero health'
@@ -58794,7 +58804,7 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 79b1cb9744ff3c04db841a87c3257225, type: 3}
   defaultSprite: {fileID: 21300000, guid: 79b1cb9744ff3c04db841a87c3257225, type: 3}
   isUnlocked: 1
-  cost: 100
+  price: 0
   BoughtPrefsKey: 
   isBought: 1
   spriteRenderer: {fileID: 0}

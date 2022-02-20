@@ -30,7 +30,7 @@ public class PlayerLevelBar : MonoBehaviour
     private float barSpeed;
     [SerializeField]private int prevNeededScore;
 
-    private void Start()
+    private void OnEnable()
     {
         if (PlayerPrefs.HasKey("Needed score"))
         {
@@ -46,14 +46,17 @@ public class PlayerLevelBar : MonoBehaviour
         }
         if (PlayerPrefs.HasKey(GameManager.instance.statsManager.keys[8]))
         {
-            levelIndex = PlayerPrefs.GetInt("Player lvl index");
+            levelIndex = PlayerPrefs.GetInt(GameManager.instance.statsManager.keys[8]);
             Debug.Log(levelIndex);
         }
         if (PlayerPrefs.HasKey("Prev needed score"))
         {
             prevNeededScore = PlayerPrefs.GetInt("Prev needed score");
         }
+
         currentScoreTrans = prevScore;
+        if (GameManager.instance.scoreManager.receivedScore == 0)
+            prevScore = lastScore;currentScoreTrans = prevScore;
 
         var emission = particles.emission;
         emission.rateOverTime = 1000;
@@ -65,9 +68,6 @@ public class PlayerLevelBar : MonoBehaviour
 
     public void UpdateBar()
     {
-        if (GameManager.instance.scoreManager.totalScore == lastScore)
-            return;
-
         float particleEmision = GameManager.instance.scoreManager.receivedScore * particleEmisionMultiplier;
         if (particleEmision > maxParticleEmision)
             particleEmision = maxParticleEmision;
@@ -87,22 +87,29 @@ public class PlayerLevelBar : MonoBehaviour
         particles.gameObject.SetActive(true);
         particles.enableEmission = true;
 
-        while (currentScoreTrans < GameManager.instance.scoreManager.totalScore)
+        float scoreDiff = currentScoreTrans - prevNeededScore;
+        float neededScoreDiff = neededScore - prevNeededScore;
+        neededBarAmount =  scoreDiff / neededScoreDiff;
+        bar.fillAmount = neededBarAmount;
+
+        do
         {
-            float scoreDiff = currentScoreTrans - prevNeededScore;
-            float neededScoreDiff = neededScore - prevNeededScore;
-            neededBarAmount =  scoreDiff / neededScoreDiff;
+            scoreDiff = currentScoreTrans - prevNeededScore;
+            neededScoreDiff = neededScore - prevNeededScore;
+            neededBarAmount = scoreDiff / neededScoreDiff;
             particles.GetComponent<RectTransform>().localPosition = new Vector3(bar.fillAmount * 100, 0, 0);
 
             bar.fillAmount = neededBarAmount;
             yield return null;
-        }
+        } while (currentScoreTrans < GameManager.instance.scoreManager.totalScore);
+
     }
 
     private IEnumerator UpdateBarScore()
     {
         neededScoreTxt.text = neededScore.ToString();
-        while (currentScoreTrans < GameManager.instance.scoreManager.totalScore)
+
+        do
         {
             float barSpeedTrans = GameManager.instance.scoreManager.totalScore - prevScore;
             if (barSpeedTrans < minBarSpeed)
@@ -114,8 +121,9 @@ public class PlayerLevelBar : MonoBehaviour
                 NextLevel();
             }
             yield return null;
-        }
-        if(currentScoreTrans > GameManager.instance.scoreManager.totalScore)
+        } while (currentScoreTrans < GameManager.instance.scoreManager.totalScore);
+
+        if (currentScoreTrans > GameManager.instance.scoreManager.totalScore)
         {
             currentScoreTrans = GameManager.instance.scoreManager.totalScore;
             particles.enableEmission = false;
@@ -136,6 +144,7 @@ public class PlayerLevelBar : MonoBehaviour
 
         PlayerPrefs.SetInt("Needed score", neededScore);
         PlayerPrefs.SetInt(GameManager.instance.statsManager.keys[8], levelIndex);
+
         neededScoreTxt.text = neededScore.ToString();
 
         levelIndexTxt.text = "LVL " + levelIndex;

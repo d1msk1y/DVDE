@@ -166,18 +166,13 @@ MonoBehaviour:
   recoilForceModifier: 0
   bulletSpeedModifier: 0.75
   rechargeSpeedModifier: 0.8
-  damageModifier: 0.7
+  damageModifier: 2.5
   rechargeSpeed: 2
   bulletSpeed: 15
   _bulletLifetime: 0
   damage: 10
   gun: {fileID: 4260970655199085018}
   gunScript: {fileID: 4260970655199085016}
-  weapons:
-  - {fileID: 9098946617528409337, guid: fa532ae75399d2b40ba0b2bee4904e9a, type: 3}
-  - {fileID: 9098946617528409337, guid: ed2b842db7be8a545b13ee49dbc4e6ea, type: 3}
-  - {fileID: 7602995759612751143, guid: bc4fe19cd1b74e041b5a57b418d22ffd, type: 3}
-  - {fileID: 9098946617528409337, guid: e0cbe051a2d12b44bb2cc43677e296cb, type: 3}
   shotParticle: {fileID: 5536939204925810771, guid: 194272f4852772e4694734a9e36dfe95, type: 3}
   isRecharged: 1
 --- !u!114 &198281370506949886
@@ -201,6 +196,7 @@ MonoBehaviour:
   shieldBar: {fileID: 0}
   shieldColorDamage: {r: 0.23137255, g: 0.8039216, b: 1, a: 1}
   healthColorDamage: {r: 1, g: 0.31764707, b: 0.31764707, a: 1}
+  startColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &198281370506949885
 MonoBehaviour:
   m_ObjectHideFlags: 0
