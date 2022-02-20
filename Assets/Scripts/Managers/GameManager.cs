@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public LvlManager lvlManager;
     public SoundManager soundManager;
     public CameraMotor cameraMotor;
+    public CameraShaker cameraShaker;
     public UiManager UiManager;
     public ScoreManager scoreManager;
     public ItemsManager itemsManager;
@@ -109,9 +110,9 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    public void ShakeOnce()
+    public void ShakeOnce(Vector4 force)
     {
-        CameraShaker.Instance.ShakeOnce(0.5f, 10f, .01f, .05f);
+        cameraShaker.ShakeOnce(force.x, force.y, force.z, force.w);
     }
 
     #region Post proces & Modes

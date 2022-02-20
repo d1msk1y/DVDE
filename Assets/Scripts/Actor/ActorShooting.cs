@@ -5,7 +5,7 @@ public class ActorShooting : MonoBehaviour
 {
 	[Header("Essential references")]
 	public Transform _firePos;
-	public GameObject _gunObj;
+	public GameObject _gunHandler;
 	private LineRenderer _lineRenderer;
 	private SpriteRenderer _spriteRenderer;
 	private Joystick _shootingJoystick;
@@ -14,57 +14,54 @@ public class ActorShooting : MonoBehaviour
 	public int gunIndex;
 	public Gun defaultGun;
 	public Gun gunScript;
-
 	public Gun knife;
+
 	[SerializeField]
 	private float _gunThrowForce;
 	[SerializeField]
 	private float _bulletScaleModifier;
 	[SerializeField]
 	private float _gunThrowAimLength;
+
 	public int criticalDamageChance;
 	public int ammos;
 	public int extraAmmos;
-	private int _damage;
 	public float extraAmmosPercent;
 	public float damageModifier;
 	public float aimLength;
+
+	private int _damage;
 	private float _recoilForce;
-
 	private float _bulletSpeed;
-
 	private float _rechargeSpeed;
-
 	private float _bulletLifetime;
 
 	[Header("Particles")]
 	public ParticleSystem shotParticle;
-
 	public LineRenderer _aimLineRenderer;
 
 	[Header("Particles")]
 	private float _currentRecharge;
-
 	private Vector3 _handlerScale;
-
 	private float angle;
-
 	private bool _isRecharged = true;
 
 	private void Start()
 	{
 		defaultGun = GameManager.instance.itemsManager.buyableGuns[PlayerPrefs.GetInt("Picked gun")].gunProperties;
 		GameManager.instance.itemsManager.purchasedWeapons = GameManager.instance.itemsManager.checkPurchasedGuns();
-		gunScript = _gunObj.GetComponentInChildren<Gun>();
+		gunScript = _gunHandler.GetComponentInChildren<Gun>();
 		GiveWeapon(defaultGun);
 		GameManager.instance.UiManager.SetAmmoStats(ammos, gunScript.ammos);
-		_lineRenderer = base.GetComponent<LineRenderer>();
-		_spriteRenderer = base.GetComponent<SpriteRenderer>();
+		_lineRenderer = GetComponent<LineRenderer>();
+		_spriteRenderer = GetComponent<SpriteRenderer>();
 		_shootingJoystick = GameManager.instance.UiManager.shootingJoystick;
 	}
 
 	private void Update()
 	{
+		AutoAim();
+
 		if (_currentRecharge > 0f)
 		{
 			_currentRecharge -= _rechargeSpeed * Time.deltaTime;
@@ -73,23 +70,16 @@ public class ActorShooting : MonoBehaviour
 		{
 			_isRecharged = true;
 		}
-		if (_shootingJoystick.Horizontal != 0f || _shootingJoystick.Vertical != 0f)
-		{
-			float z = Mathf.Atan2(_shootingJoystick.Vertical, _shootingJoystick.Horizontal) * 57.29578f;
-			_gunObj.transform.rotation = Quaternion.Euler(0f, 0f, z);
-			_aimLineRenderer.SetPosition(0, _firePos.position);
-			_aimLineRenderer.SetPosition(1, _firePos.position + new Vector3(_shootingJoystick.Horizontal, _shootingJoystick.Vertical).normalized * aimLength);
-			if (ammos <= 0 && !gunScript.gameObject.CompareTag("Knife"))
-			{
-				_lineRenderer.SetPosition(0, _firePos.position);
-				_lineRenderer.SetPosition(1, base.transform.position + new Vector3(_shootingJoystick.Horizontal, _shootingJoystick.Vertical) * _gunThrowAimLength);
-			}
-		}
-		_gunObj.transform.localScale = Vector3.Lerp(_gunObj.transform.localScale, _handlerScale, 10f * Time.deltaTime);
+
+		JoyStickAim();
+
+		_gunHandler.transform.localScale = Vector3.Lerp(_gunHandler.transform.localScale, _handlerScale, 10f * Time.deltaTime);
+
 		if (gunScript.weaponType == WeaponType.Knife)
 		{
 			return;
 		}
+
 		if ((angle > -90f && angle < 90f) || _shootingJoystick.Horizontal > 0f)
 		{
 			_handlerScale = new Vector3(1f, 1f, 1f);
@@ -107,11 +97,43 @@ public class ActorShooting : MonoBehaviour
 		}
 	}
 
+	private void AutoAim()
+    {
+		if (GameManager.instance.lvlManager.lvlController != null
+			&& GameManager.instance.isCurrentBattle)
+		{
+			Vector3 enemyPosition = GetClosestEnemy(GameManager.instance.lvlManager.lvlController.currentEnemiesInAction)
+			.transform.position;//Mouse Position		
+			enemyPosition -= transform.position;
+			float angleGun = Mathf.Atan2(enemyPosition.y, enemyPosition.x) * Mathf.Rad2Deg;
+			_gunHandler.transform.rotation = Quaternion.Euler(0, 0, angleGun);
+			angle = _gunHandler.transform.rotation.z;
+		}
+	}
+
+	private void JoyStickAim()
+    {
+		if (_shootingJoystick.Horizontal != 0f || _shootingJoystick.Vertical != 0f)
+		{
+			float z = Mathf.Atan2(_shootingJoystick.Vertical, _shootingJoystick.Horizontal) * 57.29578f;
+			_gunHandler.transform.rotation = Quaternion.Euler(0f, 0f, z);
+			_aimLineRenderer.SetPosition(0, _firePos.position);
+			_aimLineRenderer.SetPosition(1, _firePos.position + new Vector3(_shootingJoystick.Horizontal, _shootingJoystick.Vertical).normalized * aimLength);
+			if (ammos <= 0 && !gunScript.gameObject.CompareTag("Knife"))
+			{
+				_lineRenderer.SetPosition(0, _firePos.position);
+				_lineRenderer.SetPosition(1, transform.position
+					+ new Vector3(_shootingJoystick.Horizontal, _shootingJoystick.Vertical)
+					* _gunThrowAimLength);
+			}
+		}
+	}
+
 	private Transform GetClosestEnemy(GameObject[] enemies)
 	{
 		Transform result = null;
 		float num = float.PositiveInfinity;
-		Vector3 position = base.transform.position;
+		Vector3 position = transform.position;
 		foreach (GameObject gameObject in enemies)
 		{
 			if (gameObject == null)
@@ -135,8 +157,8 @@ public class ActorShooting : MonoBehaviour
 			return;
 		}
 		Destroy(gunScript.gameObject);
-		_gunObj.transform.localScale = Vector3.one;
-		GameObject gameObject = Instantiate<GameObject>(gun2Give.gameObject, _gunObj.transform.position, Quaternion.identity, _gunObj.transform);
+		_gunHandler.transform.localScale = Vector3.one;
+		GameObject gameObject = Instantiate<GameObject>(gun2Give.gameObject, _gunHandler.transform.position, Quaternion.identity, _gunHandler.transform);
 		gunScript.transform.eulerAngles = Vector3.zero;
 		gunScript = (gameObject.GetComponent(typeof(Gun)) as Gun);
 		if (PlayerPrefs.HasKey(GameManager.instance.dataManager.specsKeys[3]))
@@ -187,7 +209,7 @@ public class ActorShooting : MonoBehaviour
 		}
 		//gunScript.audioSource.pitch = Random.Range(0.6f, 1.5f);
 		gunScript.audioSource.PlayOneShot(gunScript.shotSound);
-		GameManager.instance.ShakeOnce();
+		GameManager.instance.ShakeOnce(gunScript.shakeForce);
 		rb.AddForce(-_firePos.right * _recoilForce, ForceMode2D.Impulse);
 		SpawnBullet();
 		_isRecharged = false;
@@ -205,7 +227,7 @@ public class ActorShooting : MonoBehaviour
 
 	private void SpawnBullet()
 	{
-		GameObject gameObject = Instantiate<GameObject>(gunScript.bullet, _firePos.position, _gunObj.transform.rotation);
+		GameObject gameObject = Instantiate<GameObject>(gunScript.bullet, _firePos.position, _gunHandler.transform.rotation);
 		if (gunScript.weaponType == WeaponType.Shotgun)
 		{
 			Bullet[] componentsInChildren = gameObject.GetComponentsInChildren<Bullet>();
@@ -239,16 +261,17 @@ public class ActorShooting : MonoBehaviour
 		curBullet.damage = _damage;
 		curBullet.bulletSpeed = _bulletSpeed;
 		curBullet.shootingScript = this;
-		curBullet.parent = base.gameObject;
+		curBullet.parent = gameObject;
 		curBullet.lifeTime = _bulletLifetime;
 		curBullet.criticalDamageChance = criticalDamageChance;
-		curBullet.explosionParticle.startColor = _spriteRenderer.color;
-		curBullet.trailRenderer.startWidth *= _bulletScaleModifier;
+#pragma warning disable CS0618 // Type or member is obsolete
+        curBullet.explosionParticle.startColor = _spriteRenderer.color;
+#pragma warning restore CS0618 // Type or member is obsolete
+        curBullet.trailRenderer.startWidth *= _bulletScaleModifier;
 		SetBulletColor(curBullet);
 		Instantiate<ParticleSystem>(shotParticle, _firePos.position, Quaternion.identity);
 	}
 
-	// Token: 0x06000064 RID: 100 RVA: 0x00003EBE File Offset: 0x000020BE
 	private void SetBulletColor(Bullet bullet_obj)
 	{
 		bullet_obj.spriteRenderer.color = _spriteRenderer.color;

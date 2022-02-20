@@ -35,6 +35,7 @@ public class Gun : MonoBehaviour
     public float bulletSpeed;
     public float rechargeSpeed;
     public float bulletLifetime;
+    public Vector4 shakeForce;
     public int damage;
     public float pushForce;
     public int ammos;

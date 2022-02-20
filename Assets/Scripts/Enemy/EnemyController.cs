@@ -205,7 +205,8 @@ public class EnemyController : MonoBehaviour
         {
             _entityHealth.TakeDamage(collision.gameObject.GetComponentInChildren<Gun>().damage, _spriteRenderer);
             if(enabled && gameObject != null)
-                _rigidBody.AddForce(collision.transform.right * collision.gameObject.GetComponentInParent<Gun>().pushForce, ForceMode2D.Impulse);
+                _rigidBody.AddForce(collision.transform.right
+                    * collision.gameObject.GetComponentInParent<Gun>().pushForce, ForceMode2D.Impulse);
         }
     }
 }

@@ -144,6 +144,7 @@ MonoBehaviour:
   bulletSpeed: 50
   rechargeSpeed: 2
   bulletLifetime: 0.125
+  shakeForce: {x: 2, y: 5, z: 0.1, w: 0.5}
   damage: 9
   pushForce: 0
   ammos: 12

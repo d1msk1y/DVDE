@@ -90,7 +90,6 @@ public class PlayerShooting : MonoBehaviour
             return;
         }
 
-        GameManager.instance.ShakeOnce();
 
         rb.AddForce(-firePos.right * _recoilForce, ForceMode2D.Impulse);
 

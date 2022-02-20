@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     [Space(10)]
     public bool isAlive = true;
+    public bool isShooting;
     private bool _isSecondLifeUsed = false;
     private float _startModifier;
 
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
 #if UNITY_EDITOR
         if (Input.GetButton("Fire1") || GameManager.instance.UiManager.shootingJoystick.Horizontal != 0 || GameManager.instance.UiManager.shootingJoystick.Horizontal != 0)
-            Shot();
+           // Shot();
         if (Input.GetButtonUp("Fire1"))
         {
             shootingScript.ClearAllLines();
@@ -62,10 +63,12 @@ public class PlayerController : MonoBehaviour
         }
 #endif
 
+        if (isShooting)
+            Shot();
+
         if (Input.GetButtonDown("Jump"))
         {
             playerMovement.Dodge();
-            GameManager.instance.ShakeOnce();
         }
 
         if(entityHealth.health <= 0)
@@ -79,6 +82,11 @@ public class PlayerController : MonoBehaviour
     private void Shot()
     {
         shootingScript.Shot(_rigidBody);
+    }
+
+    public void IsShoot(bool x)
+    {
+        isShooting = x;
     }
 
     public void EnterRageMode()
