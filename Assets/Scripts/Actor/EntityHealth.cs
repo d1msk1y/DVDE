@@ -75,6 +75,7 @@ public class EntityHealth : MonoBehaviour
     public void ResetHealth()
     {
         health = maxHealth;
+        shield = maxShield;
         GetComponent<SpriteRenderer>().color = startColor;
     }
 

@@ -43,7 +43,8 @@ public class HealthBar : MonoBehaviour
         if (!isShieldBarActive && !isShieldBarPopDowned)
             yield return null;
         isShieldBarActive = false;
-        shieldBarAnimator.Play("ShieldBarPopDown");
+        if(shieldBar.gameObject.active)
+            shieldBarAnimator.Play("ShieldBarPopDown");
     }
 
     private IEnumerator HideShieldBar()

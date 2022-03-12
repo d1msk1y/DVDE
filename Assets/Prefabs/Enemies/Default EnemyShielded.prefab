@@ -328,8 +328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
-  maxHealth: 40
-  shield: 20
+  maxHealth: 100
+  shield: 40
   maxShield: 20
   damageStats: {fileID: 8503724349538595293, guid: 7500b75b7cbc93f49b6cc7bd1edd33ba, type: 3}
   healthBar: {fileID: 339436046885067934}

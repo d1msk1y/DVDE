@@ -204,9 +204,9 @@ public class EnemyController : MonoBehaviour
         if (collision.collider.tag == "Knife")
         {
             _entityHealth.TakeDamage(collision.gameObject.GetComponentInChildren<Gun>().damage, _spriteRenderer);
-            if(enabled && gameObject != null)
+           /* if(enabled && gameObject != null)
                 _rigidBody.AddForce(collision.transform.right
-                    * collision.gameObject.GetComponentInParent<Gun>().pushForce, ForceMode2D.Impulse);
+                    * collision.gameObject.GetComponentInParent<Gun>().pushForce, ForceMode2D.Impulse);*/
         }
     }
 }

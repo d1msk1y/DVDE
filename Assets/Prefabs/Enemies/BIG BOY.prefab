@@ -166,7 +166,7 @@ MonoBehaviour:
   recoilForceModifier: 0
   bulletSpeedModifier: 0.75
   rechargeSpeedModifier: 0.8
-  damageModifier: 2.5
+  damageModifier: 2
   rechargeSpeed: 2
   bulletSpeed: 15
   _bulletLifetime: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
-  maxHealth: 60
+  maxHealth: 250
   shield: 0
   maxShield: 0
   damageStats: {fileID: 8503724349538595293, guid: 7500b75b7cbc93f49b6cc7bd1edd33ba, type: 3}

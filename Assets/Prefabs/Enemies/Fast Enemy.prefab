@@ -5423,7 +5423,7 @@ MonoBehaviour:
   recoilForceModifier: 0
   bulletSpeedModifier: 1
   rechargeSpeedModifier: 1
-  damageModifier: 3
+  damageModifier: 2
   rechargeSpeed: 2
   bulletSpeed: 15
   _bulletLifetime: 0
