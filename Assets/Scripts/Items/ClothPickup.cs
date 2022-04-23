@@ -31,7 +31,6 @@ public class ClothPickup : PickupAble
         }
     }
 
-
     public override void PickUp()
     {
         base.PickUp();

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2303303726818709100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -25}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 9.035999, y: 7.798068, z: 9.035999}
   m_Children: []
   m_Father: {fileID: 5806657137732992062}
@@ -131,15 +131,16 @@ MonoBehaviour:
   lifeTime: 15
   isDestroyable: 0
   destroyByLifetime: 0
-  scaleUpAmount: 1.1
+  scaleUpAmount: 0.2
   isAutomized: 0
   itemType: 1
   outlinedSprite: {fileID: 21300000, guid: 95dfd33acb9b2a34fa9d31e0171e797b, type: 3}
   defaultSprite: {fileID: 21300000, guid: 9c0cb3188fe0f5a46beededdd8b97bd2, type: 3}
-  isUnlocked: 0
-  cost: 10
+  isUnlocked: 1
+  price: 100
   BoughtPrefsKey: Is bought CowBoy
   isBought: 0
+  spriteRenderer: {fileID: 0}
   itemCanvas: {fileID: 6154623135432961523, guid: 6c8ff7ded091b084bb277e3ca8990cb9, type: 3}
   clothIndex: 0
   clothType: 0
@@ -181,7 +182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1155032131613111868, guid: 401bce3c36e218547a9a9959531aa9e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1155032131613111868, guid: 401bce3c36e218547a9a9959531aa9e9, type: 3}
       propertyPath: m_LocalRotation.w

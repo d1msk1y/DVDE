@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139646673602504428}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.7, y: 4, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
@@ -55,14 +55,14 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: da5dfcf72c66287439545fa241f8e041, type: 3}
   defaultSprite: {fileID: 21300000, guid: 3b324d87e4a3ecb40939491ce548d822, type: 3}
   isUnlocked: 1
-  price: 0
-  BoughtPrefsKey: Is bought Pixel Glasses
+  price: 5000
+  BoughtPrefsKey: Is bought Cyclop Glasses
   isBought: 0
   spriteRenderer: {fileID: 0}
   itemCanvas: {fileID: 6154623135432961523, guid: 6c8ff7ded091b084bb277e3ca8990cb9, type: 3}
-  clothIndex: 0
+  clothIndex: 4
   clothType: 1
-  clothItem: {fileID: 2108440876244526612, guid: f6b72f4ed5791cc4ab3ca1a6880c2adc, type: 3}
+  clothItem: {fileID: 2108440876244526612, guid: eb6b2a1fccca9e844aa1d4da66c5c246, type: 3}
 --- !u!1 &2793698771338342801
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7838989064315937332, guid: 401bce3c36e218547a9a9959531aa9e9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1039965968519032271, guid: 401bce3c36e218547a9a9959531aa9e9, type: 3}
       propertyPath: m_Name

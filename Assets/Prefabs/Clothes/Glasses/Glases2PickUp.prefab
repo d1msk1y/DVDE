@@ -54,8 +54,8 @@ MonoBehaviour:
   itemType: 1
   outlinedSprite: {fileID: 21300000, guid: a1e59905f20900b49bb0d8f948d58463, type: 3}
   defaultSprite: {fileID: 21300000, guid: 79b1cb9744ff3c04db841a87c3257225, type: 3}
-  isUnlocked: 0
-  cost: 0
+  isUnlocked: 1
+  price: 1000
   BoughtPrefsKey: Is bought Pixel Glasses
   isBought: 0
   spriteRenderer: {fileID: 0}
@@ -88,7 +88,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3771570528640217449}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.496, y: 3.496, z: 1}
   m_Children: []
   m_Father: {fileID: 2108440876244526603}
@@ -182,7 +182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1155032131613111868, guid: 401bce3c36e218547a9a9959531aa9e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8510714125165806160, guid: 401bce3c36e218547a9a9959531aa9e9, type: 3}
       propertyPath: m_Size.x

@@ -59,7 +59,7 @@ MonoBehaviour:
   bullet: {fileID: 5702945816397988629, guid: fe7d7984c2ad4f24fa1e931bf17ad30f, type: 3}
   gunName: PISTOL
   recoilForce: 1
-  bulletSpeed: 30
+  bulletSpeed: 15
   rechargeSpeed: 5
   bulletLifetime: 0.7
   shakeForce: {x: 0.25, y: 4, z: 0.1, w: 0.1}

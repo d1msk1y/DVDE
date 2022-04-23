@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Controlls")]
-    [SerializeField]private Joystick _movementJoystick;
+    public Joystick movementJoystick;
 
     public float movementSpeed;
     public float maxMovementSpeed;
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _rigidBody = PlayerController.instance._rigidBody;
-        _movementJoystick = GameManager.instance.UiManager.movementJoystick;
+        movementJoystick = GameManager.instance.UiManager.movementJoystick;
     }
 
     private void Update()
@@ -33,12 +33,12 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.x = Input.GetAxis("Horizontal");
         moveDirection.y = Input.GetAxis("Vertical");
 
-        if (_movementJoystick.Horizontal != 0 || _movementJoystick.Vertical != 0)
+        if (movementJoystick.Horizontal != 0 || movementJoystick.Vertical != 0)
         {
-            moveDirection.x = _movementJoystick.Horizontal;
-            moveDirection.y = _movementJoystick.Vertical;
+            moveDirection.x = movementJoystick.Horizontal;
+            moveDirection.y = movementJoystick.Vertical;
         }
-    
+
         _rigidBody.AddForce(moveDirection * movementSpeed * Time.deltaTime);
 
         currentDistance = Vector3.Distance(transform.position, startPos);

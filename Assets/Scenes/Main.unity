@@ -8373,6 +8373,10 @@ PrefabInstance:
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7843616784158152004, guid: b5d210331361db941b10dabe726d017e, type: 3}
+      propertyPath: price
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843616784158152004, guid: b5d210331361db941b10dabe726d017e, type: 3}
       propertyPath: isUnlocked
       value: 1
       objectReference: {fileID: 0}
@@ -10985,6 +10989,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753171279003241791, guid: 985f76737d3bded40ba046dc4fd77248, type: 3}
+      propertyPath: price
+      value: 8000
+      objectReference: {fileID: 0}
     - target: {fileID: 7753171279003241792, guid: 985f76737d3bded40ba046dc4fd77248, type: 3}
       propertyPath: m_Name
       value: 3_LaserGunPickUp
@@ -11374,6 +11382,7 @@ MonoBehaviour:
   - {fileID: 8075138502781704380, guid: adad6df79eace9648a6f4a1fd39bb49d, type: 3}
   - {fileID: 6166282527787218738, guid: 3cfba2b00bc96d34c9df70127b92b1bf, type: 3}
   - {fileID: 5558179452883737807, guid: 0a32eb785488b004c88bc4ce89f87ad4, type: 3}
+  - {fileID: 6166282527787218738, guid: d1d6a0a0331688e4a81895514aab2817, type: 3}
   weapons:
   - {fileID: 0}
   - {fileID: 0}
@@ -18919,13 +18928,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   defaultSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   isUnlocked: 1
-  price: 0
+  price: 300
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 711346791}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _priceModifier: 0
+  _priceModifier: 1.5
   _upgradeStages:
   - 3
   - 4
@@ -18939,8 +18948,8 @@ MonoBehaviour:
   _square: {fileID: 21300000, guid: ce21bf681f0f21a4db5600dbb2e184ad, type: 3}
   upgradeType: 0
   upgradePrefsIndex: 2
-  stagePrefsKey: Rage
-  pricePrefsKey: 
+  stagePrefsKey: Slow mo stage
+  pricePrefsKey: Slow mo price
   speech: "SLOW MO\nSlow down the time \nafter a killing streak(SOMETIMES)"
   speechNPC: {fileID: 618328301}
 --- !u!1 &644645793
@@ -28050,6 +28059,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2528945962566040125, guid: 1c19c234d05bd3d40a3f28b0791c145c, type: 3}
+      propertyPath: price
+      value: 7000
+      objectReference: {fileID: 0}
     - target: {fileID: 2528945962566040130, guid: 1c19c234d05bd3d40a3f28b0791c145c, type: 3}
       propertyPath: m_Name
       value: 3_Musket2PickUp
@@ -33538,6 +33551,7 @@ RectTransform:
   - {fileID: 1737069981519000608}
   - {fileID: 2108440876189245076}
   - {fileID: 220306304}
+  - {fileID: 3030715401744018598}
   m_Father: {fileID: 306007534}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -36435,6 +36449,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7843616784158152004, guid: e35fb9b41adeaa14b9b5bd422310031f, type: 3}
+      propertyPath: price
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843616784158152004, guid: e35fb9b41adeaa14b9b5bd422310031f, type: 3}
       propertyPath: isBought
       value: 0
       objectReference: {fileID: 0}
@@ -38440,13 +38458,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   defaultSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   isUnlocked: 1
-  price: 0
+  price: 500
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 711346791}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _priceModifier: 0
+  _priceModifier: 1.5
   _upgradeStages:
   - 3
   - 4
@@ -38460,8 +38478,8 @@ MonoBehaviour:
   _square: {fileID: 21300000, guid: ce21bf681f0f21a4db5600dbb2e184ad, type: 3}
   upgradeType: 0
   upgradePrefsIndex: 1
-  stagePrefsKey: Rage
-  pricePrefsKey: 
+  stagePrefsKey: Rage stage
+  pricePrefsKey: Rage price
   speech: "RAGE\nRage allows you to\nkill your enemies by \none shot"
   speechNPC: {fileID: 618328301}
 --- !u!4 &1408279731 stripped
@@ -38970,6 +38988,10 @@ PrefabInstance:
     - target: {fileID: 7843616784158152004, guid: d79131b94dcd4914a8ad427560678d11, type: 3}
       propertyPath: cost
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843616784158152004, guid: d79131b94dcd4914a8ad427560678d11, type: 3}
+      propertyPath: price
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7843616784158152004, guid: d79131b94dcd4914a8ad427560678d11, type: 3}
       propertyPath: isBuyable
@@ -43567,13 +43589,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   defaultSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   isUnlocked: 1
-  price: 0
+  price: 1000
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 711346791}
   itemCanvas: {fileID: 6154623135432961523, guid: 52c999907673dd846a23ba034324f5af, type: 3}
   _maxStage: 7
-  _priceModifier: 0
+  _priceModifier: 1.5
   _upgradeStages:
   - 0
   - 9
@@ -43588,7 +43610,7 @@ MonoBehaviour:
   upgradeType: 0
   upgradePrefsIndex: 0
   stagePrefsKey: Second life stage
-  pricePrefsKey: 
+  pricePrefsKey: Second life price
   speech: 'SECOND LIFE
 
     Increase your chances for second life'
@@ -50432,12 +50454,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9099635999137748412, guid: c7dafc32c40e1b44891a14128bc47777, type: 3}
+      propertyPath: price
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099635999137748412, guid: c7dafc32c40e1b44891a14128bc47777, type: 3}
       propertyPath: clothItem
       value: 
       objectReference: {fileID: 2108440876244526612, guid: eb6b2a1fccca9e844aa1d4da66c5c246, type: 3}
     - target: {fileID: 9099635999137748412, guid: c7dafc32c40e1b44891a14128bc47777, type: 3}
       propertyPath: clothIndex
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099635999137748412, guid: c7dafc32c40e1b44891a14128bc47777, type: 3}
+      propertyPath: BoughtPrefsKey
+      value: Is bought Cyclop Glasses
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7dafc32c40e1b44891a14128bc47777, type: 3}
@@ -50448,6 +50478,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 126379272}
     m_Modifications:
+    - target: {fileID: 4204376043622755460, guid: 0dae07110d1b5a14bafff3af9ab7fa83, type: 3}
+      propertyPath: price
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4204376043622755460, guid: 0dae07110d1b5a14bafff3af9ab7fa83, type: 3}
       propertyPath: isUnlocked
       value: 1
@@ -51691,6 +51725,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1862083724998123128, guid: a9e65fb46d298c44bbe0b5aae31e1f52, type: 3}
+      propertyPath: price
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862083724998123128, guid: a9e65fb46d298c44bbe0b5aae31e1f52, type: 3}
       propertyPath: isBuyable
       value: 1
       objectReference: {fileID: 0}
@@ -51786,6 +51824,11 @@ MonoBehaviour:
   clothIndex: -1
   clothType: 0
   clothItem: {fileID: 875173951675300429, guid: d2bf372827a3ec84db8b3d92244678ad, type: 3}
+--- !u!4 &3030715401744018598 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4764632461305512862, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+  m_PrefabInstance: {fileID: 7498524591185784632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3136424056217273538
 GameObject:
   m_ObjectHideFlags: 0
@@ -51931,6 +51974,10 @@ PrefabInstance:
     - target: {fileID: 7843616784158152004, guid: 16cc6db1bd80f8143af29d251049b993, type: 3}
       propertyPath: cost
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843616784158152004, guid: 16cc6db1bd80f8143af29d251049b993, type: 3}
+      propertyPath: price
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 7843616784158152004, guid: 16cc6db1bd80f8143af29d251049b993, type: 3}
       propertyPath: isBuyable
@@ -52091,6 +52138,10 @@ PrefabInstance:
     - target: {fileID: 6458442149703973550, guid: 2d818b9cdacf38240add59202577cc65, type: 3}
       propertyPath: cost
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458442149703973550, guid: 2d818b9cdacf38240add59202577cc65, type: 3}
+      propertyPath: price
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 6458442149703973550, guid: 2d818b9cdacf38240add59202577cc65, type: 3}
       propertyPath: isBuyable
@@ -52407,6 +52458,10 @@ PrefabInstance:
     - target: {fileID: 2262942464128315190, guid: c4c266bf951a6a6459f35149b17bb392, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262942464128315191, guid: c4c266bf951a6a6459f35149b17bb392, type: 3}
+      propertyPath: price
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 2262942464128315208, guid: c4c266bf951a6a6459f35149b17bb392, type: 3}
       propertyPath: m_Name
@@ -57342,6 +57397,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6336183859908708824, guid: a7754f2b1f86bac40aaffbe18a2f81e0, type: 3}
+      propertyPath: price
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336183859908708824, guid: a7754f2b1f86bac40aaffbe18a2f81e0, type: 3}
       propertyPath: isBuyable
       value: 1
       objectReference: {fileID: 0}
@@ -57536,6 +57595,10 @@ PrefabInstance:
     - target: {fileID: 7753171279003241790, guid: c8198f82cf3808f4c952d55ce6c30509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753171279003241791, guid: c8198f82cf3808f4c952d55ce6c30509, type: 3}
+      propertyPath: price
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 7753171279003241792, guid: c8198f82cf3808f4c952d55ce6c30509, type: 3}
       propertyPath: m_Name
@@ -57775,6 +57838,10 @@ PrefabInstance:
     - target: {fileID: 8257395874832450599, guid: 7a518eab2a3a18b42a6b6f39bd2dd999, type: 3}
       propertyPath: cost
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8257395874832450599, guid: 7a518eab2a3a18b42a6b6f39bd2dd999, type: 3}
+      propertyPath: price
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8257395874832450599, guid: 7a518eab2a3a18b42a6b6f39bd2dd999, type: 3}
       propertyPath: isBought
@@ -59233,6 +59300,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 332c79d5783270645b3c19931aef2e1c, type: 3}
+--- !u!1001 &7498524591185784632
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 988954706}
+    m_Modifications:
+    - target: {fileID: 3713200148127887569, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: price
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764632461305512833, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: m_Name
+      value: BananaHat2PickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764632461305512862, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764632461305512862, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764632461305512862, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764632461305512862, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764632461305512862, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764632461305512862, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764632461305512862, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764632461305512862, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764632461305512862, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764632461305512862, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764632461305512862, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8f61c57e184ce04f9d32089e3d1c85b, type: 3}
 --- !u!4 &7591579322835601004
 Transform:
   m_ObjectHideFlags: 0

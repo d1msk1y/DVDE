@@ -15,15 +15,14 @@ public class ClothSlotController : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("Hat index"))
         {
-            hatIndex = PlayerPrefs.GetInt("Hat index");
+            hatIndex = PlayerPrefs.GetInt(GameManager.instance.itemsManager.hatIndexPrefsKey);
         }
         if (PlayerPrefs.HasKey("Glasses index"))
         {
-            glassesIndex = PlayerPrefs.GetInt("Glasses index");
+            glassesIndex = PlayerPrefs.GetInt(GameManager.instance.itemsManager.glassesIndexPrefsKey);
         }
 
         hatSlot.clothSlotController = this;
         glassesSlot.clothSlotController = this;
     }
-
 }

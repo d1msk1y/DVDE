@@ -59,7 +59,7 @@ MonoBehaviour:
   bullet: {fileID: 5702945816397988629, guid: fe7d7984c2ad4f24fa1e931bf17ad30f, type: 3}
   gunName: UZI
   recoilForce: 1
-  bulletSpeed: 30
+  bulletSpeed: 15
   rechargeSpeed: 20
   bulletLifetime: 0.25
   shakeForce: {x: 0.3, y: 6, z: 0.05, w: 0.05}

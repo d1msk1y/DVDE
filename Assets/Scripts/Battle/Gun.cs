@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum WeaponType {
+public enum WeaponType
+{
     Pistol,
     Riffle,
     LaserGun,
@@ -42,17 +43,19 @@ public class Gun : MonoBehaviour
 
     private void Start()
     {
+        if (weaponType == WeaponType.Knife)
+            return;
         audioSource = GetComponent<AudioSource>();
 
         audioSource.volume = GameManager.instance.soundManager.sfxVolume;
         switch (weaponType)
-        {    
+        {
             case WeaponType.Shotgun:
                 audioSource.volume = GameManager.instance.soundManager.sfxVolume + 0.1f;
-                break;        
+                break;
             case WeaponType.BulletThrower:
                 audioSource.volume = GameManager.instance.soundManager.sfxVolume + 0.15f;
-                break;          
+                break;
         }
     }
 }

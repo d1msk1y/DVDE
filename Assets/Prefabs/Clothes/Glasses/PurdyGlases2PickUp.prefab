@@ -54,10 +54,11 @@ MonoBehaviour:
   itemType: 1
   outlinedSprite: {fileID: 21300000, guid: 40ea5d52bb7888546bace3f3f6663c21, type: 3}
   defaultSprite: {fileID: 21300000, guid: ad429aae4be0e7d4bb169b58ebf98e8b, type: 3}
-  isUnlocked: 0
-  cost: 0
+  isUnlocked: 1
+  price: 4000
   BoughtPrefsKey: Is bought Purdy
   isBought: 0
+  spriteRenderer: {fileID: 0}
   itemCanvas: {fileID: 6154623135432961523, guid: 6c8ff7ded091b084bb277e3ca8990cb9, type: 3}
   clothIndex: 1
   clothType: 1
@@ -87,7 +88,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3771570528640217449}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 17.464298, y: 17.464298, z: 3.7324965}
   m_Children: []
   m_Father: {fileID: 2108440876244526603}

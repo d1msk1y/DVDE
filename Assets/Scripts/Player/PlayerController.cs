@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private bool _isSecondLifeUsed = false;
     private float _startModifier;
 
-    [HideInInspector]public Rigidbody2D _rigidBody;
+    [HideInInspector] public Rigidbody2D _rigidBody;
     public static PlayerController instance;
 
     private void Awake()
@@ -42,8 +42,8 @@ public class PlayerController : MonoBehaviour
             return;
 
 #if UNITY_EDITOR
-        if (Input.GetButton("Fire1") || GameManager.instance.UiManager.shootingJoystick.Horizontal != 0 || GameManager.instance.UiManager.shootingJoystick.Horizontal != 0)
-           // Shot();
+        if (Input.GetKey(KeyCode.LeftControl))
+            Shot();
         if (Input.GetButtonUp("Fire1"))
         {
             shootingScript.ClearAllLines();
@@ -71,11 +71,11 @@ public class PlayerController : MonoBehaviour
             playerMovement.Dodge();
         }
 
-        if(entityHealth.health <= 0)
+        if (entityHealth.health <= 0)
             Die();
 
 
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
             GameManager.instance.dataManager.SetPlayerSpecs();
     }
 
@@ -95,19 +95,13 @@ public class PlayerController : MonoBehaviour
         shootingScript.damageModifier = 100000;
     }
 
-    public void ExitRageMode()
-    {
-        shootingScript.damageModifier = _startModifier;
-    }
+    public void ExitRageMode() => shootingScript.damageModifier = _startModifier;
 
-    private void ThrowGun()
-    {
-        shootingScript.ThrowGun(shootingScript.gunScript.gun2Throw);
-    }
+    private void ThrowGun() => shootingScript.ThrowGun(shootingScript.gunScript.gun2Throw);
 
     private void GiveCloth()
     {
-        if(clothSlotController.glassesIndex == -1 && clothSlotController.hatIndex == -1)
+        if (clothSlotController.glassesIndex == -1 && clothSlotController.hatIndex == -1)
         {
             return;
         }
@@ -136,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        Instantiate(deathParticle, transform.position, Quaternion.identity);        
+        Instantiate(deathParticle, transform.position, Quaternion.identity);
         StartCoroutine(GameManager.instance.ExitRageMode(0));
         StartCoroutine(GameManager.instance.ExitSlowMo(0));
         isAlive = false;
@@ -185,7 +179,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag == "Wall")
+        if (collision.collider.tag == "Wall")
         {
             GameManager.instance.soundManager._vfxAudioSource.PlayOneShot(GameManager.instance.soundManager.hitWall);
         }

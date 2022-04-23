@@ -141,7 +141,7 @@ MonoBehaviour:
   bullet: {fileID: 5702945816397988629, guid: fe7d7984c2ad4f24fa1e931bf17ad30f, type: 3}
   gunName: LASER GUN
   recoilForce: 1
-  bulletSpeed: 50
+  bulletSpeed: 25
   rechargeSpeed: 7
   bulletLifetime: 0.2
   shakeForce: {x: 0.5, y: 4, z: 0.1, w: 0.5}
