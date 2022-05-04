@@ -21149,14 +21149,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811128578}
-  m_LocalRotation: {x: -0, y: -0, z: -0.17077191, w: 0.9853107}
+  m_LocalRotation: {x: 0, y: 0, z: 0.97904545, w: 0.20364177}
   m_LocalPosition: {x: 0, y: -0.054, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 672341461}
   m_Father: {fileID: 1793964361}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.665}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 156.5}
 --- !u!120 &811128580
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -39934,6 +39934,10 @@ PrefabInstance:
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6336183859908708824, guid: 28cb380bd919fa44dbf4df4713127997, type: 3}
+      propertyPath: price
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336183859908708824, guid: 28cb380bd919fa44dbf4df4713127997, type: 3}
       propertyPath: isBought
       value: 0
       objectReference: {fileID: 0}
@@ -44620,7 +44624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef07a6e637bc34cb91fce20590941f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementJoystick: {fileID: 0}
+  movementJoystick: {fileID: 0}
   movementSpeed: 2000
   maxMovementSpeed: 15
   dodgeForce: 500
@@ -44754,7 +44758,7 @@ MonoBehaviour:
   gunScript: {fileID: 1856146580}
   knife: {fileID: 3777805062696050820, guid: ff1987a4237932c4699a9777b2802019, type: 3}
   _gunThrowForce: 100
-  _bulletScaleModifier: 2
+  _bulletScaleModifier: 1
   _gunThrowAimLength: 2
   criticalDamageChance: 10
   ammos: 10
@@ -51758,7 +51762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4986574348057590219, guid: a9e65fb46d298c44bbe0b5aae31e1f52, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4986574348057590219, guid: a9e65fb46d298c44bbe0b5aae31e1f52, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57358,7 +57362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2771426261620374167, guid: a7754f2b1f86bac40aaffbe18a2f81e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: -1.577
       objectReference: {fileID: 0}
     - target: {fileID: 2771426261620374167, guid: a7754f2b1f86bac40aaffbe18a2f81e0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57789,7 +57793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5806657137732992062, guid: 7a518eab2a3a18b42a6b6f39bd2dd999, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.577
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5806657137732992062, guid: 7a518eab2a3a18b42a6b6f39bd2dd999, type: 3}
       propertyPath: m_LocalPosition.z
