@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Joystick movementJoystick;
 
     public float movementSpeed;
-    public float maxMovementSpeed;
+    public float maxVelocity;
 
     public float dodgeForce;
     public float dodgeRechargeTime;
@@ -41,13 +41,13 @@ public class PlayerMovement : MonoBehaviour
 
         _rigidBody.AddForce(moveDirection * movementSpeed * Time.deltaTime);
 
-        currentDistance = Vector3.Distance(transform.position, startPos);
+        // if (_rigidBody.velocity != Vector2.zero && moveDirection == Vector2.zero)
+        // {
+        //     _rigidBody.AddForce(-_rigidBody.velocity * movementSpeed * 0.2f * Time.deltaTime);
+        // }
 
-        if (_rigidBody.velocity != Vector2.zero && moveDirection == Vector2.zero)
-        {
-            _rigidBody.AddForce(-_rigidBody.velocity * movementSpeed * 0.2f * Time.deltaTime);
-        }
-
+        if (_rigidBody.velocity.magnitude > maxVelocity)
+            _rigidBody.velocity = Vector2.ClampMagnitude(_rigidBody.velocity, maxVelocity);
     }
 
     public void Dodge()
@@ -57,5 +57,4 @@ public class PlayerMovement : MonoBehaviour
 
         _rigidBody.velocity = moveDirection * Vector2.one * dodgeDistance;
     }
-
 }

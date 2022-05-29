@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Linq;
 
 public class ActorShooting : MonoBehaviour
 {
@@ -86,17 +88,13 @@ public class ActorShooting : MonoBehaviour
 
     private void CheckHandler()
     {
-        if (GetState().x > 0 || _shootingJoystick.Horizontal > 0f)
+        Debug.Log(_gunHandler.transform.rotation.z);
+        if (_gunHandler.transform.rotation.z > -0.6 && _gunHandler.transform.rotation.z < 0.6)
         {
             _handlerScale = new Vector3(1f, 1f, 1f);
             PlayerController.instance.clothSlotController.glassesSlot.transform.localScale = new Vector3(1f, 1f, 1f);
         }
         else
-        {
-            _handlerScale = new Vector3(1f, -1f, 1f);
-            PlayerController.instance.clothSlotController.glassesSlot.transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
-        if (_shootingJoystick.Horizontal < 0f)
         {
             _handlerScale = new Vector3(1f, -1f, 1f);
             PlayerController.instance.clothSlotController.glassesSlot.transform.localScale = new Vector3(-1f, 1f, 1f);

@@ -17,14 +17,14 @@ public class Interactable : MonoBehaviour
 
     protected void Start()
     {
-        if(destroyByLifetime)
+        if (destroyByLifetime)
             Destroy(gameObject, lifeTime);
         player = PlayerController.instance.gameObject;
     }
 
     protected void Update()
     {
-        if (player == null)
+        if (player == null || !player.transform.hasChanged)
             return;
 
         distance = Vector2.Distance(transform.position, player.transform.position);
@@ -38,7 +38,7 @@ public class Interactable : MonoBehaviour
 
     public virtual void PickUp()
     {
-        if(isDestroyable)
+        if (isDestroyable)
             Destroy(gameObject);
     }
 

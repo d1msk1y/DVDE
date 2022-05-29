@@ -72,14 +72,14 @@ public class ScoreManager : MonoBehaviour
 
     public void AddComboPoint(int value)
     {
-        if(_currentScoreMultiplier < maxScoreMultiplier)
+        if (_currentScoreMultiplier < maxScoreMultiplier)
             _currentScoreMultiplier += value;
 
-        if(_randomPos == Vector3.zero)
+        if (_randomPos == Vector3.zero)
             _randomPos = new Vector3(Random.Range(0, 10), Random.Range(0, 5));
 
-        if(_scoreMultiplierTxt != null)
-        Destroy(_scoreMultiplierTxt.transform.parent.gameObject);
+        if (_scoreMultiplierTxt != null)
+            Destroy(_scoreMultiplierTxt.transform.parent.gameObject);
 
         PopUpTXT(GameManager.instance.UiManager.mainUiCanvas.transform.position + _randomPos);
 
@@ -115,16 +115,16 @@ public class ScoreManager : MonoBehaviour
 
     private void PopUpTXT(Vector3 popPos)
     {
-        if(_scoreMultiplierTxt != null)
+        if (_scoreMultiplierTxt != null)
             Destroy(_scoreMultiplierTxt.transform.parent.gameObject);
         _scoreMultiplierTxt = Instantiate(comboText, popPos, Quaternion.identity, GameManager.instance.UiManager.hud.transform.parent).GetComponentInChildren<Text>();
 
-        if(_currentScoreMultiplier > 2)
+        if (_currentScoreMultiplier > 2)
         {
             StartCoroutine(InstantiateParticles(scoreMultiplierParticles, _scoreMultiplierTxt.transform, 0));
             _scoreMultiplierTxt.GetComponent<Animator>().Play("ScoreModifierBump");
         }
-        else if(_currentScoreMultiplier <= 2)
+        else if (_currentScoreMultiplier <= 2)
         {
             StartCoroutine(InstantiateParticles(scoreMultiplierParticles, _scoreMultiplierTxt.transform, 0.1f));
             _scoreMultiplierTxt.GetComponent<Animator>().Play("ScoreModifierPopup");
@@ -136,7 +136,7 @@ public class ScoreManager : MonoBehaviour
     {
         _currentScoreMultiplier = 1;
         _randomPos = Vector3.zero;
-        if(todestroy != null)
+        if (todestroy != null)
             todestroy.GetComponentInChildren<Animator>().Play("ScoreModifierPopdown"); Destroy(todestroy, 0.5f);
     }
 
@@ -148,29 +148,29 @@ public class ScoreManager : MonoBehaviour
 
     public void CheckDoubleKill()
     {
-        if(killedDoubles < 1)
+        if (killedDoubles < 1)
             StartCoroutine(resetDoubleKill());
 
         killedDoubles += 1;
         GameObject doubleKillTextInst = null;
 
-        if(killedDoubles >= 2)
+        if (killedDoubles >= 2)
         {
             doubleKillTextInst = Instantiate(doubleKillText, GameManager.instance.UiManager.mainUiCanvas.transform.position + new Vector3(Random.Range(0, 10), Random.Range(0, 5)),
                 Quaternion.identity, GameManager.instance.UiManager.mainUiCanvas.transform);
 
-            CheckSkill();
+            //CheckSkill();
         }
-        if(killedDoubles == 2)
+        if (killedDoubles == 2)
         {
             doubleKillTextInst.GetComponentInChildren<Text>().text = "DOUBLE KILL!";
         }
         if (killedDoubles == 3)
-        { 
+        {
             doubleKillTextInst.GetComponentInChildren<Text>().text = "TRIPPLE KILL!";
         }
         if (killedDoubles == 4)
-        { 
+        {
             doubleKillTextInst.GetComponentInChildren<Text>().text = "QUADRO KILL!";
         }
 
@@ -226,7 +226,7 @@ public class ScoreManager : MonoBehaviour
 
         GameManager.instance.UiManager.UpdateCostTxts();
     }
-    
+
     private IEnumerator countCoins()
     {
         int coinsCounted = 0;
@@ -244,10 +244,10 @@ public class ScoreManager : MonoBehaviour
     private IEnumerator resetDoubleKill()
     {
         _timer = doubleKillLifeTime;
-        while(_timer > 0)
+        while (_timer > 0)
         {
             _timer -= 1 * Time.deltaTime;
-            if(_timer <= 0)
+            if (_timer <= 0)
                 killedDoubles = 0;
 
             yield return null;
