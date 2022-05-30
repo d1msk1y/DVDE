@@ -22,14 +22,14 @@ public class HealthBar : MonoBehaviour
         shieldBarImg.fillAmount = Mathf.Lerp(shieldBarImg.fillAmount, shieldBarAmount, 0.3f);
 
         float healthBarAmount = (float)entityHealth.health / entityHealth.maxHealth;
-        healthBarImg.fillAmount = Mathf.Lerp(healthBarImg.fillAmount, healthBarAmount, 0.3f); 
+        healthBarImg.fillAmount = Mathf.Lerp(healthBarImg.fillAmount, healthBarAmount, 0.3f);
 
-        if(entityHealth.shield <= 0)
+        if (entityHealth.shield <= 0)
         {
             StartCoroutine(ShieldBarPopDown());
         }
 
-        if(entityHealth.shield != entityHealth.startShield || entityHealth.shield > 0 && isShieldBarPopDowned)
+        if (entityHealth.shield != entityHealth.startShield || entityHealth.shield > 0 && isShieldBarPopDowned)
         {
             if (entityHealth.shield <= 0)
                 return;
@@ -43,7 +43,9 @@ public class HealthBar : MonoBehaviour
         if (!isShieldBarActive && !isShieldBarPopDowned)
             yield return null;
         isShieldBarActive = false;
-        if(shieldBar.gameObject.active)
+#pragma warning disable CS0618 // Type or member is obsolete
+        if (shieldBar.gameObject.active)
+#pragma warning restore CS0618 // Type or member is obsolete
             shieldBarAnimator.Play("ShieldBarPopDown");
     }
 

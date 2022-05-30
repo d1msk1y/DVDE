@@ -28,7 +28,7 @@ public class PlayerLevelBar : MonoBehaviour
     private float prevScore;
     private float lastScore;
     private float barSpeed;
-    [SerializeField]private int prevNeededScore;
+    [SerializeField] private int prevNeededScore;
 
     private void OnEnable()
     {
@@ -56,7 +56,7 @@ public class PlayerLevelBar : MonoBehaviour
 
         currentScoreTrans = prevScore;
         if (GameManager.instance.scoreManager.receivedScore == 0)
-            prevScore = lastScore;currentScoreTrans = prevScore;
+            prevScore = lastScore; currentScoreTrans = prevScore;
 
         var emission = particles.emission;
         emission.rateOverTime = 1000;
@@ -85,11 +85,13 @@ public class PlayerLevelBar : MonoBehaviour
     private IEnumerator UpdateBarAmount()
     {
         particles.gameObject.SetActive(true);
+#pragma warning disable CS0618 // Type or member is obsolete
         particles.enableEmission = true;
+#pragma warning restore CS0618 // Type or member is obsolete
 
         float scoreDiff = currentScoreTrans - prevNeededScore;
         float neededScoreDiff = neededScore - prevNeededScore;
-        neededBarAmount =  scoreDiff / neededScoreDiff;
+        neededBarAmount = scoreDiff / neededScoreDiff;
         bar.fillAmount = neededBarAmount;
 
         do
@@ -126,7 +128,9 @@ public class PlayerLevelBar : MonoBehaviour
         if (currentScoreTrans > GameManager.instance.scoreManager.totalScore)
         {
             currentScoreTrans = GameManager.instance.scoreManager.totalScore;
+#pragma warning disable CS0618 // Type or member is obsolete
             particles.enableEmission = false;
+#pragma warning restore CS0618 // Type or member is obsolete
             currentScoreTxt.text = Mathf.Round(currentScoreTrans).ToString();
         }
     }

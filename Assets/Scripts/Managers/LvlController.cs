@@ -31,13 +31,15 @@ public class LvlController : MonoBehaviour
     {
         GameManager.instance.lvlManager.lvlController = this;
         SetUp();
+        Instantiate(GameManager.instance.lvlManager.bgParticle, transform.position, Quaternion.identity, transform);
     }
+
     void Start()
     {
         GameManager.instance.lvlManager.lvlController = this;
         SetUp();
     }
-    
+
     void SetUp()
     {
         enemies2Spawn = GameManager.instance.lvlManager.currentEnemiesToSpawnStage;
@@ -55,7 +57,7 @@ public class LvlController : MonoBehaviour
     {
 
         int lvlDiff = GameManager.instance.lvlManager.currentLevel - lvlIndex;
-        if(lvlDiff > 2)
+        if (lvlDiff > 2)
         {
             Destroy(gameObject);
         }
@@ -76,7 +78,7 @@ public class LvlController : MonoBehaviour
         }
         if (lvlIndex == GameManager.instance.lvlManager.currentLevel && enemiesSpawned >= enemies2Spawn && currentEnemiesInAction.Length <= 0)
         {
-            StartCoroutine(r_Door.GetComponent<Door>().OpenTheDoor());;//Right door open.
+            StartCoroutine(r_Door.GetComponent<Door>().OpenTheDoor()); ;//Right door open.
             StartCoroutine(l_Door.GetComponent<Door>().CloseTheDoor());//Left door close.
         }
 
@@ -90,7 +92,7 @@ public class LvlController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
             if (GameManager.instance.lvlManager.currentLevel >= lvlIndex)
                 return;

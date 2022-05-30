@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 77359652245195994}
   - component: {fileID: 5536939204925810771}
   - component: {fileID: 7187054159480289308}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlayerShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -659,8 +659,8 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
-    angle: 35.8
+    type: 10
+    angle: 48.32
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -746,7 +746,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.0001
+      value: 0.06
       mode: 0
       spread: 0
       speed:

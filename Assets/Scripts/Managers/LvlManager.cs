@@ -10,6 +10,10 @@ public class LvlManager : MonoBehaviour
     [Space(10)]
     public GameObject lvlPrefab;
 
+    [Header("GFX")]
+    public ParticleSystem bgParticle;
+    public EtherealSpawner etherealSpawner;
+
     [Header("Info")]
     public LvlController lvlController;
     public int currentLevel;
@@ -27,7 +31,7 @@ public class LvlManager : MonoBehaviour
     private int startLevelStage;
     private int startWeaponsStage;
     private int startEnemiesToSpawnStage;
-    [HideInInspector]public GameObject[] currentEnemiesInAction;
+    [HideInInspector] public GameObject[] currentEnemiesInAction;
 
     private void Start()
     {
@@ -46,7 +50,7 @@ public class LvlManager : MonoBehaviour
 
     private void Update()
     {
-        if(lvlController == null && currentLevel == 0)
+        if (lvlController == null && currentLevel == 0)
         {
             SpawnFirstLevel();
         }
@@ -56,7 +60,7 @@ public class LvlManager : MonoBehaviour
 
         enemies2Spawn = lvlController.enemies2Spawn;
         enemiesSpawned = lvlController.enemiesSpawned;
-        if(enemiesSpawned >= enemies2Spawn && lvlController.currentEnemiesInAction.Length <= 0 && currentLevel == lvlController.lvlIndex)
+        if (enemiesSpawned >= enemies2Spawn && lvlController.currentEnemiesInAction.Length <= 0 && currentLevel == lvlController.lvlIndex)
         {
             SpawnNewLevel();
             GameManager.instance.soundManager.LowPassFrequencyCutOff();
@@ -66,8 +70,8 @@ public class LvlManager : MonoBehaviour
     }
 
     public void SwitchLevel()
-    {        
-        if(GameManager.instance.isGameStarted == false)
+    {
+        if (GameManager.instance.isGameStarted == false)
             GameManager.instance.soundManager.StartSoundtrack();
 
         currentLevel += 1;
@@ -110,6 +114,7 @@ public class LvlManager : MonoBehaviour
 
     private void SpawnFirstLevel()
     {
+        bgParticle = etherealSpawner.GetRandomParticle();
         _newLvl = Instantiate(lvlPrefab, Vector3.zero, Quaternion.identity);
 
         enemies2Spawn = _newLvl.GetComponent<LvlController>().enemies2Spawn;
@@ -148,7 +153,7 @@ public class LvlManager : MonoBehaviour
     private void DestroyAllLevels()
     {
         LvlController[] lvls = GameObject.FindObjectsOfType<LvlController>();
-        foreach(LvlController lvlController in lvls)
+        foreach (LvlController lvlController in lvls)
         {
             Destroy(lvlController.gameObject);
         }
@@ -178,7 +183,7 @@ public class LvlManager : MonoBehaviour
     private void DestroyAllObstacles()
     {
         LevelGeneration[] spawners = GameObject.FindObjectsOfType<LevelGeneration>();
-        foreach(LevelGeneration spawner in spawners)
+        foreach (LevelGeneration spawner in spawners)
         {
             Destroy(spawner.transform.parent.gameObject);
         }

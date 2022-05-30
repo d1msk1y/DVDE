@@ -89,7 +89,7 @@ public class ActorShooting : MonoBehaviour
     private void CheckHandler()
     {
         Debug.Log(_gunHandler.transform.rotation.z);
-        if (_gunHandler.transform.rotation.z > -0.6 && _gunHandler.transform.rotation.z < 0.6)
+        if (_gunHandler.transform.rotation.z > -0.7 && _gunHandler.transform.rotation.z < 0.7)
         {
             _handlerScale = new Vector3(1f, 1f, 1f);
             PlayerController.instance.clothSlotController.glassesSlot.transform.localScale = new Vector3(1f, 1f, 1f);

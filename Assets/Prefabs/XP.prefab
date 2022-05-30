@@ -134,7 +134,7 @@ MonoBehaviour:
   destroyByLifetime: 0
   useFulAmount: 100
   itemType: 2
-  moveSpeed: 0.2
+  moveSpeed: 20
   pickUpRadius: 0.7
   _audioSource: {fileID: 0}
   _pickupSound: {fileID: 8300000, guid: bcf5f2404b585ad4cb6d6298bb254f96, type: 3}

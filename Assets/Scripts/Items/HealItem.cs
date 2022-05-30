@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemType { Health, Shield, Experience}
+public enum ItemType { Health, Shield, Experience }
 
 public class HealItem : Interactable
 {
@@ -22,8 +22,8 @@ public class HealItem : Interactable
         base.Start();
         _audioSource = GameManager.instance.soundManager._vfxAudioSource;
         _playerHealth = player.GetComponent<EntityHealth>();
-        
-        if(itemType == ItemType.Shield)
+
+        if (itemType == ItemType.Shield)
         {
             useFulAmount = GameManager.instance.itemsManager.shieldUseful;
         }
@@ -37,7 +37,7 @@ public class HealItem : Interactable
             return;
 
         if (distance < pickUpRadius)
-        {            
+        {
             PickUp();
         }
     }
@@ -67,7 +67,7 @@ public class HealItem : Interactable
                 _playerHealth.Heal(useFulAmount, itemType);
 
                 break;
-        }        
+        }
     }
 
     private void PickUpXP()
@@ -79,7 +79,7 @@ public class HealItem : Interactable
     {
         base.OnReachZoneEnter();
 
-        transform.position = Vector2.Lerp(transform.position, player.transform.position, moveSpeed);
+        transform.position = Vector2.Lerp(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
     }
 
     private void OnDrawGizmos()
@@ -89,5 +89,4 @@ public class HealItem : Interactable
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, pickUpRadius);
     }
-
 }

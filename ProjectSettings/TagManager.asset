@@ -27,8 +27,8 @@ TagManager:
   - Item
   - BlockPlayer
   - Block Enemy
-  - 
-  - 
+  - No Bloom
+  - No Bloom PostProc
   - 
   - 
   - 

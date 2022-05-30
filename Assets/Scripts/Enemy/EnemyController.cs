@@ -32,13 +32,13 @@ public class EnemyController : MonoBehaviour
     private float _distanceToPlayer;
 
     [Header("GFX")]
-    [SerializeField]private ParticleSystem _deathParticle;
+    [SerializeField] private ParticleSystem _deathParticle;
     public ParticleSystem hitParticle;
     private SpriteRenderer _spriteRenderer;
 
     [Header("Other")]
-    [HideInInspector]public Rigidbody2D _rigidBody;
-    [HideInInspector]public Rigidbody2D _playerRigidBody;
+    [HideInInspector] public Rigidbody2D _rigidBody;
+    [HideInInspector] public Rigidbody2D _playerRigidBody;
     private RaycastHit2D _hit;
     private GameObject transXpItem;
 
@@ -80,7 +80,7 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        if(_entityHealth.health <= 0)
+        if (_entityHealth.health <= 0)
         {
             Die();
         }
@@ -96,7 +96,7 @@ public class EnemyController : MonoBehaviour
         if (_distanceToPlayer <= _lookRadius)
         {
             _isPlayerWithinReach = true;
-            _hit = Physics2D.Raycast(_rigidBody.position,dir,_lookRadius, ~_ignoreLayer);
+            _hit = Physics2D.Raycast(_rigidBody.position, dir, _lookRadius, ~_ignoreLayer);
         }
         else
         {
@@ -138,22 +138,22 @@ public class EnemyController : MonoBehaviour
     private void Die()
     {
         Instantiate(_deathParticle, transform.position, Quaternion.identity);
-        GameObject healItem = Instantiate(_healItem,transform.position, Quaternion.identity);
+        GameObject healItem = Instantiate(_healItem, transform.position, Quaternion.identity, GameManager.instance.lvlManager.lvlController.transform);
         InstantiateXp();
 
         int shieldChance = Chance(0, 2);
         if (shieldChance == 1)
-            Instantiate(_shieldItem, transform.position, Quaternion.identity);
+            Instantiate(_shieldItem, transform.position, Quaternion.identity, GameManager.instance.lvlManager.lvlController.transform);
 
         GunPickUp gunInst = Instantiate(_enemyShooting.gunScript.gun2PickUp, transform.position,
-            Quaternion.Euler(new Vector3(0,0,Random.Range(0,360))));
- 
+            Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360))), GameManager.instance.lvlManager.lvlController.transform);
+
         gunInst.GetComponent<Rigidbody2D>().AddForce
-            (GameManager.instance.RandomVector(-1,1) * _itemDropForce);
+            (GameManager.instance.RandomVector(-1, 1) * _itemDropForce);
         healItem.GetComponent<Rigidbody2D>().AddForce
-            (GameManager.instance.RandomVector(-1,1) * _itemDropForce);
+            (GameManager.instance.RandomVector(-1, 1) * _itemDropForce);
         transXpItem.GetComponent<Rigidbody2D>().AddForce
-            (GameManager.instance.RandomVector(-1,1) * _itemDropForce);
+            (GameManager.instance.RandomVector(-1, 1) * _itemDropForce);
 
         GameManager.instance.scoreManager.enemiesKilled += 1;
         GameManager.instance.scoreManager.AddComboPoint(1);
@@ -168,7 +168,7 @@ public class EnemyController : MonoBehaviour
         float randomScore = score * _distanceToPlayer * 0.15f;
         score = (int)randomScore;
 
-        transXpItem = Instantiate(_xpItem, transform.position, Quaternion.identity);
+        transXpItem = Instantiate(_xpItem, transform.position, Quaternion.identity, GameManager.instance.lvlManager.lvlController.transform);
 
         float scaleModifier = 0.005f * score;
 
@@ -180,14 +180,14 @@ public class EnemyController : MonoBehaviour
         //transXpItem.transform.localScale *= scaleModifier;
         HealItem xpItemProp = transXpItem.GetComponent<HealItem>();
         xpItemProp.useFulAmount = score;
-    } 
+    }
 
     private int Chance(int a, int b)
     {
         int chance = Random.Range(a, b);
         return chance;
     }
-    
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
@@ -196,7 +196,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag == "Gun")
+        if (collision.collider.tag == "Gun")
         {
             Die();
             Destroy(collision.gameObject);
@@ -204,9 +204,9 @@ public class EnemyController : MonoBehaviour
         if (collision.collider.tag == "Knife")
         {
             _entityHealth.TakeDamage(collision.gameObject.GetComponentInChildren<Gun>().damage, _spriteRenderer);
-           /* if(enabled && gameObject != null)
-                _rigidBody.AddForce(collision.transform.right
-                    * collision.gameObject.GetComponentInParent<Gun>().pushForce, ForceMode2D.Impulse);*/
+            /* if(enabled && gameObject != null)
+                 _rigidBody.AddForce(collision.transform.right
+                     * collision.gameObject.GetComponentInParent<Gun>().pushForce, ForceMode2D.Impulse);*/
         }
     }
 }
