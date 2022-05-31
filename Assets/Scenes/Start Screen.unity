@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 36308262}
   - component: {fileID: 36308263}
   - component: {fileID: 36308264}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: bottom (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -5205,7 +5205,7 @@ GameObject:
   - component: {fileID: 65258412}
   - component: {fileID: 65258413}
   - component: {fileID: 65258414}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: bottom (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -5364,7 +5364,7 @@ GameObject:
   - component: {fileID: 87291898}
   - component: {fileID: 87291899}
   - component: {fileID: 87291900}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: bottom (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -10894,7 +10894,7 @@ GameObject:
   - component: {fileID: 379856411}
   - component: {fileID: 379856412}
   - component: {fileID: 379856413}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: bottom
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -12225,20 +12225,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_Font: {fileID: 12800000, guid: 505e8b591d42bc849b32be7dad24d011, type: 3}
+    m_FontSize: 61
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 48
+    m_MaxSize: 61
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: With each room, the enemies become stronger and more diverse, so do not
-    forget to upgrade your hero and your weapon
+  m_Text: LOADING...
 --- !u!222 &906092241
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18488,6 +18487,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cfba2b00bc96d34c9df70127b92b1bf, type: 3}
+--- !u!1 &1204221721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1204221723}
+  - component: {fileID: 1204221722}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1204221722
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204221721}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1204221723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204221721}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.473427, y: -1.9634784, z: 26.070196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1204435866
 PrefabInstance:
   m_ObjectHideFlags: 0
