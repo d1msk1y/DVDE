@@ -1133,7 +1133,7 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: b472845715a859c489e3a8807d200437, type: 3}
   defaultSprite: {fileID: 21300000, guid: b472845715a859c489e3a8807d200437, type: 3}
   isUnlocked: 1
-  price: 500
+  price: 100
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 496314562}
@@ -6659,7 +6659,7 @@ RectTransform:
   - {fileID: 754968347}
   - {fileID: 921836319}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7333,7 +7333,7 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   defaultSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   isUnlocked: 1
-  price: 1000
+  price: 500
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 662523013}
@@ -11078,6 +11078,17 @@ PrefabInstance:
       propertyPath: price
       value: 8000
       objectReference: {fileID: 0}
+    - target: {fileID: 7753171279003241791, guid: 985f76737d3bded40ba046dc4fd77248, type: 3}
+      propertyPath: speech
+      value: 'LASER GUN
+
+        TF?! Laser gun, who tf added it?! Ahh whatever,
+        I guess u can shoot through 2+ enemies in a row'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753171279003241791, guid: 985f76737d3bded40ba046dc4fd77248, type: 3}
+      propertyPath: speechNPC
+      value: 
+      objectReference: {fileID: 2432284102956996165}
     - target: {fileID: 7753171279003241792, guid: 985f76737d3bded40ba046dc4fd77248, type: 3}
       propertyPath: m_Name
       value: 3_LaserGunPickUp
@@ -11380,7 +11391,7 @@ MonoBehaviour:
   currentLevel: 0
   currentLevelStage: 0
   currentWeaponsStage: 0
-  currentEnemiesToSpawnStage: 10
+  currentEnemiesToSpawnStage: 3
   enemies2Spawn: 0
   enemiesSpawned: 0
   currentEnemiesInAction: []
@@ -11443,8 +11454,8 @@ MonoBehaviour:
   doubleKillText: {fileID: 6241413314518128177, guid: aea348df55f40274bb7f8a7f34074d1e, type: 3}
   scoreMultiplierParticles: {fileID: 3623291629530755474, guid: 606ecffc3e9b67c41b982f182f5b10b3, type: 3}
   doubleKillParticles: {fileID: 3623291629530755474, guid: 606ecffc3e9b67c41b982f182f5b10b3, type: 3}
-  receivedCoins: 0
-  totalCoins: 10000
+  receivedCoins: 100000
+  _totalCoins: 0
   enemiesKilled: 0
 --- !u!114 &416460881
 MonoBehaviour:
@@ -19061,7 +19072,7 @@ MonoBehaviour:
   stagePrefsKey: Slow mo stage
   pricePrefsKey: Slow mo price
   speech: "SLOW MO\nSlow down the time \nafter a killing streak(SOMETIMES)"
-  speechNPC: {fileID: 618328301}
+  speechNPC: {fileID: 0}
 --- !u!1 &644645793
 GameObject:
   m_ObjectHideFlags: 0
@@ -28292,6 +28303,17 @@ PrefabInstance:
       propertyPath: price
       value: 7000
       objectReference: {fileID: 0}
+    - target: {fileID: 2528945962566040125, guid: 1c19c234d05bd3d40a3f28b0791c145c, type: 3}
+      propertyPath: speech
+      value: 'MUSKET
+
+        This gun loved by pirates, bad choice, don''t buy it,
+        or do, nobody cares'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2528945962566040125, guid: 1c19c234d05bd3d40a3f28b0791c145c, type: 3}
+      propertyPath: speechNPC
+      value: 
+      objectReference: {fileID: 2432284102956996165}
     - target: {fileID: 2528945962566040130, guid: 1c19c234d05bd3d40a3f28b0791c145c, type: 3}
       propertyPath: m_Name
       value: 3_Musket2PickUp
@@ -34073,7 +34095,7 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   defaultSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   isUnlocked: 1
-  price: 1000
+  price: 500
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 1113188934}
@@ -34163,7 +34185,7 @@ Transform:
   - {fileID: 1541337371}
   - {fileID: 136504710}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1040258853
 GameObject:
@@ -38846,7 +38868,7 @@ MonoBehaviour:
   stagePrefsKey: Rage stage
   pricePrefsKey: Rage price
   speech: "RAGE\nRage allows you to\nkill your enemies by \none shot"
-  speechNPC: {fileID: 618328301}
+  speechNPC: {fileID: 0}
 --- !u!4 &1408279731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6857463719931623095, guid: eaf35fe0f1f778e4bbadb4a07293a5d1, type: 3}
@@ -41293,6 +41315,7 @@ MonoBehaviour:
   _lowPasFilterCutOffSpeed: 25
   _lowPassFreqCurrent: 0
   _isLowPassFilterCutOffDowned: 1
+  withdrawalSound: {fileID: 8300000, guid: 7e1ac80029cfbae4495ae69ca82bc775, type: 3}
   hitWall: {fileID: 8300000, guid: 41677ff102101dc45aba34b0c1c4db28, type: 3}
   actorDeath: {fileID: 0}
   select: {fileID: 0}
@@ -43624,7 +43647,7 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   defaultSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   isUnlocked: 1
-  price: 800
+  price: 300
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 694922407}
@@ -44060,7 +44083,7 @@ MonoBehaviour:
   speech: 'SECOND LIFE
 
     Increase your chances for second life'
-  speechNPC: {fileID: 618328301}
+  speechNPC: {fileID: 0}
 --- !u!1 &1718085619
 GameObject:
   m_ObjectHideFlags: 0
@@ -44429,7 +44452,7 @@ Transform:
   m_LocalScale: {x: 4.0513897, y: 4.0513897, z: 4.0513897}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1731535953
 PrefabInstance:
@@ -45260,7 +45283,7 @@ Transform:
   - {fileID: 675154765}
   - {fileID: 1962116700}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1793964362
 MonoBehaviour:
@@ -45324,7 +45347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31477b0f119fc6540aa63efd6a8c745b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
   maxHealth: 50
   shield: 0
   maxShield: 0
@@ -46519,7 +46541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAQIexU0K+jTQIAAPMEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VMty2jAU/RVG66bjECClu9YQ0gWBCe1k442QrrEGWfLoER4Z/r1Xso0dOh0WyOece3Xuw/4gQtkKmNNmYQRfag7k+4CEM/ky6MhnONKdVhtxhlbzJrgrgohGzSt1QiN+H8KsLsEZwX6onQziBEGvRK5NOec7SLV1FuGcSgtIGe1CtELoY0CO+Hc3DSEnPA0fw+mMp2kyuOCRgXJgOmkrbGW1yismaVkBD5Y78cOwTTuKMoXFNIrk6yhk11IK23gh7lTFWlNaWY+VoIALirVFA6HUAsSucCFhP3iV5xZcY8rQ00wYbFGdlfzUdd9Kave1s3cqfbhnUpuqcy7/oe/uI50bXT63194n4QpXCLZ/pSdGrev1tQ/PPvv26kDlnm4lvBWgXvTCaK84ks74EOotDGfd47WytAC27/Da6g3oq/9PJ9RwicUfUynK7bXxCGykju2OsweDo/mFhuNm2CYFosHFHwu/6a6/Qg3xJIx1SDVVqmBvq70JUjKPPQvVeJdqoyDCjekKFJXutMY07naCN1zv2hvmiYaXpbm84dp34CYkwp0+SW6otT5ch2ULfViCLVbeSaGgMx2IF+xTqpWqF6zfkzZs401OWS9s5wX/vFpkvMUfy4eUjel4+i2/SygfTR6TJJ/mkyl7mJC4e0JhnVSua6NNe3BqqkuucM/ab8hgYWgVl50beliIc6l7LRcq1xtmANSqznA1DgYvwdeSz7nABm3AOaHivMlHRqRme+DZNVEWK50fnaFZlyUjlXjXLiAZSeNHIyMXcvkLUEsDBBQAAAgIAAAQIez8AQzwbAAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrSSaRIQJqcZJSabJppaWqTpGiSmmJiZGxikWaaZWSYbmynFAtWXVBak+iXmpkL0BCSWZKRl5qVk5qXruRdlpriDjFaKrQUAUEsBAi0AFAAACAgAABAh7FTQr6NNAgAA8wQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAABAh7PwBDPBsAAAAeAAAAAkAJAAAAAAAAAAAAAAAmgIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABRAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAIIexU0K+jTQIAAPMEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VMty2jAU/RVG66bjECClu9YQ0gWBCe1k442QrrEGWfLoER4Z/r1Xso0dOh0WyOece3Xuw/4gQtkKmNNmYQRfag7k+4CEM/ky6MhnONKdVhtxhlbzJrgrgohGzSt1QiN+H8KsLsEZwX6onQziBEGvRK5NOec7SLV1FuGcSgtIGe1CtELoY0CO+Hc3DSEnPA0fw+mMp2kyuOCRgXJgOmkrbGW1yismaVkBD5Y78cOwTTuKMoXFNIrk6yhk11IK23gh7lTFWlNaWY+VoIALirVFA6HUAsSucCFhP3iV5xZcY8rQ00wYbFGdlfzUdd9Kave1s3cqfbhnUpuqcy7/oe/uI50bXT63194n4QpXCLZ/pSdGrev1tQ/PPvv26kDlnm4lvBWgXvTCaK84ks74EOotDGfd47WytAC27/Da6g3oq/9PJ9RwicUfUynK7bXxCGykju2OsweDo/mFhuNm2CYFosHFHwu/6a6/Qg3xJIx1SDVVqmBvq70JUjKPPQvVeJdqoyDCjekKFJXutMY07naCN1zv2hvmiYaXpbm84dp34CYkwp0+SW6otT5ch2ULfViCLVbeSaGgMx2IF+xTqpWqF6zfkzZs401OWS9s5wX/vFpkvMUfy4eUjel4+i2/SygfTR6TJJ/mkyl7mJC4e0JhnVSua6NNe3BqqkuucM/ab8hgYWgVl50beliIc6l7LRcq1xtmANSqznA1DgYvwdeSz7nABm3AOaHivMlHRqRme+DZNVEWK50fnaFZlyUjlXjXLiAZSeNHIyMXcvkLUEsDBBQAAAgIAAAIIez8AQzwbAAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrSSaRIQJqcZJSabJppaWqTpGiSmmJiZGxikWaaZWSYbmynFAtWXVBak+iXmpkL0BCSWZKRl5qVk5qXruRdlpriDjFaKrQUAUEsBAi0AFAAACAgAAAgh7FTQr6NNAgAA8wQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7PwBDPBsAAAAeAAAAAkAJAAAAAAAAAAAAAAAmgIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABRAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -47134,7 +47156,7 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   defaultSprite: {fileID: 21300000, guid: cd835b7c8c5d31c40ae6444fa7021c0d, type: 3}
   isUnlocked: 1
-  price: 800
+  price: 500
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 428384205}
@@ -47770,7 +47792,7 @@ Transform:
   - {fileID: 1241116657}
   - {fileID: 2050211706}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1957005743
 GameObject:
@@ -49770,7 +49792,7 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 4f3fe90eba019a2489c39fb05a2df3b4, type: 3}
   defaultSprite: {fileID: 21300000, guid: 4f3fe90eba019a2489c39fb05a2df3b4, type: 3}
   isUnlocked: 1
-  price: 700
+  price: 200
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 1271388016}
@@ -50899,9 +50921,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2528945962566040125, guid: faf0512d435880e468db466edc78349b, type: 3}
+      propertyPath: speech
+      value: 'PISTOL
+
+        Shitty-ass gun, Only dumbass gonna use it, but u have
+        no choice haha'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2528945962566040125, guid: faf0512d435880e468db466edc78349b, type: 3}
       propertyPath: isBought
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2528945962566040125, guid: faf0512d435880e468db466edc78349b, type: 3}
+      propertyPath: speechNPC
+      value: 
+      objectReference: {fileID: 2432284102956996165}
     - target: {fileID: 2528945962566040130, guid: faf0512d435880e468db466edc78349b, type: 3}
       propertyPath: m_Name
       value: 3_Pistol2PickUp
@@ -51066,6 +51099,17 @@ PrefabInstance:
       propertyPath: price
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 4204376043622755460, guid: 0dae07110d1b5a14bafff3af9ab7fa83, type: 3}
+      propertyPath: speech
+      value: 'UZI
+
+        The same as PISTOL but it does skratata 0/10(Don''t bring
+        this to school, ok?)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204376043622755460, guid: 0dae07110d1b5a14bafff3af9ab7fa83, type: 3}
+      propertyPath: speechNPC
+      value: 
+      objectReference: {fileID: 2432284102956996165}
     - target: {fileID: 4204376043622755460, guid: 0dae07110d1b5a14bafff3af9ab7fa83, type: 3}
       propertyPath: isUnlocked
       value: 1
@@ -51239,63 +51283,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 401bce3c36e218547a9a9959531aa9e9, type: 3}
---- !u!1001 &1705076060467851566
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 77359652245195994, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 77359652245195994, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -32.73772
-      objectReference: {fileID: 0}
-    - target: {fileID: 77359652245195994, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.45050806
-      objectReference: {fileID: 0}
-    - target: {fileID: 77359652245195994, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77359652245195994, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 77359652245195994, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77359652245195994, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77359652245195994, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77359652245195994, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77359652245195994, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77359652245195994, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 886116533143568168, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
-      propertyPath: m_Name
-      value: PlayerShot (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}
 --- !u!4 &1737069981519000608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2771426261620374167, guid: a7754f2b1f86bac40aaffbe18a2f81e0, type: 3}
@@ -52156,7 +52143,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -151, y: 108}
+  m_AnchoredPosition: {x: -151, y: 130.83}
   m_SizeDelta: {x: 567.5, y: 378.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2885269498419879867
@@ -52207,19 +52194,21 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: da700b9e4eff70d41b3800b27edd3201, type: 3}
-    m_FontSize: 50
+    m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 5
     m_MaxSize: 102
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Here you can buy and choose on of these guns, it will be your default gun
-    with which you will start game.
+  m_Text: 'LASER GUN
+
+    TF?! Laser gun, who tf added it?! Ahh whatever, I guess
+    u can shoot through 2+ enemies in a row'
 --- !u!1 &2885269498680490170
 GameObject:
   m_ObjectHideFlags: 0
@@ -53104,6 +53093,17 @@ PrefabInstance:
       propertyPath: price
       value: 2000
       objectReference: {fileID: 0}
+    - target: {fileID: 2262942464128315191, guid: c4c266bf951a6a6459f35149b17bb392, type: 3}
+      propertyPath: speech
+      value: 'SHOTGUN
+
+        3 bullets at each shot still doesn''t make u cool
+        but u can spend money on this one for fun yk'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262942464128315191, guid: c4c266bf951a6a6459f35149b17bb392, type: 3}
+      propertyPath: speechNPC
+      value: 
+      objectReference: {fileID: 2432284102956996165}
     - target: {fileID: 2262942464128315208, guid: c4c266bf951a6a6459f35149b17bb392, type: 3}
       propertyPath: m_Name
       value: 3_ShotGun2PickUp
@@ -58241,6 +58241,17 @@ PrefabInstance:
       propertyPath: price
       value: 5000
       objectReference: {fileID: 0}
+    - target: {fileID: 7753171279003241791, guid: c8198f82cf3808f4c952d55ce6c30509, type: 3}
+      propertyPath: speech
+      value: 'AK-47
+
+        Also does skratata, but it''s AK yk, it has more damage
+        or smth(Actually DOES make U look cool)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753171279003241791, guid: c8198f82cf3808f4c952d55ce6c30509, type: 3}
+      propertyPath: speechNPC
+      value: 
+      objectReference: {fileID: 2432284102956996165}
     - target: {fileID: 7753171279003241792, guid: c8198f82cf3808f4c952d55ce6c30509, type: 3}
       propertyPath: m_Name
       value: 3_Ak47PickUp
@@ -59506,7 +59517,7 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   defaultSprite: {fileID: 21300000, guid: 4cf5f34223dd83e4ea1ad510f2880c4f, type: 3}
   isUnlocked: 1
-  price: 500
+  price: 100
   BoughtPrefsKey: 
   isBought: 0
   spriteRenderer: {fileID: 711346791}

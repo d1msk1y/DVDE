@@ -35,7 +35,7 @@ public class HeroUpgrade : PickupAble
 
     private void Awake()
     {
-        if(PlayerPrefs.HasKey(pricePrefsKey))
+        if (PlayerPrefs.HasKey(pricePrefsKey))
             price = PlayerPrefs.GetInt(pricePrefsKey);
     }
 
@@ -62,7 +62,7 @@ public class HeroUpgrade : PickupAble
             _points[i].sprite = _square;
         }
 
-        if(_currentStage >= _maxStage)
+        if (_currentStage >= _maxStage)
         {
             Destroy(itemCanvas.GetComponentInChildren<Text>());
         }
@@ -115,7 +115,7 @@ public class HeroUpgrade : PickupAble
 
     public override void Buy()
     {
-        GameManager.instance.scoreManager.totalCoins -= price;
+        GameManager.instance.scoreManager.TotalCoins -= price;
         _currentStage += 1;
 
         PlayerPrefs.SetInt(stagePrefsKey, _currentStage);//Memorize stage visual
@@ -124,14 +124,14 @@ public class HeroUpgrade : PickupAble
 
         GameManager.instance.UiManager.UpdateCostTxts();
 
-        PlayerPrefs.SetInt("Total coins", GameManager.instance.scoreManager.totalCoins);
+        PlayerPrefs.SetInt("Total coins", GameManager.instance.scoreManager.TotalCoins);
 
         // The way to multiply object price (int).
         float costTransition = (float)price * (float)_priceModifier;
         price = (int)costTransition;
         PlayerPrefs.SetInt(pricePrefsKey, price);
 
-        for (int i = 0; i < _currentStage+1; i++)
+        for (int i = 0; i < _currentStage + 1; i++)
         {
             _points[i].sprite = _square;
         }

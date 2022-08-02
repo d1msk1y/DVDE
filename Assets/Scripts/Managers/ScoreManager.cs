@@ -32,7 +32,8 @@ public class ScoreManager : MonoBehaviour
 
     [Header("Coins")]
     public int receivedCoins;
-    public int totalCoins;
+    [SerializeField] private int _totalCoins;
+    public int TotalCoins { get => _totalCoins; set => _totalCoins = value; }
 
     [Header("Player stats")]
     public int enemiesKilled;
@@ -49,7 +50,7 @@ public class ScoreManager : MonoBehaviour
         }
         if (PlayerPrefs.HasKey("Total coins"))
         {
-            totalCoins = PlayerPrefs.GetInt("Total coins");
+            TotalCoins = PlayerPrefs.GetInt("Total coins");
         }
         if (PlayerPrefs.HasKey("Last total score"))
         {
@@ -219,7 +220,7 @@ public class ScoreManager : MonoBehaviour
         GameManager.instance.statsManager.earnedCoins += receivedCoins;
         StartCoroutine(countCoins());
 
-        totalCoins += receivedCoins;
+        TotalCoins += receivedCoins;
 
         UpdateGameOverTxt();
         SaveScoreData();
@@ -260,7 +261,7 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetInt(GameManager.instance.statsManager.keys[1], GameManager.instance.statsManager.earnedCoins);
         PlayerPrefs.SetInt(GameManager.instance.statsManager.keys[6], maxReceivedScore);
         PlayerPrefs.SetInt(GameManager.instance.statsManager.keys[7], totalScore);
-        PlayerPrefs.SetInt("Total coins", totalCoins);
+        PlayerPrefs.SetInt("Total coins", TotalCoins);
         PlayerPrefs.SetInt("Last total score", lastScore);
     }
 

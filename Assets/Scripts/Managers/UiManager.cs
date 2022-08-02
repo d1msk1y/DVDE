@@ -11,7 +11,7 @@ public class UiManager : MonoBehaviour
 
     [Header("HUD")]
     public Canvas mainUiCanvas;
-     public GameObject hud;
+    public GameObject hud;
     [SerializeField] private Text _ammoTxt;
     [SerializeField] private Text _gunNameTxt;
 
@@ -78,9 +78,9 @@ public class UiManager : MonoBehaviour
 
     public void UpdateCostTxts()
     {
-        foreach(Text text in coinsTXTs)
+        foreach (Text text in coinsTXTs)
         {
-            text.text = "$" + GameManager.instance.scoreManager.totalCoins;
+            text.text = "$" + GameManager.instance.scoreManager.TotalCoins;
         }
     }
 
@@ -100,7 +100,7 @@ public class UiManager : MonoBehaviour
 
     public void PickUpButton()
     {
-        toPickup.PickUp();   
+        toPickup.PickUp();
     }
 
     #endregion

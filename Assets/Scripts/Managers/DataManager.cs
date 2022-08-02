@@ -12,7 +12,7 @@ public class DataManager : MonoBehaviour
 
     public void SetPlayerSpecs()
     {
-        if(PlayerPrefs.HasKey(specsKeys[0]))
+        if (PlayerPrefs.HasKey(specsKeys[0]))
             player.entityHealth.maxHealth = (int)PlayerPrefs.GetFloat(specsKeys[0]);
 
         if (PlayerPrefs.HasKey(specsKeys[1]))
@@ -40,7 +40,7 @@ public class DataManager : MonoBehaviour
 
         if (PlayerPrefs.HasKey(skillsKeys[1]))
             GameManager.instance.rageTime = (int)PlayerPrefs.GetFloat(skillsKeys[1]);
-        
+
         if (PlayerPrefs.HasKey(skillsKeys[2]))
             GameManager.instance.slowMoTime = (int)PlayerPrefs.GetFloat(skillsKeys[2]);
     }
@@ -49,7 +49,7 @@ public class DataManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         entityHealth.shield = entityHealth.maxShield;
-        entityHealth.health = entityHealth.maxHealth;
+        entityHealth.Health = entityHealth.maxHealth;
     }
 
 }

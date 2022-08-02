@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             playerMovement.Dodge();
         }
 
-        if (entityHealth.health <= 0)
+        if (entityHealth.Health <= 0)
             Die();
 
 

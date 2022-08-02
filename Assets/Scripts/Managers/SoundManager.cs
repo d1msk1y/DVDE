@@ -18,10 +18,10 @@ public class SoundManager : MonoBehaviour
     [Header("LowPassFilter properties")]
     public AudioClip[] soundTracks;
     public AudioClip mainOST;
-    [SerializeField]private AudioMixer _ostAudioMixer;
+    [SerializeField] private AudioMixer _ostAudioMixer;
 
     [Header("LowPassFilter properties")]
-    [SerializeField]private AudioLowPassFilter _lowPassFilter;
+    [SerializeField] private AudioLowPassFilter _lowPassFilter;
     [SerializeField] private float _minLowPasFilterCutOff;
     [SerializeField] private float _SoundtrackVolume;
     [SerializeField] private float _lowPasFilterCutOffSpeed;
@@ -29,6 +29,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private bool _isLowPassFilterCutOffDowned;
 
     [Header("Other")]
+    public AudioClip withdrawalSound;
     public AudioClip hitWall;
     public AudioClip actorDeath;
     public AudioClip select;
@@ -82,7 +83,7 @@ public class SoundManager : MonoBehaviour
 
     public IEnumerator SmoothOnAudio(AudioSource audioSource)
     {
-        while(audioSource.volume != _SoundtrackVolume)
+        while (audioSource.volume != _SoundtrackVolume)
         {
             audioSource.volume += 1 * Time.deltaTime * 0.9f;
             yield return null;
@@ -90,7 +91,7 @@ public class SoundManager : MonoBehaviour
     }
     public IEnumerator SmoothOffAudio(AudioSource audioSource)
     {
-        while(audioSource.volume != 0)
+        while (audioSource.volume != 0)
         {
             audioSource.volume -= 1 * Time.deltaTime * 0.9f;
             yield return null;
@@ -102,11 +103,11 @@ public class SoundManager : MonoBehaviour
         if (_isLowPassFilterCutOffDowned)
             yield return null;
 
-            _isLowPassFilterCutOffDowned = true;
+        _isLowPassFilterCutOffDowned = true;
 
-        while(_isLowPassFilterCutOffDowned)
+        while (_isLowPassFilterCutOffDowned)
         {
-            if(!_isLowPassFilterCutOffDowned)
+            if (!_isLowPassFilterCutOffDowned)
                 yield return null;
 
             _lowPassFreqCurrent = Mathf.SmoothDamp(22000, _minLowPasFilterCutOff,
@@ -121,9 +122,9 @@ public class SoundManager : MonoBehaviour
         if (!_isLowPassFilterCutOffDowned)
             yield return null;
 
-            _isLowPassFilterCutOffDowned = false;
+        _isLowPassFilterCutOffDowned = false;
 
-        while(!_isLowPassFilterCutOffDowned)
+        while (!_isLowPassFilterCutOffDowned)
         {
             _lowPassFreqCurrent = Mathf.SmoothDamp(_minLowPasFilterCutOff, 22000,
                 ref _lowPassCutOffVelocityUp, _lowPasFilterCutOffSpeed * Time.deltaTime);

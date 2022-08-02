@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EntityHealth : MonoBehaviour
 {
-    public int health;
+    public int Health { get => _health; set => _health = value; }
+    private int _health;
+
     public int maxHealth = 100;
     public int shield;
     public int maxShield;
@@ -16,19 +18,23 @@ public class EntityHealth : MonoBehaviour
     public Color healthColorDamage;
     public Color startColor;
 
+    public delegate void EntityHandler();
+    public event EntityHandler onDamageEvent;
+    public event EntityHandler onDieEvent;
+
     internal int startShield;
 
     private void Start()
     {
         startShield = shield;
-        health = maxHealth;
+        Health = maxHealth;
         healthBar.gameObject.SetActive(false);
         startColor = GetComponent<SpriteRenderer>().color;
     }
 
     private void Update()
     {
-        if (health != maxHealth || shield != startShield)
+        if (Health != maxHealth || shield != startShield)
         {
             healthBar.gameObject.SetActive(true);
         }
@@ -37,9 +43,10 @@ public class EntityHealth : MonoBehaviour
 
     public void TakeDamage(int damage, SpriteRenderer spriteRenderer)
     {
-        if(shield > 0)
+        if (shield > 0)
         {
             shield -= damage;
+            onDamageEvent?.Invoke();
             StartCoroutine(colorPop(spriteRenderer, shieldColorDamage));
             if (shield < 0)
                 shield = 0;
@@ -48,7 +55,8 @@ public class EntityHealth : MonoBehaviour
 
         StartCoroutine(colorPop(spriteRenderer, healthColorDamage));
 
-        health -= damage;
+        onDamageEvent?.Invoke();
+        Health -= damage;
     }
 
     public IEnumerator colorPop(SpriteRenderer spriteRenderer, Color color)
@@ -67,16 +75,15 @@ public class EntityHealth : MonoBehaviour
                 shield = maxShield;
         }
 
-        health += healthAmount;
-        if (health > maxHealth)
-            health = maxHealth;
+        Health += healthAmount;
+        if (Health > maxHealth)
+            Health = maxHealth;
     }
 
     public void ResetHealth()
     {
-        health = maxHealth;
+        Health = maxHealth;
         shield = maxShield;
         GetComponent<SpriteRenderer>().color = startColor;
     }
-
 }

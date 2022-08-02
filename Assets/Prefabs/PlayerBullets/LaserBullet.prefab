@@ -153,6 +153,7 @@ MonoBehaviour:
   criticalDamageChance: 0
   explosionParticle: {fileID: 5536939204925810771, guid: 7135ecf1b951d684da01b99a2008eb40, type: 3}
   parent: {fileID: 0}
+  shootingScript: {fileID: 0}
   damageStats: {fileID: 8503724349538595293, guid: 7500b75b7cbc93f49b6cc7bd1edd33ba, type: 3}
   criticalDamageTxt: {fileID: 6241413314518128177, guid: 0ff0b02b5fc888846bf267603e7fcc3d, type: 3}
   whatIsSolid:
@@ -202,7 +203,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

@@ -141,9 +141,9 @@ MonoBehaviour:
   bullet: {fileID: 5702945816397988629, guid: a56ccdbae85388243973f8d10a135558, type: 3}
   gunName: SHOTGUN
   recoilForce: 5
-  bulletSpeed: 25
+  bulletSpeed: 16
   rechargeSpeed: 2
-  bulletLifetime: 0.125
+  bulletLifetime: 0.1875
   shakeForce: {x: 2, y: 5, z: 0.1, w: 0.5}
   damage: 9
   pushForce: 0

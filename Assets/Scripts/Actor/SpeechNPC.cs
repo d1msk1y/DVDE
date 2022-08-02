@@ -31,7 +31,7 @@ public class SpeechNPC : Interactable
 
         base.OnReachZoneEnter();
 
-        Say(speechTXT) ;
+        Say(speechTXT);
     }
 
     public override void OnReachZoneExit()

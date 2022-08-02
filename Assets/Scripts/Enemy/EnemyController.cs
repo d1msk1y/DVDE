@@ -80,7 +80,7 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        if (_entityHealth.health <= 0)
+        if (_entityHealth.Health <= 0)
         {
             Die();
         }

@@ -59,9 +59,9 @@ MonoBehaviour:
   bullet: {fileID: 5702945816397988629, guid: fe7d7984c2ad4f24fa1e931bf17ad30f, type: 3}
   gunName: AK-47
   recoilForce: 3
-  bulletSpeed: 15
+  bulletSpeed: 10
   rechargeSpeed: 10
-  bulletLifetime: 0.7
+  bulletLifetime: 1.05
   shakeForce: {x: 0.5, y: 5, z: 0.1, w: 0.1}
   damage: 10
   pushForce: 0

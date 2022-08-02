@@ -41,7 +41,7 @@ public class PickupAble : Interactable
         {
             isBought = PlayerPrefs.GetInt(BoughtPrefsKey);
         }
-        if(GetComponent<Animator>() != null)
+        if (GetComponent<Animator>() != null)
             animator = GetComponent<Animator>();
 
     }
@@ -50,11 +50,11 @@ public class PickupAble : Interactable
     {
         base.Start();
 
-        if(spriteRenderer == null)
+        if (spriteRenderer == null)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         Color startColor = spriteRenderer.color;
 
-        if(itemType == PickupType.Buyable && isUnlocked == 1 && isBought == 0 ||
+        if (itemType == PickupType.Buyable && isUnlocked == 1 && isBought == 0 ||
             itemType == PickupType.UpgradeAble && isUnlocked == 1)
         {
             itemCanvas = Instantiate(itemCanvas, transform.position, Quaternion.identity, transform);
@@ -69,7 +69,7 @@ public class PickupAble : Interactable
         }
         else
         {
-            if(spriteRenderer != null)
+            if (spriteRenderer != null)
                 spriteRenderer.color = startColor;
         }
 
@@ -93,7 +93,7 @@ public class PickupAble : Interactable
 
     private IEnumerator ScaleDown()
     {
-        while(transform.localScale != startScale && !isInReachZone)
+        while (transform.localScale != startScale && !isInReachZone)
         {
             transform.localScale = Vector3.Lerp(transform.localScale, startScale, 0.1f);
             yield return null;
@@ -101,7 +101,7 @@ public class PickupAble : Interactable
     }
     private IEnumerator ScaleUp()
     {
-        while(transform.localScale != Vector3.one * scaleUpAmount && isInReachZone)
+        while (transform.localScale != Vector3.one * scaleUpAmount && isInReachZone)
         {
             transform.localScale = Vector3.Lerp(transform.localScale, startScale * scaleUpAmount, 0.05f);
             yield return null;
@@ -117,7 +117,7 @@ public class PickupAble : Interactable
         GameManager.instance.UiManager.pickUpButton.gameObject.SetActive(true);
         GameManager.instance.UiManager.toPickup = this;
 
-        if(animator != null)
+        if (animator != null)
             animator.SetBool("isNear", true);
     }
 
@@ -149,7 +149,7 @@ public class PickupAble : Interactable
                 particle.transform.localScale = particle.transform.localScale * 1.5f;
             }
         }
-        if (isUnlocked == 1 && isBought == 0 && GameManager.instance.scoreManager.totalCoins >= price)
+        if (isUnlocked == 1 && isBought == 0 && GameManager.instance.scoreManager.TotalCoins >= price)
         {
             Buy();
 
@@ -165,7 +165,7 @@ public class PickupAble : Interactable
 
     public virtual void Buy()
     {
-        GameManager.instance.scoreManager.totalCoins -= price;
+        GameManager.instance.scoreManager.TotalCoins -= price;
         GameManager.instance.statsManager.spentCoins += price;
         GameManager.instance.UiManager.UpdateCostTxts();
 
@@ -176,7 +176,7 @@ public class PickupAble : Interactable
 
         isBought = 1;
         PlayerPrefs.SetInt(BoughtPrefsKey, isBought);
-        PlayerPrefs.SetInt("Total coins", GameManager.instance.scoreManager.totalCoins);
+        PlayerPrefs.SetInt("Total coins", GameManager.instance.scoreManager.TotalCoins);
 
         Instantiate(GameManager.instance.itemsManager.buyParticle, transform.position, Quaternion.identity);
 

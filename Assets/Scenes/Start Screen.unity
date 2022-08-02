@@ -20683,7 +20683,6 @@ GameObject:
   - component: {fileID: 1942846307}
   - component: {fileID: 1942846306}
   - component: {fileID: 1942846305}
-  - component: {fileID: 1942846301}
   - component: {fileID: 1942846299}
   - component: {fileID: 1942846298}
   - component: {fileID: 1942846297}
@@ -20936,23 +20935,6 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &1942846301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1942846296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87a42724e6fb2243a23ad35e49d027f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hatSlot: {fileID: 0}
-  glassesSlot: {fileID: 0}
-  glassesIndex: 0
-  hatIndex: 0
-  isRandomized: 1
 --- !u!50 &1942846305
 Rigidbody2D:
   serializedVersion: 4
