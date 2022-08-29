@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +11,7 @@ public class Box : Destructible
     [SerializeField] private GameObject healItem;
     [SerializeField] private GameObject shieldItem;
     [SerializeField] private GameObject gunItem;
+    [SerializeField] private Detonator _grenade;
 
     [Header("Random points")]
     [SerializeField] private bool xpChance;
@@ -22,6 +22,8 @@ public class Box : Destructible
     [SerializeField] private int shieldChanceAmount;
     [SerializeField] private bool healChance;
     [SerializeField] private int healChanceAmount;
+    [SerializeField] private bool grenadeChance;
+    [SerializeField] private int grenadeChanceAmount;
 
     [SerializeField] private GameObject[] randomGuns;
 
@@ -38,10 +40,13 @@ public class Box : Destructible
 
     private void DropItems()
     {
+        List<GameObject> drop = new List<GameObject>();
+
         GameObject xpItemInst = Instantiate(xpItem, transform.position, Quaternion.identity);
         GameObject healItemInst = Instantiate(healItem, transform.position, Quaternion.identity);
         GameObject shieldItemInst = Instantiate(shieldItem, transform.position, Quaternion.identity);
         GameObject gunInst = Instantiate(gunItem, transform.position, Quaternion.identity);
+        // Detonator grenadeInst = Instantiate(_grenade, transform.position, Quaternion.identity);
 
         xpItemInst.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f, 1f) * dropForce);
         healItemInst.GetComponent<Rigidbody2D>().AddForce(new Vector2(2f, 1f) * dropForce);

@@ -10,6 +10,7 @@ public class GunPickUp : PickupAble
     public SpeechNPC speechNPC;
 
     private bool _isSpeechBaloonActive;
+    [SerializeField] private bool _speechBaloon;
 
     [Space(10)]
     public Gun gunProperties;
@@ -51,7 +52,7 @@ public class GunPickUp : PickupAble
     {
         base.OnReachZoneEnter();
 
-        if (_isSpeechBaloonActive)
+        if (_isSpeechBaloonActive && !_speechBaloon)
             return;
 
         _isSpeechBaloonActive = true;
@@ -62,7 +63,7 @@ public class GunPickUp : PickupAble
     {
         base.OnReachZoneExit();
 
-        if (!_isSpeechBaloonActive)
+        if (!_isSpeechBaloonActive || !_speechBaloon)
             return;
 
         _isSpeechBaloonActive = false;

@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemy()
     {
         if (_currentSpawnRate > 0 || 
-            lvlController.currentEnemiesInAction.Length >= lvlController.maxEnemiesInAction || 
+            lvlController.CurrentEnemiesInAction.Count >= lvlController.maxEnemiesInAction || 
             lvlController.enemiesSpawned >= lvlController.enemies2Spawn ||
             GameManager.instance.lvlManager.currentLevel < lvlController.lvlIndex)
             return;

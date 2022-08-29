@@ -26,10 +26,22 @@ public class LvlController : MonoBehaviour
     public GameObject[] enemies;
     public GameObject doorTrigger;
 
-    public GameObject[] currentEnemiesInAction;
+    public List<GameObject> CurrentEnemiesInAction {
+        get => _currentEnemiesInAction;
+        private set => StartCoroutine(SetEnemiesList(value));
+    }
+    private List<GameObject> _currentEnemiesInAction;
+
+    private IEnumerator SetEnemiesList(List<GameObject> enemiesInAction)
+    {
+        yield return new WaitForSeconds(0.1f);
+        _currentEnemiesInAction = enemiesInAction;
+    }
+    
     private void OnEnable()
     {
         GameManager.instance.lvlManager.lvlController = this;
+        CurrentEnemiesInAction = new List<GameObject>();
         SetUp();
         Instantiate(GameManager.instance.lvlManager.bgParticle, transform.position, Quaternion.identity, transform);
     }
@@ -62,29 +74,24 @@ public class LvlController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (GameManager.instance.lvlManager.lvlController != this)
-            return;
-
-        currentEnemiesInAction = GameObject.FindGameObjectsWithTag("Enemy");
-
-        if (enemiesSpawned < enemies2Spawn && currentEnemiesInAction.Length <= 0)
+        if (enemiesSpawned < enemies2Spawn && CurrentEnemiesInAction.Count <= 0)
         {
             if (lvlIndex > GameManager.instance.lvlManager.currentLevel)
             {
-                StartCoroutine(r_Door.GetComponent<Door>().CloseTheDoor());//Right door close.
-                StartCoroutine(l_Door.GetComponent<Door>().OpenTheDoor());//Left door open.
+                StartCoroutine(r_Door.CloseTheDoor());//Right door close.
+                StartCoroutine(l_Door.OpenTheDoor());//Left door open.
             }
 
         }
-        if (lvlIndex == GameManager.instance.lvlManager.currentLevel && enemiesSpawned >= enemies2Spawn && currentEnemiesInAction.Length <= 0)
+        if (lvlIndex == GameManager.instance.lvlManager.currentLevel && enemiesSpawned >= enemies2Spawn && CurrentEnemiesInAction.Count <= 0)
         {
-            StartCoroutine(r_Door.GetComponent<Door>().OpenTheDoor()); ;//Right door open.
-            StartCoroutine(l_Door.GetComponent<Door>().CloseTheDoor());//Left door close.
+            StartCoroutine(r_Door.OpenTheDoor()); ;//Right door open.
+            StartCoroutine(l_Door.CloseTheDoor());//Left door close.
         }
 
         if (lvlIndex == GameManager.instance.lvlManager.currentLevel)
         {
-            StartCoroutine(l_Door.GetComponent<Door>().CloseTheDoor());//Left door close.
+            StartCoroutine(l_Door.CloseTheDoor());//Left door close.
         }
 
 

@@ -77,6 +77,9 @@ public class GameManager : MonoBehaviour
         ScanAstar();
     }
 
+    public void ShakeOnce(Vector4 force)  => cameraShaker.ShakeOnce(force.x, force.y, force.z, force.w);
+    public void ShakeScreen (float force) => cameraShaker.ShakeOnce(force, 10f, 0.1f, 0.3F);
+    
     #region A*
 
     private IEnumerator ScanAstarDelay()
@@ -110,10 +113,6 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    public void ShakeOnce(Vector4 force)
-    {
-        cameraShaker.ShakeOnce(force.x, force.y, force.z, force.w);
-    }
 
     #region Post proces & Modes
 
@@ -251,5 +250,4 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
-
 }

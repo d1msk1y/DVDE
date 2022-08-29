@@ -18,6 +18,8 @@ public class EntityHealth : MonoBehaviour
     public Color healthColorDamage;
     public Color startColor;
 
+    public SpriteRenderer spriteRenderer;
+
     public delegate void EntityHandler();
     public event EntityHandler onDamageEvent;
     public event EntityHandler onDieEvent;
@@ -29,7 +31,9 @@ public class EntityHealth : MonoBehaviour
         startShield = shield;
         Health = maxHealth;
         healthBar.gameObject.SetActive(false);
-        startColor = GetComponent<SpriteRenderer>().color;
+        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        startColor = spriteRenderer.color;
     }
 
     private void Update()
@@ -43,14 +47,14 @@ public class EntityHealth : MonoBehaviour
 
     public void TakeDamage(int damage, SpriteRenderer spriteRenderer)
     {
-        if (shield > 0)
-        {
+        if (shield > 0) {
+            var initialShield = shield;
             shield -= damage;
             onDamageEvent?.Invoke();
             StartCoroutine(colorPop(spriteRenderer, shieldColorDamage));
-            if (shield < 0)
-                shield = 0;
-            return;
+            
+            if (shield < 0) shield = 0;
+            if(initialShield >= damage) return;
         }
 
         StartCoroutine(colorPop(spriteRenderer, healthColorDamage));
@@ -59,7 +63,7 @@ public class EntityHealth : MonoBehaviour
         Health -= damage;
     }
 
-    public IEnumerator colorPop(SpriteRenderer spriteRenderer, Color color)
+    private IEnumerator colorPop(SpriteRenderer spriteRenderer, Color color)
     {
         spriteRenderer.color = color;
         yield return new WaitForSeconds(0.1f);

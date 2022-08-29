@@ -60,13 +60,11 @@ public class LvlManager : MonoBehaviour
 
         enemies2Spawn = lvlController.enemies2Spawn;
         enemiesSpawned = lvlController.enemiesSpawned;
-        if (enemiesSpawned >= enemies2Spawn && lvlController.currentEnemiesInAction.Length <= 0 && currentLevel == lvlController.lvlIndex)
-        {
-            SpawnNewLevel();
-            GameManager.instance.soundManager.LowPassFrequencyCutOff();
-            Debug.Log("Level cleared!");
-            GameManager.instance.isCurrentBattle = false;
-        }
+        
+        if (enemiesSpawned < enemies2Spawn || lvlController.CurrentEnemiesInAction.Count > 0 || currentLevel != lvlController.lvlIndex) return;
+        SpawnNewLevel();
+        GameManager.instance.soundManager.LowPassFrequencyCutOff();
+        GameManager.instance.isCurrentBattle = false;
     }
 
     public void SwitchLevel()

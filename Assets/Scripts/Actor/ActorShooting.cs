@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 public class ActorShooting : MonoBehaviour
@@ -47,7 +48,7 @@ public class ActorShooting : MonoBehaviour
     private float angle;
     private bool _isRecharged = true;
 
-    private Vector2 enemyPosition;
+    [HideInInspector]public Vector2 enemyPosition;
 
     private void Start()
     {
@@ -112,9 +113,9 @@ public class ActorShooting : MonoBehaviour
     private void AutoAim()
     {
         if (GameManager.instance.lvlManager.lvlController != null
-            && GameManager.instance.isCurrentBattle && GameManager.instance.lvlManager.lvlController.currentEnemiesInAction.Length != 0)
+            && GameManager.instance.isCurrentBattle && GameManager.instance.lvlManager.lvlController.CurrentEnemiesInAction.Count != 0)
         {
-            enemyPosition = GetClosestEnemy(GameManager.instance.lvlManager.lvlController.currentEnemiesInAction)
+            enemyPosition = GetClosestEnemy(GameManager.instance.lvlManager.lvlController.CurrentEnemiesInAction)
             .transform.position;//Mouse Position		
             enemyPosition -= (Vector2)transform.position;
             float angleGun = Mathf.Atan2(enemyPosition.y, enemyPosition.x) * Mathf.Rad2Deg;
@@ -149,7 +150,7 @@ public class ActorShooting : MonoBehaviour
         }
     }
 
-    private Transform GetClosestEnemy(GameObject[] enemies)
+    private Transform GetClosestEnemy(List<GameObject> enemies)
     {
         Transform result = null;
         float num = float.PositiveInfinity;

@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using System.Collections;
 
 public class EnemyController : MonoBehaviour
 {
@@ -44,7 +43,7 @@ public class EnemyController : MonoBehaviour
 
     public static EnemyController instance;
 
-    private void Awake()
+    internal virtual void Awake()
     {
         instance = this;
     }
@@ -62,6 +61,7 @@ public class EnemyController : MonoBehaviour
     private void OnEnable()
     {
         SetReferences();
+        GameManager.instance.lvlManager.lvlController.CurrentEnemiesInAction.Add(gameObject);
     }
 
     private void SetReferences()
@@ -135,7 +135,7 @@ public class EnemyController : MonoBehaviour
         #endregion
     }
 
-    private void Die()
+    internal virtual void Die()
     {
         Instantiate(_deathParticle, transform.position, Quaternion.identity);
         GameObject healItem = Instantiate(_healItem, transform.position, Quaternion.identity, GameManager.instance.lvlManager.lvlController.transform);
@@ -160,7 +160,15 @@ public class EnemyController : MonoBehaviour
 
         GameManager.instance.scoreManager.CheckDoubleKill();
 
+        // StartCoroutine(RemoveEnemyFromList());
+        GameManager.instance.lvlManager.lvlController.CurrentEnemiesInAction.Remove(gameObject);
         Destroy(gameObject);
+    }
+
+    private IEnumerator RemoveEnemyFromList()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameManager.instance.lvlManager.lvlController.CurrentEnemiesInAction.Remove(gameObject);
     }
 
     private void InstantiateXp()
