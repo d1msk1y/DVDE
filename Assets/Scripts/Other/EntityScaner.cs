@@ -24,16 +24,6 @@ public class EntityScanner
 		return CheckEntities(colliders);
 	}
 
-	public List<EntityHealth> GetAllEntities()
-	{
-		if (_transform == null)
-			return null;
-
-		var colliders = Physics2D.OverlapCircleAll(_transform.position, 300, _entityFilter);
-
-		return CheckEntities(colliders);
-	}
-
 	public EntityHealth GetClosestEntity (List<EntityHealth> entities)
 	{
 		if (_transform == null)

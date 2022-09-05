@@ -13,14 +13,10 @@ public class ClothSlotController : MonoBehaviour
 
     private void Awake()
     {
-        if (PlayerPrefs.HasKey("Hat index"))
-        {
-            hatIndex = PlayerPrefs.GetInt(GameManager.instance.itemsManager.hatIndexPrefsKey);
-        }
-        if (PlayerPrefs.HasKey("Glasses index"))
-        {
-            glassesIndex = PlayerPrefs.GetInt(GameManager.instance.itemsManager.glassesIndexPrefsKey);
-        }
+        if (PlayerPrefs.HasKey("Hat index")) hatIndex = PlayerPrefs.GetInt(GameManager.instance.itemsManager.hatIndexPrefsKey);
+        else hatIndex = -1;
+        if (PlayerPrefs.HasKey("Glasses index")) glassesIndex = PlayerPrefs.GetInt(GameManager.instance.itemsManager.glassesIndexPrefsKey);
+        else glassesIndex = -1;
 
         hatSlot.clothSlotController = this;
         glassesSlot.clothSlotController = this;

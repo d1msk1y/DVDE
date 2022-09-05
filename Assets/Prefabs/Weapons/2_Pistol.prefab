@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9098946617528409337}
   - component: {fileID: 672341463}
   - component: {fileID: -4478961388432737247}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: 2_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunIndex: 0
   weaponType: 0
-  audioSource: {fileID: 0}
+  audioSource: {fileID: -4478961388432737247}
   shotSound: {fileID: 8300000, guid: a7d2a307d13214a42880fae3dee6d6a0, type: 3}
   noAmmoSound: {fileID: 8300000, guid: 0bc3e8fddee1b8f4eb0edf6b005f7ec7, type: 3}
   gunPickUpSound: {fileID: 8300000, guid: 96e9e29993c1052498accc3900f99d0e, type: 3}
@@ -192,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9098946617765351091}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: ShotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -224,7 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9098946619299867187}
   - component: {fileID: 9098946619299867186}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}

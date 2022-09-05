@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8363865703752814303}
   - {fileID: 5949904452967637050}
@@ -56,11 +57,14 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: cfca2cb64f4a180469176b39a6e92b0a, type: 3}
   defaultSprite: {fileID: 21300000, guid: 0b442f70e203a1f4caeb205ed09ee9df, type: 3}
   isUnlocked: 1
-  cost: 1000
+  price: 0
   BoughtPrefsKey: IsBoughtLaserGun
   isBought: 0
   spriteRenderer: {fileID: 0}
   itemCanvas: {fileID: 6154623135432961523, guid: 6c8ff7ded091b084bb277e3ca8990cb9, type: 3}
+  speech: 
+  speechNPC: {fileID: 0}
+  _speechBaloon: 1
   gunProperties: {fileID: 9098946617528409337, guid: b9214c92713347a449d58e15e3bce8e6, type: 3}
 --- !u!50 &8851808425940652951
 Rigidbody2D:
@@ -110,6 +114,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.04, y: -0.24, z: 0}
   m_LocalScale: {x: 2.376528, y: 2.376528, z: 2.376528}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7753171279003241790}
   m_RootOrder: 0
@@ -125,6 +130,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

@@ -44,15 +44,11 @@ public class PlayerLevelBar : MonoBehaviour
         {
             lastScore = PlayerPrefs.GetInt("Total score");
         }
-        if (PlayerPrefs.HasKey(GameManager.instance.statsManager.keys[8]))
-        {
-            levelIndex = PlayerPrefs.GetInt(GameManager.instance.statsManager.keys[8]);
-            Debug.Log(levelIndex);
-        }
         if (PlayerPrefs.HasKey("Prev needed score"))
         {
             prevNeededScore = PlayerPrefs.GetInt("Prev needed score");
         }
+        GameManager.instance.scoreManager.CurrentLevel = levelIndex;
 
         currentScoreTrans = prevScore;
         if (GameManager.instance.scoreManager.receivedScore == 0)
@@ -147,7 +143,8 @@ public class PlayerLevelBar : MonoBehaviour
         neededScore = (int)neededScoreTransition;
 
         PlayerPrefs.SetInt("Needed score", neededScore);
-        PlayerPrefs.SetInt(GameManager.instance.statsManager.keys[8], levelIndex);
+        PlayerPrefs.SetInt(GameManager.instance.statsManager.keys[8], levelIndex);//Set level index
+        GameManager.instance.scoreManager.CurrentLevel = levelIndex;
 
         neededScoreTxt.text = neededScore.ToString();
 

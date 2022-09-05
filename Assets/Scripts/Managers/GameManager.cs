@@ -102,6 +102,11 @@ public class GameManager : MonoBehaviour
         int chance = Random.Range(a, b);
         return chance;
     }
+    public float RandomFloat(float a, float b)
+    {
+        var randNumb = Random.Range(a, b);
+        return randNumb;
+    }
 
     public Vector3 RandomVector(int a, int b)
     {

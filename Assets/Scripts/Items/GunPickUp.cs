@@ -26,7 +26,7 @@ public class GunPickUp : PickupAble
 
     public override void PickUp()
     {
-        if (itemType == PickupType.Buyable && GameManager.instance.scoreManager.TotalCoins < price && isBought == 0)
+        if (itemType == PickupType.Buyable && GameManager.instance.scoreManager.TotalCoins < price && isBought == 0 || IsUnlocked == 0)
             return;
 
         base.PickUp();
@@ -34,6 +34,7 @@ public class GunPickUp : PickupAble
         {
             GameManager.instance.itemsManager.pickedGun = gunProperties.gunIndex;
             PlayerPrefs.SetInt("Picked gun", gunProperties.gunIndex);
+            GameManager.instance.soundManager.PlayVfx(GameManager.instance.soundManager.select);
         }
         player.GetComponent<ActorShooting>().GiveWeapon(gunProperties);
         GameManager.instance.soundManager._vfxAudioSource.PlayOneShot(gunProperties.gunPickUpSound, 2f);
@@ -41,7 +42,7 @@ public class GunPickUp : PickupAble
         GameManager.instance.UiManager.pickUpButton.gameObject.SetActive(false);
     }
 
-    public override void Buy()
+    protected override void Buy()
     {
         base.Buy();
         GameManager.instance.itemsManager.purchasedWeapons =
@@ -52,8 +53,8 @@ public class GunPickUp : PickupAble
     {
         base.OnReachZoneEnter();
 
-        if (_isSpeechBaloonActive && !_speechBaloon)
-            return;
+        if (!_speechBaloon) return;
+        if (_isSpeechBaloonActive) return;
 
         _isSpeechBaloonActive = true;
         speechNPC.Say(speech);
@@ -63,8 +64,8 @@ public class GunPickUp : PickupAble
     {
         base.OnReachZoneExit();
 
-        if (!_isSpeechBaloonActive || !_speechBaloon)
-            return;
+        if (!_speechBaloon) return;
+        if (!_isSpeechBaloonActive) return;
 
         _isSpeechBaloonActive = false;
 

@@ -88,6 +88,7 @@ public class HeroUpgrade : PickupAble
             return;
 
         base.PickUp();
+        GameManager.instance.soundManager.PlayVfx(GameManager.instance.soundManager.select);
     }
 
     public override void OnReachZoneEnter()
@@ -113,7 +114,7 @@ public class HeroUpgrade : PickupAble
         speechNPC.speechBallon.PopDown();
     }
 
-    public override void Buy()
+    protected override void Buy()
     {
         GameManager.instance.scoreManager.TotalCoins -= price;
         _currentStage += 1;

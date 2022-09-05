@@ -19,6 +19,7 @@ public class HealthBar : MonoBehaviour
     private void OnEnable()
     {
         entityHealth.onDamageEvent += UpdateHealthBar;
+        entityHealth.onHealEvent += UpdateHealthBar;
     }
 
     private void Update()

@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,6 +35,7 @@ public class ClothPickup : PickupAble
     public override void PickUp()
     {
         base.PickUp();
+        GameManager.instance.soundManager.PlayVfx(GameManager.instance.soundManager.select);
         if(isBought == 1 && itemType == PickupType.Buyable)
         {
             clotheTypeSlot.GiveCloth(clothItem, clothIndex, prefsIndex, clothType);

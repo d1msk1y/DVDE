@@ -5522,6 +5522,9 @@ MonoBehaviour:
   healthColorDamage: {r: 1, g: 0.31764707, b: 0.31764707, a: 1}
   startColor: {r: 0, g: 0, b: 0, a: 0}
   spriteRenderer: {fileID: 0}
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4204486566781388621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5629,12 +5632,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90380d40267c104292b5e83391447a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 0
+  damageRadius: 3
   _vulnerable:
     serializedVersion: 2
-    m_Bits: 0
-  _explosionParticleSystem: {fileID: 0}
-  _damage: 0
+    m_Bits: 256
+  _explosionParticleSystem: {fileID: 395773990715605322, guid: 1291baaa0c2229e47aeba2f298951281, type: 3}
+  _explosionClip: {fileID: 8300000, guid: 9b9aaf703be88dc48bdbd44db043a072, type: 3}
+  _damage: 40
 --- !u!58 &8080589637577768736
 CircleCollider2D:
   m_ObjectHideFlags: 0

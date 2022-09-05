@@ -35,19 +35,17 @@ public class EnemySpawner : MonoBehaviour
             return;
 
         lvlController.enemiesSpawned += 1;
-
-        int randEnemy = Random.Range(0, maxEnemy);
-        if(randEnemy > enemies.Length)
-        {
-            randEnemy = enemies.Length;
-        }
-        GameObject object2Spawn = enemies[randEnemy];
-
-        GameObject wall = Instantiate(object2Spawn, transform.position, Quaternion.identity, GameManager.instance.lvlManager.lvlController.transform);
+        
+        var wall = Instantiate(GetRandomEnemy(), transform.position, Quaternion.identity, GameManager.instance.lvlManager.lvlController.transform);
         wall.transform.parent = lvlController.transform.parent;
         _currentSpawnRate = spawnRate;
-
-        //GameManager.instance.lvlManager.currentEnemiesInAction = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
+    private GameObject GetRandomEnemy()
+    {
+        var randomIndex = Random.Range(0, maxEnemy);
+        if (randomIndex > enemies.Length) randomIndex = enemies.Length;
+
+        return enemies[randomIndex];
+    }
 }

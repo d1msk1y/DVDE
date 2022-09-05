@@ -10,7 +10,7 @@ public class ExplosiveEnemyController : EnemyController
 		base.Awake();
 		_explosive = GetComponent<Explosive>();
 	}
-	
+
 	internal override void Die()
 	{
 		base.Die();

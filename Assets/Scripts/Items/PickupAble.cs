@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public enum PickupType
@@ -21,19 +23,33 @@ public class PickupAble : Interactable
     public Sprite outlinedSprite;
     public Sprite defaultSprite;
 
-    [Header("Buyable")]
-    public int isUnlocked;//0 - isn't buyable; 1 - buyable
+    [Header("Lock")]
+    [SerializeField] private int _lvlToUnlock = 0;
+    public int IsUnlocked {
+        get => _isUnlocked;
+        private set {
+            Unlock();
+            _isUnlocked = value;
+        }
+    }
+    private int _isUnlocked;
+
+    [Header("Buy-able")]
     public int price;
     public string BoughtPrefsKey;
-    public int isBought;//0 - isn't bougt; 1 - bought
+    public int isBought;//0 - isn't bought; 1 - bought
 
     //References
-    internal Vector3 startScale;
+    private Vector3 startScale;
+    private Color _startColor;
     public SpriteRenderer spriteRenderer;
-    internal Animator animator;
+    private Animator animator;
     private bool isInReachZone = false;
     private ItemFrame itemFrame;
     [SerializeField] internal Canvas itemCanvas;
+
+    public delegate void PickupAbleHandler();
+    public event PickupAbleHandler onUnlock;
 
     private void Awake()
     {
@@ -49,39 +65,33 @@ public class PickupAble : Interactable
     protected new void Start()
     {
         base.Start();
-
         if (spriteRenderer == null)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        Color startColor = spriteRenderer.color;
+        _startColor = spriteRenderer.color;
 
-        if (itemType == PickupType.Buyable && isUnlocked == 1 && isBought == 0 ||
-            itemType == PickupType.UpgradeAble && isUnlocked == 1)
-        {
+        if (GetComponentInChildren<ItemFrame>() != null) {
+            itemFrame = GetComponentInChildren<ItemFrame>();
+        }
+        
+        if (itemType == PickupType.Buyable && IsUnlocked == 1 && isBought == 0 ||
+            itemType == PickupType.UpgradeAble && IsUnlocked == 1) {
             itemCanvas = Instantiate(itemCanvas, transform.position, Quaternion.identity, transform);
             itemCanvas.GetComponentInChildren<Text>().text = price + "$";
         }
-
         startScale = transform.localScale;
 
-        if (isUnlocked == 0)
-        {
-            spriteRenderer.color = GameManager.instance.itemsManager.unActiveClothColor;
-        }
-        else
-        {
-            if (spriteRenderer != null)
-                spriteRenderer.color = startColor;
-        }
+        if (itemType != PickupType.Buyable && itemType != PickupType.UpgradeAble) return;
+        GameManager.instance.scoreManager.onLevelUp += ValidateAccess;
+        ValidateAccess();
+        SetLockVisuals();
 
-        if (GetComponentInChildren<ItemFrame>() != null)
-        {
-            itemFrame = GetComponentInChildren<ItemFrame>();
-        }
+
+
     }
 
     protected new void Update()
     {
-        if (isUnlocked == 0 && itemType == PickupType.Buyable)
+        if (IsUnlocked == 0 && itemType == PickupType.Buyable)
             return;
         base.Update();
         if (Input.GetKeyDown(KeyCode.E) && distance < interactRadius)
@@ -90,6 +100,26 @@ public class PickupAble : Interactable
         }
     }
 
+    #region Lock
+    private void SetLockVisuals ()
+    {
+        StartCoroutine(itemFrame.SetColor());
+        if (IsUnlocked == 0) {
+            spriteRenderer.color = GameManager.instance.itemsManager.unActiveClothColor;
+        } else {
+            if (spriteRenderer != null)
+                spriteRenderer.color = _startColor;
+        }
+    }
+    
+    private void ValidateAccess() => IsUnlocked = GameManager.instance.scoreManager.CurrentLevel >= _lvlToUnlock ? 1 : 0;
+    
+    private void Unlock()
+    {
+        onUnlock?.Invoke();
+        SetLockVisuals();
+    }
+    #endregion
 
     private IEnumerator ScaleDown()
     {
@@ -148,22 +178,20 @@ public class PickupAble : Interactable
                 ParticleSystem particle = Instantiate(GameManager.instance.itemsManager.pickUpParticle, transform.position, Quaternion.identity);
                 particle.transform.localScale = particle.transform.localScale * 1.5f;
             }
+            
         }
-        if (isUnlocked == 1 && isBought == 0 && GameManager.instance.scoreManager.TotalCoins >= price)
-        {
-            Buy();
+        if (IsUnlocked != 1 || isBought != 0 || GameManager.instance.scoreManager.TotalCoins < price)
+            return;
+        Buy();
 
-            if (itemType == PickupType.Buyable)
-            {
-                Debug.Log(transform.name + " Bought!");
-                Destroy(itemCanvas);
-                if (itemFrame != null)
-                    itemFrame.GetComponent<SpriteRenderer>().color = Color.white;
-            }
-        }
+        if (itemType != PickupType.Buyable) 
+            return;
+        Destroy(itemCanvas);
+        if (itemFrame != null)
+            itemFrame.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    public virtual void Buy()
+    protected virtual void Buy()
     {
         GameManager.instance.scoreManager.TotalCoins -= price;
         GameManager.instance.statsManager.spentCoins += price;
@@ -180,11 +208,6 @@ public class PickupAble : Interactable
 
         Instantiate(GameManager.instance.itemsManager.buyParticle, transform.position, Quaternion.identity);
 
-    }
-
-    public void Unlock()
-    {
-        isUnlocked = 1;
     }
 
     private void OnDrawGizmos()

@@ -5,6 +5,19 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+    [field: Header("Player Level")]
+    public int CurrentLevel {
+        get => _currentLevel;
+        set {
+            if (value - _currentLevel > 0) onLevelUp?.Invoke();
+            _currentLevel = value;
+            PlayerPrefs.SetInt(GameManager.instance.statsManager.keys[8], value); //Set level index
+           
+        }
+    }
+
+    private int _currentLevel;
+
     [Header("Score")]
     public int receivedScore;
     public int maxReceivedScore;
@@ -29,6 +42,9 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private ParticleSystem doubleKillParticles;
 
     private Vector3 _randomPos;
+
+    public delegate void ScoreHandler();
+    public event ScoreHandler onLevelUp;
 
     [Header("Coins")]
     public int receivedCoins;
@@ -56,6 +72,9 @@ public class ScoreManager : MonoBehaviour
         {
             lastScore = PlayerPrefs.GetInt("Last total score");
         }
+        if (PlayerPrefs.HasKey(GameManager.instance.statsManager.keys[8])) {
+            CurrentLevel = PlayerPrefs.GetInt(GameManager.instance.statsManager.keys[8]); //Get level index
+        } else CurrentLevel = 1;
     }
 
     private void Update()

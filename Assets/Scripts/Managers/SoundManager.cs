@@ -52,7 +52,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void RandomizeTrack()
+    private void RandomizeTrack()
     {
         _soundtrackAudioSource.clip = soundTracks[Random.Range(0, soundTracks.Length)];
 
@@ -133,4 +133,5 @@ public class SoundManager : MonoBehaviour
             yield return null;
         }
     }
+    public void PlayVfx (AudioClip clip) => _vfxAudioSource.PlayOneShot(clip);
 }

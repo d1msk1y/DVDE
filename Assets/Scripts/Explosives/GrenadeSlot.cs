@@ -7,7 +7,7 @@ public class GrenadeSlot : MonoBehaviour
 
 	public void AddGrenade() => _grenadesLeft++;
 	
-	public void SelectGrenade (Detonator grenade) => _selectedGrenade = grenade;
+	public void SetGrenade (Detonator grenade) => _selectedGrenade = grenade;
 	
 	public Detonator GetGrenade()
 	{

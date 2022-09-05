@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpeechNPC : Interactable
 {
     public SpeechBallon speechBallon;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip[] _speechClips;
 
     [Multiline]
     public string speechTXT;
@@ -20,6 +22,13 @@ public class SpeechNPC : Interactable
     public void Say(string speech)
     {
         speechBallon.PopUp(speech);
+        Mumble();
+    }
+
+    private void Mumble()
+    {
+        _audioSource.pitch = GameManager.instance.RandomFloat(1.5f, 2);
+        _audioSource.PlayOneShot(_speechClips[GameManager.instance.Chance(0, _speechClips.Length)]);
     }
 
     public override void OnReachZoneEnter()

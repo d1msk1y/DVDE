@@ -9,6 +9,7 @@ public abstract class Detonator : MonoBehaviour
 
 	[Header("SFX")]
 	[SerializeField] private ParticleSystem _explosionParticleSystem;
+	[SerializeField] private AudioClip _explosionClip;
 
 	internal EntityScanner entityScanner;
 
@@ -22,6 +23,8 @@ public abstract class Detonator : MonoBehaviour
 		//Detonation algorithm
 		if (_explosionParticleSystem != null)
 			Instantiate(_explosionParticleSystem, transform.position, quaternion.identity).transform.localScale = Vector3.one * damageRadius;
+		
+		GameManager.instance.soundManager._vfxAudioSource.PlayOneShot(_explosionClip);
 	}
 
 	private void OnDrawGizmos()

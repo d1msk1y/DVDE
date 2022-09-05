@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EntityHealth : MonoBehaviour
 {
-    public int Health { get => _health; set => _health = value; }
+    public int Health {
+        get => _health;
+        set
+        {
+            _health = value;
+            if(_health <= 0) OnDie?.Invoke();
+        }
+    }
     private int _health;
 
     public int maxHealth = 100;
@@ -23,12 +31,14 @@ public class EntityHealth : MonoBehaviour
     public delegate void EntityHandler();
     public event EntityHandler onDamageEvent;
     public event EntityHandler onDieEvent;
+    public UnityEvent OnDie;
+    public event EntityHandler onHealEvent;
 
     internal int startShield;
 
     private void Start()
     {
-        startShield = shield;
+        startShield = maxShield;
         Health = maxHealth;
         healthBar.gameObject.SetActive(false);
         
@@ -55,6 +65,7 @@ public class EntityHealth : MonoBehaviour
             
             if (shield < 0) shield = 0;
             if(initialShield >= damage) return;
+            damage -= initialShield;
         }
 
         StartCoroutine(colorPop(spriteRenderer, healthColorDamage));
@@ -82,6 +93,8 @@ public class EntityHealth : MonoBehaviour
         Health += healthAmount;
         if (Health > maxHealth)
             Health = maxHealth;
+
+        onHealEvent?.Invoke();
     }
 
     public void ResetHealth()

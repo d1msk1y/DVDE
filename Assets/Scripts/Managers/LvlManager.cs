@@ -35,17 +35,14 @@ public class LvlManager : MonoBehaviour
 
     private void Start()
     {
+        startLevelStage = currentLevelStage;
+        startWeaponsStage = currentWeaponsStage;
+        startEnemiesToSpawnStage = currentEnemiesToSpawnStage;
+        
         if (lvlController == null && currentLevel == 0)
         {
             SpawnFirstLevel();
         }
-
-        enemies2Spawn = lvlController.enemies2Spawn;
-        enemiesSpawned = lvlController.enemiesSpawned;
-
-        startLevelStage = currentLevelStage;
-        startWeaponsStage = currentWeaponsStage;
-        startEnemiesToSpawnStage = currentEnemiesToSpawnStage;
     }
 
     private void Update()
@@ -112,15 +109,14 @@ public class LvlManager : MonoBehaviour
 
     private void SpawnFirstLevel()
     {
+        ResetLvlManager();
+        
         bgParticle = etherealSpawner.GetRandomParticle();
         _newLvl = Instantiate(lvlPrefab, Vector3.zero, Quaternion.identity);
 
-        enemies2Spawn = _newLvl.GetComponent<LvlController>().enemies2Spawn;
-        enemiesSpawned = _newLvl.GetComponent<LvlController>().enemiesSpawned;
-
         lvlController.lvlIndex = currentLevel + 1;
 
-        _newLvl.GetComponent<LvlController>().currentLevelStage = currentLevelStage;
+        _newLvl.GetComponent<LvlController>().currentLevelStage = startLevelStage;
         GameManager.instance.aStarManager.UpdateAstarPosition(new Vector3(_newLvl.transform.position.x, _newLvl.transform.position.y, 0));
         GameManager.instance.isGameStarted = false;
     }
@@ -132,6 +128,7 @@ public class LvlManager : MonoBehaviour
         DestroyAllEnemies();
         DestroyAllPickUpAble();
         DestroyAllObstacles();
+        ResetLvlproperties();
     }
 
     #region Level reset functions
@@ -139,7 +136,7 @@ public class LvlManager : MonoBehaviour
     private void ResetManagerValues()
     {
         currentLevel = 0;
-        currentLevelStage = 0;
+        currentLevelStage = startLevelStage;
         lvlController = null;
     }
 
@@ -189,9 +186,9 @@ public class LvlManager : MonoBehaviour
 
     public void ResetLvlproperties()
     {
-        currentLevelStage = 0;
-        currentWeaponsStage = 0;
-        currentEnemiesToSpawnStage = 0;
+        currentLevelStage = startLevelStage;
+        currentWeaponsStage = startWeaponsStage;
+        currentEnemiesToSpawnStage = startEnemiesToSpawnStage;
     }
 
     #endregion
