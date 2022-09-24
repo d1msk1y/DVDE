@@ -47,6 +47,10 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public delegate void GameHandler();
+    public event GameHandler OnGameOver; 
+    public event GameHandler OnRestart; 
+
     private void Awake()
     {
         instance = this;
@@ -222,6 +226,7 @@ public class GameManager : MonoBehaviour
         UiManager.HideGameOverCanavas();
         scoreManager.ResetScore();
         soundManager.PlayMenuOST();
+        OnRestart?.Invoke();
     }
 
     public void GameOver()
@@ -231,8 +236,8 @@ public class GameManager : MonoBehaviour
         //soundManager.LowPassFrequencyCutOff();
         UiManager.playerLevelBarGameOver.UpdateBar();
         StartCoroutine(soundManager.SmoothOffAudio(soundManager._soundtrackAudioSource));
-
         statsManager.UpdateStats();
+        OnGameOver?.Invoke();
     }
 
     public void Reborn()

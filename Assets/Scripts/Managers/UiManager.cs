@@ -40,12 +40,13 @@ public class UiManager : MonoBehaviour
     }
 
     #region Main
-    public void ShowBG()
+
+    private void ShowBG()
     {
         backGround.GetComponent<Animator>().Play("BG on");
     }
 
-    public void HideBG()
+    private void HideBG()
     {
         backGround.GetComponent<Animator>().Play("BG off");
     }

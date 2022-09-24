@@ -18,7 +18,7 @@ public class GunPickUp : PickupAble
     private new void Update()
     {
         base.Update();
-        if (player.GetComponent<PlayerController>().shootingScript.ammos <= 0 && distance < interactRadius)
+        if (player.shootingScript.ammos <= 0 && distance < interactRadius)
         {
             PickUp();
         }
@@ -26,7 +26,7 @@ public class GunPickUp : PickupAble
 
     public override void PickUp()
     {
-        if (itemType == PickupType.Buyable && GameManager.instance.scoreManager.TotalCoins < price && isBought == 0 || IsUnlocked == 0)
+        if (itemType == PickupType.Buyable && GameManager.instance.scoreManager.TotalCoins < price && isBought == 0 || itemType == PickupType.Buyable && IsUnlocked == 0)
             return;
 
         base.PickUp();
@@ -36,7 +36,7 @@ public class GunPickUp : PickupAble
             PlayerPrefs.SetInt("Picked gun", gunProperties.gunIndex);
             GameManager.instance.soundManager.PlayVfx(GameManager.instance.soundManager.select);
         }
-        player.GetComponent<ActorShooting>().GiveWeapon(gunProperties);
+        player.shootingScript.GiveWeapon(gunProperties);
         GameManager.instance.soundManager._vfxAudioSource.PlayOneShot(gunProperties.gunPickUpSound, 2f);
         PlayerController.instance.shootingScript.ClearAllLines();
         GameManager.instance.UiManager.pickUpButton.gameObject.SetActive(false);

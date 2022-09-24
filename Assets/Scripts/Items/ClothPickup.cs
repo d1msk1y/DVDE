@@ -18,7 +18,7 @@ public class ClothPickup : PickupAble
     {
         base.Start();
 
-        clothSlotController = player.GetComponent<ClothSlotController>();
+        clothSlotController = player.clothSlotController;
 
         if (clothType == ClothType.Hat)
         {

@@ -33,6 +33,7 @@ public class HealthBar : MonoBehaviour
 
     private void UpdateHealthBar()
     {
+        if (!gameObject.activeSelf) return;
         if (entityHealth.shield <= 0)
         {
             StartCoroutine(ShieldBarPopDown());

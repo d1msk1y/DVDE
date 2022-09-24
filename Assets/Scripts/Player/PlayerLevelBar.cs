@@ -21,6 +21,9 @@ public class PlayerLevelBar : MonoBehaviour
     [SerializeField] private Text levelIndexTxt;
     [SerializeField] private Image bar;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip _levelUp;
+
     [SerializeField] private ParticleSystem particles;
 
     private float neededBarAmount;
@@ -48,6 +51,7 @@ public class PlayerLevelBar : MonoBehaviour
         {
             prevNeededScore = PlayerPrefs.GetInt("Prev needed score");
         }
+        levelIndex = PlayerPrefs.GetInt(GameManager.instance.statsManager.keys[8]);
         GameManager.instance.scoreManager.CurrentLevel = levelIndex;
 
         currentScoreTrans = prevScore;
@@ -131,10 +135,11 @@ public class PlayerLevelBar : MonoBehaviour
         }
     }
 
-    public void NextLevel()
+    private void NextLevel()
     {
         levelIndex += 1;
         levelIndexTxt.GetComponentInParent<Animator>().Play("Pop");
+        GetComponent<AudioSource>().PlayOneShot(_levelUp);
 
         float neededScoreTransition = neededScore * 1.25f;
         neededScoreTransition = Mathf.Round(neededScoreTransition / 10) * 10;
@@ -143,8 +148,8 @@ public class PlayerLevelBar : MonoBehaviour
         neededScore = (int)neededScoreTransition;
 
         PlayerPrefs.SetInt("Needed score", neededScore);
-        PlayerPrefs.SetInt(GameManager.instance.statsManager.keys[8], levelIndex);//Set level index
         GameManager.instance.scoreManager.CurrentLevel = levelIndex;
+        PlayerPrefs.SetInt(GameManager.instance.statsManager.keys[8], levelIndex);//Set level index
 
         neededScoreTxt.text = neededScore.ToString();
 

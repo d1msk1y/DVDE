@@ -25,6 +25,7 @@ public class PickupAble : Interactable
 
     [Header("Lock")]
     [SerializeField] private int _lvlToUnlock = 0;
+    public int LvlToUnlock { get => _lvlToUnlock; set => _lvlToUnlock = value; }
     public int IsUnlocked {
         get => _isUnlocked;
         private set {
@@ -72,21 +73,25 @@ public class PickupAble : Interactable
         if (GetComponentInChildren<ItemFrame>() != null) {
             itemFrame = GetComponentInChildren<ItemFrame>();
         }
-        
+
+        startScale = transform.localScale;
+
+        if (itemType == PickupType.Buyable || itemType == PickupType.UpgradeAble) {
+            GameManager.instance.scoreManager.onLevelUp += ValidateAccess;
+            ValidateAccess();
+            SetLockVisuals();
+        }
+
+        SetPriceCanvas();
+    }
+    private void SetPriceCanvas()
+    {
+
         if (itemType == PickupType.Buyable && IsUnlocked == 1 && isBought == 0 ||
             itemType == PickupType.UpgradeAble && IsUnlocked == 1) {
             itemCanvas = Instantiate(itemCanvas, transform.position, Quaternion.identity, transform);
             itemCanvas.GetComponentInChildren<Text>().text = price + "$";
         }
-        startScale = transform.localScale;
-
-        if (itemType != PickupType.Buyable && itemType != PickupType.UpgradeAble) return;
-        GameManager.instance.scoreManager.onLevelUp += ValidateAccess;
-        ValidateAccess();
-        SetLockVisuals();
-
-
-
     }
 
     protected new void Update()
@@ -112,12 +117,13 @@ public class PickupAble : Interactable
         }
     }
     
-    private void ValidateAccess() => IsUnlocked = GameManager.instance.scoreManager.CurrentLevel >= _lvlToUnlock ? 1 : 0;
+    private void ValidateAccess() => IsUnlocked = GameManager.instance.scoreManager.CurrentLevel >= LvlToUnlock ? 1 : 0;
     
     private void Unlock()
     {
         onUnlock?.Invoke();
         SetLockVisuals();
+        SetPriceCanvas();
     }
     #endregion
 

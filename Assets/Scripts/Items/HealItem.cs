@@ -21,7 +21,7 @@ public class HealItem : Interactable
     {
         base.Start();
         _audioSource = GameManager.instance.soundManager._vfxAudioSource;
-        _playerHealth = player.GetComponent<EntityHealth>();
+        _playerHealth = player.entityHealth;
 
         if (itemType == ItemType.Shield)
         {

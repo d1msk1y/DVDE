@@ -22,6 +22,8 @@ public class ScoreManager : MonoBehaviour
     public int receivedScore;
     public int maxReceivedScore;
     public int totalScore;
+    public int lastNeededScore;
+    public float neededScore;
     public int lastScore;
 
     [Header("Combo")]
@@ -56,22 +58,30 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
+        GetPlayerKeys();
+        GameManager.instance.OnRestart += GetPlayerKeys;
+    }
+    private void GetPlayerKeys()
+    {
+
         if (PlayerPrefs.HasKey(GameManager.instance.statsManager.keys[6]))
-        {
             maxReceivedScore = PlayerPrefs.GetInt(GameManager.instance.statsManager.keys[6]);
-        }
+
         if (PlayerPrefs.HasKey("Total score"))
-        {
             totalScore = PlayerPrefs.GetInt("Total score");
-        }
-        if (PlayerPrefs.HasKey("Total coins"))
-        {
+
+        if (PlayerPrefs.HasKey("Needed score"))
+            neededScore = PlayerPrefs.GetInt("Needed score");
+
+        if (PlayerPrefs.HasKey("Prev needed score"))
+            lastNeededScore = PlayerPrefs.GetInt("Prev needed score");
+
+        if (PlayerPrefs.HasKey("Total coins")) {
             TotalCoins = PlayerPrefs.GetInt("Total coins");
+            GameManager.instance.UiManager.UpdateCostTxts();
         }
         if (PlayerPrefs.HasKey("Last total score"))
-        {
             lastScore = PlayerPrefs.GetInt("Last total score");
-        }
         if (PlayerPrefs.HasKey(GameManager.instance.statsManager.keys[8])) {
             CurrentLevel = PlayerPrefs.GetInt(GameManager.instance.statsManager.keys[8]); //Get level index
         } else CurrentLevel = 1;
@@ -163,7 +173,7 @@ public class ScoreManager : MonoBehaviour
     private IEnumerator InstantiateParticles(ParticleSystem instance, Transform parent, float delay)
     {
         yield return new WaitForSeconds(delay);
-        Instantiate(instance, parent.position, Quaternion.identity, parent);
+        if(parent != null)Instantiate(instance, parent.position, Quaternion.identity, parent);
     }
 
     public void CheckDoubleKill()
@@ -235,7 +245,7 @@ public class ScoreManager : MonoBehaviour
         GameManager.instance.statsManager.totalEnemiesKilled += enemiesKilled;
 
         GameManager.instance.UiManager.coinsReceivedTxt.text = "COINS RECEIVED: 0";
-        receivedCoins = receivedScore / 10;
+        receivedCoins = (receivedScore / 10) * 3;
         GameManager.instance.statsManager.earnedCoins += receivedCoins;
         StartCoroutine(countCoins());
 
@@ -253,7 +263,7 @@ public class ScoreManager : MonoBehaviour
         float coinsCountedTrans = 0;
         while (coinsCounted < receivedCoins)
         {
-            coinsCountedTrans += 75f * Time.deltaTime;
+            coinsCountedTrans += 750f * Time.deltaTime;
             coinsCounted = (int)coinsCountedTrans;
 
             GameManager.instance.UiManager.coinsReceivedTxt.text = "COINS RECEIVED: " + coinsCounted.ToString();

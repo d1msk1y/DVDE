@@ -58,7 +58,9 @@ public class LvlController : MonoBehaviour
         lvlStageTXT.text = "STAGE " + lvlIndex;
         foreach (EnemySpawner spawner in spawners)
         {
-            spawner.enemies = enemies;
+            spawner.enemies = 
+                
+                enemies;
             spawner.spawnRate = spawnRate;
             spawner.lvlController = GameManager.instance.lvlManager.lvlController;
             spawner.maxEnemy = GameManager.instance.lvlManager.currentLevelStage;
@@ -74,7 +76,7 @@ public class LvlController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (enemiesSpawned < enemies2Spawn && CurrentEnemiesInAction.Count <= 0)
+        if (CurrentEnemiesInAction != null && enemiesSpawned < enemies2Spawn && CurrentEnemiesInAction.Count <= 0)
         {
             if (lvlIndex > GameManager.instance.lvlManager.currentLevel)
             {

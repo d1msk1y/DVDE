@@ -33,42 +33,36 @@ public class StatsManager : MonoBehaviour
     private void Start()
     {
         UpdateStats();
+        GameManager.instance.scoreManager.onLevelUp += UpdateStats;
     }
-
-    public void SetAllStats()
-    {
-        if (PlayerPrefs.HasKey(keys[0]))
-            totalEnemiesKilled = PlayerPrefs.GetInt(keys[0]);
-        if (PlayerPrefs.HasKey(keys[1]))
-            earnedCoins = PlayerPrefs.GetInt(keys[1]);
-        if (PlayerPrefs.HasKey(keys[2]))
-            spentCoins = PlayerPrefs.GetInt(keys[2]);
-        if (PlayerPrefs.HasKey(keys[3]))
-            givenDamage = PlayerPrefs.GetInt(keys[3]);
-        if (PlayerPrefs.HasKey(keys[4]))
-            receivedDamage = PlayerPrefs.GetInt(keys[4]);
-        if (PlayerPrefs.HasKey(keys[5]))
-            passedRooms = PlayerPrefs.GetInt(keys[5]);
-        if (PlayerPrefs.HasKey(keys[6]))
-            highScore = PlayerPrefs.GetInt(keys[6]);
-        if (PlayerPrefs.HasKey(keys[7]))
-            totalScore = PlayerPrefs.GetInt(keys[7]);
-        if (PlayerPrefs.HasKey(keys[8]))
-            playerLevel = PlayerPrefs.GetInt(keys[8]);
-    }
-
     public void UpdateStats()
     {
         SetAllStats();
-
-        totalEnemiesKilledTxt.text = "Total enemies killed: " + totalEnemiesKilled;
-        earnedCoinsTxt.text = "Earned coins: " + earnedCoins;
-        spentCoinsTxt.text = "Spent coins: " + spentCoins;
-        givenDamageTxt.text = "Given damage: " + givenDamage;
-        receivedDamageTxt.text = "Received damage: " + receivedDamage;
-        passedRoomsTxt.text = "Passed rooms: " + passedRooms;
-        highScoreTxt.text = "High score: " + highScore;
-        totalScoreTxt.text = "Total score: " + totalScore;
-        playerLevelTxt.text = "Player LVL: " + playerLevel;
+        SetTexts();
+    }
+    
+    private void SetAllStats()
+    {
+        if (PlayerPrefs.HasKey(keys[0])) totalEnemiesKilled = PlayerPrefs.GetInt(keys[0]);
+        if (PlayerPrefs.HasKey(keys[1])) earnedCoins = PlayerPrefs.GetInt(keys[1]);
+        if (PlayerPrefs.HasKey(keys[2])) spentCoins = PlayerPrefs.GetInt(keys[2]);
+        if (PlayerPrefs.HasKey(keys[3])) givenDamage = PlayerPrefs.GetInt(keys[3]);
+        if (PlayerPrefs.HasKey(keys[4])) receivedDamage = PlayerPrefs.GetInt(keys[4]);
+        if (PlayerPrefs.HasKey(keys[5])) passedRooms = PlayerPrefs.GetInt(keys[5]);
+        if (PlayerPrefs.HasKey(keys[6])) highScore = PlayerPrefs.GetInt(keys[6]);
+        if (PlayerPrefs.HasKey(keys[7])) totalScore = PlayerPrefs.GetInt(keys[7]);
+        if (PlayerPrefs.HasKey(keys[8])) playerLevel = PlayerPrefs.GetInt(keys[8]);
+    }
+    private void SetTexts()
+    {
+        if (totalEnemiesKilledTxt != null) totalEnemiesKilledTxt.text = "Total enemies killed: " + totalEnemiesKilled;
+        if (earnedCoinsTxt != null) earnedCoinsTxt.text = "Earned coins: " + earnedCoins;
+        if (spentCoinsTxt != null) spentCoinsTxt.text = "Spent coins: " + spentCoins;
+        if (givenDamageTxt != null) givenDamageTxt.text = "Given damage: " + givenDamage;
+        if (receivedDamageTxt != null) receivedDamageTxt.text = "Received damage: " + receivedDamage;
+        if (passedRoomsTxt != null) passedRoomsTxt.text = "Passed rooms: " + passedRooms;
+        if (highScoreTxt != null) highScoreTxt.text = "High score: " + highScore;
+        if (totalScoreTxt != null) totalScoreTxt.text = "Total score: " + totalScore;
+        if (playerLevelTxt != null) playerLevelTxt.text = "Player LVL: " + playerLevel;
     }
 }

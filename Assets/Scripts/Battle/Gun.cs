@@ -46,8 +46,6 @@ public class Gun : MonoBehaviour
         if (weaponType == WeaponType.Knife)
             return;
         audioSource = GetComponent<AudioSource>();
-
-        audioSource.volume = GameManager.instance.soundManager.sfxVolume;
         switch (weaponType)
         {
             case WeaponType.Shotgun:

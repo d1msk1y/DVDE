@@ -11,7 +11,7 @@ public class Interactable : MonoBehaviour
     public bool destroyByLifetime;
 
     [Header("Other")]
-    internal GameObject player;
+    internal PlayerController player;
     internal Vector3 vel;
     internal float distance;
 
@@ -19,7 +19,7 @@ public class Interactable : MonoBehaviour
     {
         if (destroyByLifetime)
             Destroy(gameObject, lifeTime);
-        player = PlayerController.instance.gameObject;
+        player = PlayerController.instance;
     }
 
     protected void Update()

@@ -154,8 +154,6 @@ public class PlayerController : MonoBehaviour
         if (chanceStage == 0)
             chance = 0;
 
-        Debug.Log(chance);
-        Debug.Log(chanceStage);
         if (chance != 1 || _isSecondLifeUsed)
         {
             GameManager.instance.GameOver();
