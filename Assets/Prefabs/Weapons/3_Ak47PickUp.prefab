@@ -51,12 +51,13 @@ MonoBehaviour:
   lifeTime: 15
   isDestroyable: 0
   destroyByLifetime: 0
+  _name: AK-47
   scaleUpAmount: 1.1
   isAutomized: 0
   itemType: 1
   outlinedSprite: {fileID: 21300000, guid: 4d342b5fa6fa01f4da80b83edb073dda, type: 3}
   defaultSprite: {fileID: 21300000, guid: 67da182ef84ca12459fe8799efec45b6, type: 3}
-  isUnlocked: 1
+  _lvlToUnlock: 0
   price: 0
   BoughtPrefsKey: IsBoughtAK47
   isBought: 0

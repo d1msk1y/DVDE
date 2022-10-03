@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemFrame : MonoBehaviour
 {
@@ -9,10 +10,13 @@ public class ItemFrame : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SetColor());
+        SetColor();
+        GameManager.instance.scoreManager.onCoinsChange += SetColor;
     }
 
-    public IEnumerator SetColor()
+    private void SetColor() => StartCoroutine(SetColorCoroutine());
+    
+    public IEnumerator SetColorCoroutine()
     {
         yield return new WaitForEndOfFrame();
         _pickupAble = GetComponentInParent<PickupAble>();
@@ -21,6 +25,9 @@ public class ItemFrame : MonoBehaviour
             _pickupAble.itemType == PickupType.UpgradeAble && _pickupAble.isBought != 7 && _pickupAble.IsUnlocked == 1)
         {
             GetComponent<SpriteRenderer>().color = GameManager.instance.itemsManager.unBoughtColor;
+            if (_pickupAble.price > GameManager.instance.scoreManager.TotalCoins)
+                _pickupAble.itemCanvas.GetComponentInChildren<Text>().color = GameManager.instance.itemsManager.notEnoughCoinsColor;
+            else _pickupAble.itemCanvas.GetComponentInChildren<Text>().color = GameManager.instance.itemsManager.unBoughtColor;
         }
         if(_pickupAble.IsUnlocked == 0) GetComponent<SpriteRenderer>().color = GameManager.instance.itemsManager.unActiveClothColor;
 

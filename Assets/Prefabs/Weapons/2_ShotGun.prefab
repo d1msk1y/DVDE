@@ -142,11 +142,12 @@ MonoBehaviour:
   gun2Throw: {fileID: 9098946617528409339, guid: a84cc266129f6fd4eb4f5bb0efa243a9, type: 3}
   gun2PickUp: {fileID: 2958298959038754522, guid: 448a303087f2d2948927a26e4cbff1f8, type: 3}
   bullet: {fileID: 5702945816397988629, guid: a56ccdbae85388243973f8d10a135558, type: 3}
+  bulletColorOverride: {r: 1, g: 1, b: 1, a: 1}
   gunName: SHOTGUN
   recoilForce: 5
   bulletSpeed: 20
   rechargeSpeed: 2
-  bulletLifetime: 0.1875
+  bulletLifetime: 0.3
   shakeForce: {x: 2, y: 5, z: 0.1, w: 0.5}
   damage: 9
   pushForce: 0

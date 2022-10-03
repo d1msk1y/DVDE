@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8.151949, y: 7.0351324, z: 8.151949}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4986574348057590219}
   m_RootOrder: 0
@@ -42,6 +43,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -109,6 +111,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -23.1, y: 1.83, z: 5}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1431817296296007237}
   - {fileID: 4573881310534377251}
@@ -131,12 +134,13 @@ MonoBehaviour:
   lifeTime: 15
   isDestroyable: 0
   destroyByLifetime: 0
+  _name: MAGICIAN HAT
   scaleUpAmount: 0.2
   isAutomized: 0
   itemType: 1
   outlinedSprite: {fileID: 21300000, guid: 6b8da75eef9166e4fa5eeba2cd067671, type: 3}
   defaultSprite: {fileID: 21300000, guid: 7c228b9d7c46c304abdb761a570c0c34, type: 3}
-  isUnlocked: 1
+  _lvlToUnlock: 0
   price: 500
   BoughtPrefsKey: Is bought Magician
   isBought: 0

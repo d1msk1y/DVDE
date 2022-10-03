@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public int initialLevel;//Level on game start
     private int _currentLevel;
 
     [Header("Score")]
@@ -51,15 +52,24 @@ public class ScoreManager : MonoBehaviour
     [Header("Coins")]
     public int receivedCoins;
     [SerializeField] private int _totalCoins;
-    public int TotalCoins { get => _totalCoins; set => _totalCoins = value; }
+    public event ScoreHandler onCoinsChange;
+    public int TotalCoins {
+        get => _totalCoins;
+        set {
+            _totalCoins = value;
+            onCoinsChange?.Invoke();
+        }
+    }
 
     [Header("Player stats")]
     public int enemiesKilled;
 
     private void Awake()
     {
+        GameManager.instance.OnRestart += SetInitialLevel;
         GetPlayerKeys();
         GameManager.instance.OnRestart += GetPlayerKeys;
+        SetInitialLevel();
     }
     private void GetPlayerKeys()
     {
@@ -92,6 +102,8 @@ public class ScoreManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
             AddComboPoint(1);
     }
+
+    private void SetInitialLevel() => initialLevel = CurrentLevel;
 
     public void AddScore(int score)
     {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -14,7 +15,9 @@ public enum PickupType
 
 public class PickupAble : Interactable
 {
-    //Properties
+    [SerializeField] private string _name;
+    
+    [Space(10)]
     public float scaleUpAmount;
     public bool isAutomized;
     public PickupType itemType;
@@ -29,7 +32,6 @@ public class PickupAble : Interactable
     public int IsUnlocked {
         get => _isUnlocked;
         private set {
-            Unlock();
             _isUnlocked = value;
         }
     }
@@ -86,7 +88,6 @@ public class PickupAble : Interactable
     }
     private void SetPriceCanvas()
     {
-
         if (itemType == PickupType.Buyable && IsUnlocked == 1 && isBought == 0 ||
             itemType == PickupType.UpgradeAble && IsUnlocked == 1) {
             itemCanvas = Instantiate(itemCanvas, transform.position, Quaternion.identity, transform);
@@ -108,7 +109,7 @@ public class PickupAble : Interactable
     #region Lock
     private void SetLockVisuals ()
     {
-        StartCoroutine(itemFrame.SetColor());
+        StartCoroutine(itemFrame.SetColorCoroutine());
         if (IsUnlocked == 0) {
             spriteRenderer.color = GameManager.instance.itemsManager.unActiveClothColor;
         } else {
@@ -117,13 +118,25 @@ public class PickupAble : Interactable
         }
     }
     
-    private void ValidateAccess() => IsUnlocked = GameManager.instance.scoreManager.CurrentLevel >= LvlToUnlock ? 1 : 0;
-    
+    private void ValidateAccess()
+    {
+        if(IsUnlocked != 0) return;
+        if (GameManager.instance.scoreManager.CurrentLevel >= LvlToUnlock) 
+        {
+            IsUnlocked = 1;
+            if(_lvlToUnlock > 0)Unlock();
+        } else
+        {
+            IsUnlocked = 0;
+        }
+    }
+
     private void Unlock()
     {
         onUnlock?.Invoke();
         SetLockVisuals();
         SetPriceCanvas();
+        if(GameManager.instance.scoreManager.initialLevel < LvlToUnlock)GameManager.instance.unlocksLog.CreateMessage(_name + " IS UNLOCKED!");
     }
     #endregion
 
@@ -201,6 +214,7 @@ public class PickupAble : Interactable
     {
         GameManager.instance.scoreManager.TotalCoins -= price;
         GameManager.instance.statsManager.spentCoins += price;
+        GameManager.instance.ShakeScreen(10);
         GameManager.instance.UiManager.UpdateCostTxts();
 
         GameManager.instance.UiManager.UpdateCostTxts();

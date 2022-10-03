@@ -50,12 +50,13 @@ MonoBehaviour:
   lifeTime: 15
   isDestroyable: 0
   destroyByLifetime: 0
+  _name: PIXEL GLASSES
   scaleUpAmount: 1.1
   isAutomized: 0
   itemType: 1
   outlinedSprite: {fileID: 21300000, guid: a1e59905f20900b49bb0d8f948d58463, type: 3}
   defaultSprite: {fileID: 21300000, guid: 79b1cb9744ff3c04db841a87c3257225, type: 3}
-  isUnlocked: 1
+  _lvlToUnlock: 0
   price: 1000
   BoughtPrefsKey: Is bought Pixel Glasses
   isBought: 0

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public ItemsManager itemsManager;
     public DataManager dataManager;
     public StatsManager statsManager;
+    public UnlocksLog unlocksLog;
 
     public GlitchEffect glitchEffect;
 
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ScanAstar();
+        Application.targetFrameRate = 60;
     }
 
     public void ShakeOnce(Vector4 force)  => cameraShaker.ShakeOnce(force.x, force.y, force.z, force.w);

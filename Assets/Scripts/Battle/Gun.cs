@@ -31,6 +31,7 @@ public class Gun : MonoBehaviour
     public GameObject bullet;
 
     [Header("Gun properties")]
+    public Color bulletColorOverride = Color.white;
     public string gunName;
     public float recoilForce;
     public float bulletSpeed;

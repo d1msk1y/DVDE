@@ -50,12 +50,13 @@ MonoBehaviour:
   lifeTime: 15
   isDestroyable: 0
   destroyByLifetime: 0
+  _name: MONOCLE
   scaleUpAmount: 1.1
   isAutomized: 0
   itemType: 1
   outlinedSprite: {fileID: 21300000, guid: 8f2c457aff09b2948a4cce61c3ad234d, type: 3}
   defaultSprite: {fileID: 21300000, guid: 8ad9ce901325ca74fbdfc9bee172230a, type: 3}
-  isUnlocked: 1
+  _lvlToUnlock: 0
   price: 2500
   BoughtPrefsKey: Is bought Monocle
   isBought: 0

@@ -20,6 +20,7 @@ public class ItemsManager : MonoBehaviour
     [Header("Items colors")]
     public Color unActiveClothColor;//*Item
     public Color unBoughtColor;//*Item
+    public Color notEnoughCoinsColor;//*Item
 
     [Header("Prefs")]
     public string hatIndexPrefsKey;

@@ -66,7 +66,7 @@ public class Bullet : MonoBehaviour
     {       
         if (collision == null)
         {
-            Instantiate(explosion, transform.position, Quaternion.identity);
+            Instantiate(explosion, transform.position, Quaternion.identity).startColor = spriteRenderer.color;
             Destroy(gameObject);
             if (_isFractioned)
                 Destroy(gameObject.transform.parent.gameObject);

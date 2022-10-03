@@ -141,7 +141,7 @@ public class PlayerLevelBar : MonoBehaviour
         levelIndexTxt.GetComponentInParent<Animator>().Play("Pop");
         GetComponent<AudioSource>().PlayOneShot(_levelUp);
 
-        float neededScoreTransition = neededScore * 1.25f;
+        float neededScoreTransition = neededScore * 1.15f;//Needed score increase step
         neededScoreTransition = Mathf.Round(neededScoreTransition / 10) * 10;
         prevNeededScore = neededScore;
         PlayerPrefs.SetInt("Prev needed score", prevNeededScore);

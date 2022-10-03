@@ -38,6 +38,8 @@ public class ActorShooting : MonoBehaviour
     private float _rechargeSpeed;
     private float _bulletLifetime;
 
+    private Color BulletColor => gunScript.bulletColorOverride != Color.white ? gunScript.bulletColorOverride : _spriteRenderer.color;
+
     [Header("Particles")]
     public ParticleSystem shotParticle;
     public LineRenderer _aimLineRenderer;
@@ -60,6 +62,7 @@ public class ActorShooting : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _shootingJoystick = GameManager.instance.UiManager.shootingJoystick;
+        
     }
 
     private void Update()
@@ -284,18 +287,15 @@ public class ActorShooting : MonoBehaviour
         curBullet.parent = gameObject;
         curBullet.lifeTime = _bulletLifetime;
         curBullet.criticalDamageChance = criticalDamageChance;
-#pragma warning disable CS0618 // Type or member is obsolete
-        curBullet.explosionParticle.startColor = _spriteRenderer.color;
-#pragma warning restore CS0618 // Type or member is obsolete
         curBullet.trailRenderer.startWidth *= _bulletScaleModifier;
         SetBulletColor(curBullet);
         Instantiate<ParticleSystem>(shotParticle, _firePos.position, Quaternion.identity);
     }
 
-    private void SetBulletColor(Bullet bullet_obj)
+    private void SetBulletColor(Bullet bulletObj)
     {
-        bullet_obj.spriteRenderer.color = _spriteRenderer.color;
-        bullet_obj.trailRenderer.material.color = _spriteRenderer.color;
+        bulletObj.spriteRenderer.color = BulletColor;
+        bulletObj.trailRenderer.material.color = BulletColor;
     }
 
 }

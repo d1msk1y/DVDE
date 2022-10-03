@@ -135,12 +135,13 @@ MonoBehaviour:
   lifeTime: 15
   isDestroyable: 0
   destroyByLifetime: 0
+  _name: SHOTGUN
   scaleUpAmount: 1.1
   isAutomized: 0
   itemType: 1
   outlinedSprite: {fileID: 21300000, guid: e2425336e422dbf4db98233d3026e549, type: 3}
   defaultSprite: {fileID: 21300000, guid: 3ddcdefa814d466448af622f05e5911e, type: 3}
-  isUnlocked: 1
+  _lvlToUnlock: 0
   price: 0
   BoughtPrefsKey: IsBoughtShotGun
   isBought: 0
