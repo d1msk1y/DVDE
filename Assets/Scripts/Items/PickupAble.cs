@@ -1,9 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.AnimatedValues;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public enum PickupType
@@ -35,7 +31,7 @@ public class PickupAble : Interactable
             _isUnlocked = value;
         }
     }
-    private int _isUnlocked;
+    [SerializeField]private int _isUnlocked;
 
     [Header("Buy-able")]
     public int price;
@@ -50,6 +46,7 @@ public class PickupAble : Interactable
     private bool isInReachZone = false;
     private ItemFrame itemFrame;
     [SerializeField] internal Canvas itemCanvas;
+    [SerializeField] internal Canvas itemCanvasPF;
 
     public delegate void PickupAbleHandler();
     public event PickupAbleHandler onUnlock;
@@ -80,17 +77,18 @@ public class PickupAble : Interactable
 
         if (itemType == PickupType.Buyable || itemType == PickupType.UpgradeAble) {
             GameManager.instance.scoreManager.onLevelUp += ValidateAccess;
+            GameManager.instance.OnGameOver += ValidateAccess;
             ValidateAccess();
             SetLockVisuals();
         }
 
         SetPriceCanvas();
     }
-    private void SetPriceCanvas()
+    internal virtual void SetPriceCanvas()
     {
         if (itemType == PickupType.Buyable && IsUnlocked == 1 && isBought == 0 ||
             itemType == PickupType.UpgradeAble && IsUnlocked == 1) {
-            itemCanvas = Instantiate(itemCanvas, transform.position, Quaternion.identity, transform);
+            itemCanvas = Instantiate(itemCanvasPF, transform.position, Quaternion.identity, transform);
             itemCanvas.GetComponentInChildren<Text>().text = price + "$";
         }
     }
@@ -136,7 +134,7 @@ public class PickupAble : Interactable
         onUnlock?.Invoke();
         SetLockVisuals();
         SetPriceCanvas();
-        if(GameManager.instance.scoreManager.initialLevel < LvlToUnlock)GameManager.instance.unlocksLog.CreateMessage(_name + " IS UNLOCKED!");
+        if(GameManager.instance.scoreManager.initialLevel < LvlToUnlock)GameManager.instance.unlocksLog.CreateMessage(_name + " UNLOCKED!");
     }
     #endregion
 

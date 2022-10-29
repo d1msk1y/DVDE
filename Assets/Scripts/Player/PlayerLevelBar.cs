@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PlayerLevelBar : MonoBehaviour
 {
     [Header("Lvl bar properties")]
+    [SerializeField] private float _xpStep;
     [SerializeField] private float barSpeedMultiplier;
     [SerializeField] private float minBarSpeed;
     [SerializeField] private float particleEmisionMultiplier;
@@ -140,8 +141,8 @@ public class PlayerLevelBar : MonoBehaviour
         levelIndex += 1;
         levelIndexTxt.GetComponentInParent<Animator>().Play("Pop");
         GetComponent<AudioSource>().PlayOneShot(_levelUp);
-
-        float neededScoreTransition = neededScore * 1.15f;//Needed score increase step
+        
+        float neededScoreTransition = neededScore * _xpStep;//Needed score increase step
         neededScoreTransition = Mathf.Round(neededScoreTransition / 10) * 10;
         prevNeededScore = neededScore;
         PlayerPrefs.SetInt("Prev needed score", prevNeededScore);

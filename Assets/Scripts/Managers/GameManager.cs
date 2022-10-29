@@ -62,25 +62,22 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
             soundManager.LowPassFrequencyCutOff();
 
-        if (Input.GetKeyDown(KeyCode.X))
-        {
+        if (Input.GetKeyDown(KeyCode.X)) {
             PlayerPrefs.DeleteAll();
         }
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
+        if (Input.GetKeyDown(KeyCode.Y)) {
             StartCoroutine(InterpolatePostProcess(standart, rage));
         }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
+        if (Input.GetKeyDown(KeyCode.T)) {
             StartCoroutine(InterpolatePostProcess(rage, standart));
         }
 
     }
 
-    private void Start()
-    {
+    private void Start() {
         ScanAstar();
         Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 0;
     }
 
     public void ShakeOnce(Vector4 force)  => cameraShaker.ShakeOnce(force.x, force.y, force.z, force.w);
@@ -88,14 +85,12 @@ public class GameManager : MonoBehaviour
     
     #region A*
 
-    private IEnumerator ScanAstarDelay()
-    {
+    private IEnumerator ScanAstarDelay() {
         yield return new WaitForEndOfFrame();
         aStarManager.AStar.Scan();
     }
 
-    public void ScanAstar()
-    {
+    public void ScanAstar() {
         aStarManager.AStar.Scan();
     }
 
@@ -103,19 +98,16 @@ public class GameManager : MonoBehaviour
 
     #region Compute functions
 
-    public int Chance(int a, int b)
-    {
+    public int Chance(int a, int b) {
         int chance = Random.Range(a, b);
         return chance;
     }
-    public float RandomFloat(float a, float b)
-    {
+    public float RandomFloat(float a, float b) {
         var randNumb = Random.Range(a, b);
         return randNumb;
     }
 
-    public Vector3 RandomVector(int a, int b)
-    {
+    public Vector3 RandomVector(int a, int b) {
         a = Random.Range(a, b);
         b = Random.Range(a, b);
         Vector3 vector = new Vector2(a, b);
@@ -127,8 +119,7 @@ public class GameManager : MonoBehaviour
 
     #region Post proces & Modes
 
-    public IEnumerator InterpolatePostProcess(PostProcessVolume a, PostProcessVolume b)
-    {
+    public IEnumerator InterpolatePostProcess(PostProcessVolume a, PostProcessVolume b) {
         StartCoroutine(InterpolateUp(b));
         StartCoroutine(InterpolateDown(a));
         yield return null;

@@ -136,7 +136,7 @@ MonoBehaviour:
   _entityHealth: {fileID: 198281370506949886}
   _enemyShooting: {fileID: 198281370506949873}
   clothSlotController: {fileID: 1813337277972243003}
-  score: 250
+  score: 1000
   _itemDropForce: 500
   _healItem: {fileID: 625130524909854868, guid: 5c0667a8dbe92c04daea4c21b8aadcdb, type: 3}
   _shieldItem: {fileID: 849695463515671621, guid: 7bac2dada15eb9943aa0cb85eb5a7dbe, type: 3}

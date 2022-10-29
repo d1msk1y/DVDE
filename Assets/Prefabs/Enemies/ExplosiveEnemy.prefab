@@ -5459,8 +5459,8 @@ MonoBehaviour:
   _entityHealth: {fileID: 0}
   _enemyShooting: {fileID: 0}
   clothSlotController: {fileID: 0}
-  score: 0
-  _itemDropForce: 0
+  score: 1000
+  _itemDropForce: 500
   _healItem: {fileID: 0}
   _shieldItem: {fileID: 0}
   _xpItem: {fileID: 0}

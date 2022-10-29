@@ -42,29 +42,34 @@ public class HeroUpgrade : PickupAble
     public new void Start()
     {
         base.Start();
-
-        itemCanvas.GetComponentInChildren<Text>().text = price + "$";
-
+        
         if (PlayerPrefs.HasKey(stagePrefsKey))
         {
             _currentStage = PlayerPrefs.GetInt(stagePrefsKey);
         }
 
         SetStage();
+        SetStageVisual();
 
         GameManager.instance.dataManager.SetPlayerSpecs();
-
-        _points = itemCanvas.GetComponentsInChildren<SpriteRenderer>();
-
-        //Dispaying bought upgradestages.
-        for (int i = 0; i < _currentStage + 1; i++)
-        {
-            _points[i].sprite = _square;
-        }
 
         if (_currentStage >= _maxStage)
         {
             Destroy(itemCanvas.GetComponentInChildren<Text>());
+        }
+    }
+
+    internal override void SetPriceCanvas() {
+        base.SetPriceCanvas();
+        SetStageVisual();
+    }
+    private void SetStageVisual() {
+
+        if (IsUnlocked == 1) {
+            _points = itemCanvas.GetComponentsInChildren<SpriteRenderer>();
+            for (int i = 0; i < _currentStage + 1; i++) {
+                _points[i].sprite = _square;
+            }
         }
     }
 
