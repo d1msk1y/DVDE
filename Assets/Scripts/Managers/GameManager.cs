@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void ShakeOnce(Vector4 force)  => cameraShaker.ShakeOnce(force.x, force.y, force.z, force.w);
-    public void ShakeScreen (float force) => cameraShaker.ShakeOnce(force, 10f, 0.1f, 0.3F);
+    public void ShakeScreen (float force) => cameraShaker.ShakeOnce(force, 4f, 0.1f, 0.3F);
     
     #region A*
 

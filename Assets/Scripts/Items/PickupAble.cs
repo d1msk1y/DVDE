@@ -186,6 +186,7 @@ public class PickupAble : Interactable
         if (isBought == 1 && itemType == PickupType.Buyable || itemType == PickupType.Default)
         {
             base.PickUp();
+            GameManager.instance.ShakeScreen(1);
             if (isDestroyable)
             {
                 Instantiate(GameManager.instance.itemsManager.pickUpParticle, transform.position, Quaternion.identity);
@@ -212,7 +213,7 @@ public class PickupAble : Interactable
     {
         GameManager.instance.scoreManager.TotalCoins -= price;
         GameManager.instance.statsManager.spentCoins += price;
-        GameManager.instance.ShakeScreen(10);
+        GameManager.instance.ShakeScreen(2);
         GameManager.instance.UiManager.UpdateCostTxts();
 
         GameManager.instance.UiManager.UpdateCostTxts();

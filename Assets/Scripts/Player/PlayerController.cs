@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
     [Header("Essential references")]
     public ActorShooting shootingScript;
     public PlayerMovement playerMovement;
     public EntityHealth entityHealth;
     public ClothSlotController clothSlotController;
+
+    public IAbility Ability { get; private set; }
 
     [Header("GFX")]
     public ParticleSystem deathParticle;
@@ -18,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [Space(10)]
     public bool isAlive = true;
     public bool isShooting;
-    private bool _isSecondLifeUsed = false;
+    private bool _isSecondLifeUsed;
     private float _startModifier;
 
     [HideInInspector] public Rigidbody2D _rigidBody;
@@ -33,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         GiveCloth();
+        Ability = GetComponent<IAbility>();
         _startColor = GetComponent<SpriteRenderer>().color;
     }
 
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
             return;
 
 #if UNITY_EDITOR
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetButton("Fire1"))
             Shot();
         if (Input.GetButtonUp("Fire1"))
         {
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            playerMovement.Dodge();
+            Ability.TriggerAction();
         }
 
         if (entityHealth.Health <= 0)
@@ -79,14 +79,13 @@ public class PlayerController : MonoBehaviour
             GameManager.instance.dataManager.SetPlayerSpecs();
     }
 
+    public void SetShooting (bool value) {
+        isShooting = value;
+    }
+    
     private void Shot()
     {
         shootingScript.Shot(_rigidBody);
-    }
-
-    public void IsShoot(bool x)
-    {
-        isShooting = x;
     }
 
     public void EnterRageMode()
@@ -128,7 +127,7 @@ public class PlayerController : MonoBehaviour
         clothSlotController.hatSlot.clotheIndex, null, ClothType.Hat);
     }
 
-    public void Die()
+    private void Die()
     {
         Instantiate(deathParticle, transform.position, Quaternion.identity);
         StartCoroutine(GameManager.instance.ExitRageMode(0));
@@ -177,7 +176,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Wall")
+        if (collision.collider.CompareTag("Wall"))
         {
             GameManager.instance.soundManager._vfxAudioSource.PlayOneShot(GameManager.instance.soundManager.hitWall);
         }

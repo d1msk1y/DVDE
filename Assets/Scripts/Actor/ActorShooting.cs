@@ -255,7 +255,6 @@ public class ActorShooting : MonoBehaviour
         {
             Bullet[] componentsInChildren = gameObject.GetComponentsInChildren<Bullet>();
             gameObject.transform.localScale *= _bulletScaleModifier;
-            Debug.Log(componentsInChildren.Length);
             foreach (Bullet bulletProperties in componentsInChildren)
             {
                 SetBulletProperties(bulletProperties);
