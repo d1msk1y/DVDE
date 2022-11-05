@@ -7906,6 +7906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 136504710}
+  - component: {fileID: 136504711}
   m_Layer: 3
   m_Name: PostProcessing Manager
   m_TagString: Untagged
@@ -7931,6 +7932,20 @@ Transform:
   m_Father: {fileID: 1032990095}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &136504711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136504709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1835495f7062430c9fcd1df635b1829e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slowMotionVolume: {fileID: 1933009302}
+  _defaultVolume: {fileID: 382151396}
 --- !u!1 &137521311
 GameObject:
   m_ObjectHideFlags: 0
@@ -14421,6 +14436,7 @@ GameObject:
   - component: {fileID: 416460883}
   - component: {fileID: 416460876}
   - component: {fileID: 416460884}
+  - component: {fileID: 416460885}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -14728,6 +14744,19 @@ MonoBehaviour:
   - {fileID: 6177997631892607246, guid: f2ba0c4344d276842ab5b9a2fed4931a, type: 3}
   - {fileID: 5072884485528135272, guid: eb8c587caed6a7f4c93d326d3d5634f8, type: 3}
   - {fileID: 3467486051621521636, guid: 78810e6c4c84a92478917449d32b15e9, type: 3}
+--- !u!114 &416460885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416460874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c8fea632cd46abaf82efd96c5dfdd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slowMotionSFX: {fileID: 8300000, guid: 7556a1079935aa74e85dd56ba800c317, type: 3}
 --- !u!1 &418944709
 GameObject:
   m_ObjectHideFlags: 0
@@ -62840,48 +62869,30 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.6
+  m_Time: 0.4
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1.4194634
+    widthMultiplier: 0.72243476
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.53267545
+        value: 1
         inSlope: 0
         outSlope: 0
-        tangentMode: 0
+        tangentMode: 5
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.32606417
-        value: 0.11625689
-        inSlope: -0.027655045
-        outSlope: -0.027655045
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.4802423
-      - serializedVersion: 3
-        time: 0.7066741
-        value: 0.07988779
-        inSlope: -0.30754247
-        outSlope: -0.30754247
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.42312184
       - serializedVersion: 3
         time: 1
         value: 0
         inSlope: -0.12273241
         outSlope: -0.12273241
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33746886
+        tangentMode: 1
+        weightedMode: 3
+        inWeight: 0.33333334
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -62890,21 +62901,21 @@ TrailRenderer:
       serializedVersion: 2
       key0: {r: 1, g: 0.31764707, b: 0.31764707, a: 1}
       key1: {r: 1, g: 0.5707547, b: 0.5707547, a: 0}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
+      key2: {r: 1, g: 0.5707547, b: 0.5707547, a: 0}
+      key3: {r: 1, g: 0.5707547, b: 0.5707547, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 28142
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
+      ctime0: 22937
+      ctime1: 53199
+      ctime2: 54356
+      ctime3: 55512
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 52043
+      atime0: 12143
       atime1: 65535
       atime2: 65535
       atime3: 0
@@ -63100,6 +63111,7 @@ MonoBehaviour:
   _force: 100
   _transparencyTime: 0.5
   _rechargeTime: 1
+  _swooshSFX: {fileID: 8300000, guid: 4966ab48a71c472498aeae2d773b6c99, type: 3}
   _rigidbody: {fileID: 1793964358}
 --- !u!1001 &1797656913
 PrefabInstance:
