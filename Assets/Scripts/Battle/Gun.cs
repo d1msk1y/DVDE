@@ -1,5 +1,7 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public enum WeaponType
@@ -19,10 +21,9 @@ public class Gun : MonoBehaviour
     public WeaponType weaponType;
 
     [Header("Audio")]
-    public AudioSource audioSource;
-    public AudioClip shotSound;
-    public AudioClip noAmmoSound;
-    public AudioClip gunPickUpSound;
+    public EventReference shotSound;
+    public EventReference noAmmoSound;
+    public EventReference gunPickUpSound;
 
     [Header("References")]
     public Transform firePos;
@@ -41,20 +42,4 @@ public class Gun : MonoBehaviour
     public int damage;
     public float pushForce;
     public int ammos;
-
-    private void Start()
-    {
-        if (weaponType == WeaponType.Knife)
-            return;
-        audioSource = GetComponent<AudioSource>();
-        switch (weaponType)
-        {
-            case WeaponType.Shotgun:
-                audioSource.volume = GameManager.instance.soundManager.sfxVolume + 0.1f;
-                break;
-            case WeaponType.BulletThrower:
-                audioSource.volume = GameManager.instance.soundManager.sfxVolume + 0.15f;
-                break;
-        }
-    }
 }

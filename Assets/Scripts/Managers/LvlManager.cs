@@ -60,22 +60,19 @@ public class LvlManager : MonoBehaviour
         
         if (enemiesSpawned < enemies2Spawn || lvlController.CurrentEnemiesInAction.Count > 0 || currentLevel != lvlController.lvlIndex) return;
         SpawnNewLevel();
-        GameManager.instance.soundManager.LowPassFrequencyCutOff();
+        GameManager.instance.soundManager.SwitchLowPassFrequency();
         GameManager.instance.isCurrentBattle = false;
     }
 
     public void SwitchLevel()
     {
-        if (GameManager.instance.isGameStarted == false)
-            GameManager.instance.soundManager.StartSoundtrack();
-
         currentLevel += 1;
 
         GameManager.instance.statsManager.passedRooms += 1;
         PlayerPrefs.SetInt(GameManager.instance.statsManager.keys[5], GameManager.instance.statsManager.passedRooms);
 
         GameManager.instance.aStarManager.AStar.transform.position += new Vector3(30, 0, 0);
-        GameManager.instance.soundManager.LowPassFrequencyCutOff();
+        GameManager.instance.soundManager.SwitchLowPassFrequency();
         GameManager.instance.UiManager.ShowHUD();
         GameManager.instance.aStarManager.AStar.Scan();
         GameManager.instance.isCurrentBattle = true;

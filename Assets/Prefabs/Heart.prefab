@@ -30,6 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.04, y: 4.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1091393224372976527}
   m_Father: {fileID: 0}
@@ -55,8 +56,13 @@ MonoBehaviour:
   itemType: 0
   moveSpeed: 20
   pickUpRadius: 0.4
-  _audioSource: {fileID: 0}
-  _pickupSound: {fileID: 8300000, guid: f543ff84704d7024c9dafc3268f92ee5, type: 3}
+  _pickupSound:
+    Guid:
+      Data1: -1461298224
+      Data2: 1257263231
+      Data3: -522253406
+      Data4: 284785678
+    Path: event:/SFX/Powerups/hp_pickup
 --- !u!50 &625130524909854864
 Rigidbody2D:
   serializedVersion: 4
@@ -80,7 +86,7 @@ Rigidbody2D:
   m_Constraints: 4
 --- !u!95 &461639943
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -93,6 +99,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -140,6 +147,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.08728384, y: 0.08728384, z: 0.08728384}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 625130524909854871}
   m_RootOrder: 0
@@ -155,6 +163,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

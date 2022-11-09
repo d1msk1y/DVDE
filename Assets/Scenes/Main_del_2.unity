@@ -56275,7 +56275,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1541337370}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlayVfx
+        m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: dca504cfa9605924c8f243af814ff0d0, type: 3}

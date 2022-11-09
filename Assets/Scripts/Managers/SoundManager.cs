@@ -1,137 +1,84 @@
-using System.Collections;
-using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
-using UnityEngine.Audio;
+using Random = UnityEngine.Random;
 
 
-public class SoundManager : MonoBehaviour
-{
+public class SoundManager : MonoBehaviour {
     [Header("Audio sources")]
-    public AudioSource _vfxAudioSource;
-    public AudioSource _soundtrackAudioSource;
-    public AudioSource _OSTAduioSource;
-    public AudioSource _glitchSource;
+    [SerializeField] private StudioEventEmitter _soundtrackEmitter;
+    public static StudioEventEmitter soundtrackEmitter;
+    public EventReference[] soundTracks;
 
-    [Header("Audio properties")]
-    public float sfxVolume;
 
     [Header("LowPassFilter properties")]
-    public AudioClip[] soundTracks;
-    public AudioClip mainOST;
-    [SerializeField] private AudioMixer _ostAudioMixer;
-
-    [Header("LowPassFilter properties")]
-    [SerializeField] private AudioLowPassFilter _lowPassFilter;
     [SerializeField] private float _minLowPasFilterCutOff;
-    [SerializeField] private float _SoundtrackVolume;
     [SerializeField] private float _lowPasFilterCutOffSpeed;
-    [SerializeField] private float _lowPassFreqCurrent;
     [SerializeField] private bool _isLowPassFilterCutOffDowned;
+    private float _lowPassFrequency;
+    private float _lowPassTarget;
 
     [Header("Other")]
-    public AudioClip withdrawalSound;
-    public AudioClip hitWall;
-    public AudioClip actorDeath;
-    public AudioClip select;
-    public AudioClip bulletHit;
+    public EventReference withdrawalSound;
+    public EventReference hitWall;
+    public EventReference actorDeath;
+    public EventReference select;
+    public EventReference bulletHit;
 
-    private float _lowPassCutOffVelocityDown;
-    private float _lowPassCutOffVelocityUp;
+    public static SoundManager instance;
+    private float LowPassFrequency {
+        get => _lowPassFrequency;
+        set {
+            _lowPassFrequency = value;
+            RuntimeManager.StudioSystem.setParameterByName("Tempo", value);            
+        }
+    }
 
-    private void Start()
-    {
-        PlayMenuOST();
-        LowPassFrequencyCutOff();
+    private void Start() {
+        instance = this;
+        soundtrackEmitter = _soundtrackEmitter;
+        RandomizeTrack();
+        StartSoundtrack();
+
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            RandomizeTrack();
+        if (Input.GetKeyDown(KeyCode.Tab)) {
+            StartSoundtrack();
+        }
+        if (Input.GetKeyDown(KeyCode.L)) {
+            SwitchLowPassFrequency();
+        }
+        LowPassFrequency = Mathf.Lerp(LowPassFrequency, _lowPassTarget, _lowPasFilterCutOffSpeed);
+
+        CheckSoundtrack();
+    }
+
+    public static void PlayOneShot(EventReference eventReference) => RuntimeManager.PlayOneShot(eventReference);
+    public void SwitchLowPassFrequency() {
+        if (_isLowPassFilterCutOffDowned) {
+            _lowPassTarget = 1;
+            _isLowPassFilterCutOffDowned = false;
+        } else {
+            _lowPassTarget = 0;
+            _isLowPassFilterCutOffDowned = true;
         }
     }
-
-    private void RandomizeTrack()
-    {
-        _soundtrackAudioSource.clip = soundTracks[Random.Range(0, soundTracks.Length)];
-
-        _soundtrackAudioSource.Play();
+    
+    private void CheckSoundtrack() {
+        FMOD.Studio.PLAYBACK_STATE state;
+        soundtrackEmitter.EventInstance.getPlaybackState(out state);
+        if(state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
+            StartSoundtrack();
     }
 
-    public void StartSoundtrack()//Start battle ost n' mute menu ost
+    private void RandomizeTrack() => soundtrackEmitter.EventReference = soundTracks[Random.Range(0, soundTracks.Length)];
+
+
+    private void StartSoundtrack()//Start battle ost n' mute menu ost
     {
-        StartCoroutine(SmoothOnAudio(_soundtrackAudioSource));
-        StartCoroutine(SmoothOffAudio(_OSTAduioSource));
+        soundtrackEmitter.Stop();
         RandomizeTrack();
+        soundtrackEmitter.Play();
     }
-
-    public void LowPassFrequencyCutOff()
-    {
-        if (_isLowPassFilterCutOffDowned)
-            StartCoroutine(LowPassFilterUp());
-        else if (GameManager.instance.isGameStarted)
-            StartCoroutine(LowPassFilterDown());
-    }
-
-    public void PlayMenuOST()
-    {
-        _OSTAduioSource.clip = mainOST;
-        StartCoroutine(SmoothOnAudio(_OSTAduioSource));
-        StartCoroutine(SmoothOffAudio(_soundtrackAudioSource));
-    }
-
-    public IEnumerator SmoothOnAudio(AudioSource audioSource)
-    {
-        while (audioSource.volume != _SoundtrackVolume)
-        {
-            audioSource.volume += 1 * Time.deltaTime * 0.9f;
-            yield return null;
-        }
-    }
-    public IEnumerator SmoothOffAudio(AudioSource audioSource)
-    {
-        while (audioSource.volume != 0)
-        {
-            audioSource.volume -= 1 * Time.deltaTime * 0.9f;
-            yield return null;
-        }
-    }
-
-    private IEnumerator LowPassFilterDown()
-    {
-        if (_isLowPassFilterCutOffDowned)
-            yield return null;
-
-        _isLowPassFilterCutOffDowned = true;
-
-        while (_isLowPassFilterCutOffDowned)
-        {
-            if (!_isLowPassFilterCutOffDowned)
-                yield return null;
-
-            _lowPassFreqCurrent = Mathf.SmoothDamp(22000, _minLowPasFilterCutOff,
-                ref _lowPassCutOffVelocityDown, _lowPasFilterCutOffSpeed * Time.deltaTime);
-            _ostAudioMixer.SetFloat("lowPassFreq", 1000);
-            yield return null;
-
-        }
-    }
-    private IEnumerator LowPassFilterUp()
-    {
-        if (!_isLowPassFilterCutOffDowned)
-            yield return null;
-
-        _isLowPassFilterCutOffDowned = false;
-
-        while (!_isLowPassFilterCutOffDowned)
-        {
-            _lowPassFreqCurrent = Mathf.SmoothDamp(_minLowPasFilterCutOff, 22000,
-                ref _lowPassCutOffVelocityUp, _lowPasFilterCutOffSpeed * Time.deltaTime);
-
-            _ostAudioMixer.SetFloat("lowPassFreq", 22000);
-            yield return null;
-        }
-    }
-    public void PlayVfx (AudioClip clip) => _vfxAudioSource.PlayOneShot(clip);
 }

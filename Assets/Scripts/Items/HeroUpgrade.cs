@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -93,7 +91,7 @@ public class HeroUpgrade : PickupAble
             return;
 
         base.PickUp();
-        GameManager.instance.soundManager.PlayVfx(GameManager.instance.soundManager.select);
+        SoundManager.PlayOneShot(GameManager.instance.soundManager.select);
     }
 
     public override void OnReachZoneEnter()

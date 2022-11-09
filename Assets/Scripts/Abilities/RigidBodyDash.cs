@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using FMOD;
+using FMODUnity;
+using System.Collections;
 using UnityEngine;
 public class RigidBodyDash : MonoBehaviour, IAbility {
 
@@ -8,7 +10,7 @@ public class RigidBodyDash : MonoBehaviour, IAbility {
 	[SerializeField] private float _rechargeTime;
 
 	[Space(10)]
-	[SerializeField] private AudioClip _swooshSFX;
+	[SerializeField] private EventReference _swooshSFX;
 	[SerializeField] private Rigidbody2D _rigidbody;
 
 	private float _timer;
@@ -35,7 +37,7 @@ public class RigidBodyDash : MonoBehaviour, IAbility {
 	}
 	private void Dash() {
 		_rigidbody.AddForce(DashDirection* _force, ForceMode2D.Impulse);
-		GameManager.instance.soundManager._vfxAudioSource.PlayOneShot(_swooshSFX, 1);
+		SoundManager.PlayOneShot(_swooshSFX);
 		StartCoroutine(SlowMotion.instance.TriggerSlowMotion(0.7f, 0.5f));
 	}
 

@@ -1,3 +1,5 @@
+using FMOD;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,15 +14,13 @@ public class HealItem : Interactable
     public float pickUpRadius;
 
     [Header("SFX")]
-    [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private AudioClip _pickupSound;
+    [SerializeField] private EventReference _pickupSound;
 
     private EntityHealth _playerHealth;
 
     private new void Start()
     {
         base.Start();
-        _audioSource = GameManager.instance.soundManager._vfxAudioSource;
         _playerHealth = player.entityHealth;
 
         if (itemType == ItemType.Shield)
@@ -44,8 +44,7 @@ public class HealItem : Interactable
 
     public override void PickUp()
     {
-        _audioSource.pitch = Random.Range(0.8f, 1.3f);
-        _audioSource.PlayOneShot(_pickupSound);
+        SoundManager.PlayOneShot(_pickupSound);
 
         switch (itemType)
         {

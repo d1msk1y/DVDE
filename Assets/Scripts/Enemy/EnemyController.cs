@@ -162,7 +162,7 @@ public class EnemyController : MonoBehaviour
 
         // StartCoroutine(RemoveEnemyFromList());
         GameManager.instance.lvlManager.lvlController.CurrentEnemiesInAction.Remove(gameObject);
-        GameManager.instance.soundManager.PlayVfx(GameManager.instance.soundManager.actorDeath);
+        SoundManager.PlayOneShot(SoundManager.instance.actorDeath);
         Destroy(gameObject);
     }
 

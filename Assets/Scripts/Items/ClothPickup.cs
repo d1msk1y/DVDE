@@ -35,7 +35,7 @@ public class ClothPickup : PickupAble
     public override void PickUp()
     {
         base.PickUp();
-        GameManager.instance.soundManager.PlayVfx(GameManager.instance.soundManager.select);
+        SoundManager.PlayOneShot(SoundManager.instance.select);
         if(isBought == 1 && itemType == PickupType.Buyable)
         {
             clotheTypeSlot.GiveCloth(clothItem, clothIndex, prefsIndex, clothType);

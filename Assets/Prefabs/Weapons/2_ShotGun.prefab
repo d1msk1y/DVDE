@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 7602995759612751140}
   - component: {fileID: 7602995759612751143}
   - component: {fileID: -2033180549268933632}
-  - component: {fileID: 3325655277947249526}
   m_Layer: 2
   m_Name: 2_ShotGun
   m_TagString: Untagged
@@ -134,10 +133,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunIndex: 2
   weaponType: 4
-  audioSource: {fileID: 0}
-  shotSound: {fileID: 8300000, guid: 74ec3b71fef927940974b5db803dc45c, type: 3}
-  noAmmoSound: {fileID: 8300000, guid: 0bc3e8fddee1b8f4eb0edf6b005f7ec7, type: 3}
-  gunPickUpSound: {fileID: 8300000, guid: 61013491d34c7534fa245a27832ca296, type: 3}
+  shotSound:
+    Guid:
+      Data1: -317454618
+      Data2: 1123368462
+      Data3: 212661647
+      Data4: -27590093
+    Path: event:/SFX/Guns/Fire/shotgun_fire
+  noAmmoSound:
+    Guid:
+      Data1: 1267760151
+      Data2: 1253852406
+      Data3: 1687655055
+      Data4: -1428468274
+    Path: event:/SFX/Guns/gun_noAmmo
+  gunPickUpSound:
+    Guid:
+      Data1: -846671199
+      Data2: 1320851229
+      Data3: -1067319414
+      Data4: -753839836
+    Path: event:/SFX/Guns/shotgun_reload
   firePos: {fileID: 7602995759849701229}
   gun2Throw: {fileID: 9098946617528409339, guid: a84cc266129f6fd4eb4f5bb0efa243a9, type: 3}
   gun2PickUp: {fileID: 2958298959038754522, guid: 448a303087f2d2948927a26e4cbff1f8, type: 3}
@@ -172,102 +188,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!82 &3325655277947249526
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7602995759612751141}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -3748366146462305859, guid: 5da3c0b67b2479b4a8e0619e8b98f98e, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 0.2
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &7602995759849701226
 GameObject:
   m_ObjectHideFlags: 0

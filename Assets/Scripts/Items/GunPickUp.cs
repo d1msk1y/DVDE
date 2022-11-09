@@ -34,10 +34,10 @@ public class GunPickUp : PickupAble
         {
             GameManager.instance.itemsManager.pickedGun = gunProperties.gunIndex;
             PlayerPrefs.SetInt("Picked gun", gunProperties.gunIndex);
-            GameManager.instance.soundManager.PlayVfx(GameManager.instance.soundManager.select);
+            SoundManager.PlayOneShot(GameManager.instance.soundManager.select);
         }
         player.shootingScript.GiveWeapon(gunProperties);
-        GameManager.instance.soundManager._vfxAudioSource.PlayOneShot(gunProperties.gunPickUpSound, 2f);
+        SoundManager.PlayOneShot(gunProperties.gunPickUpSound);
         PlayerController.instance.shootingScript.ClearAllLines();
         GameManager.instance.UiManager.pickUpButton.gameObject.SetActive(false);
     }

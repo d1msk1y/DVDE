@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using FMOD;
+using FMODUnity;
+using System.Collections;
 using UnityEngine;
 
 public class SlowMotion : MonoBehaviour {
 
-	[SerializeField] private AudioClip _slowMotionSFX;
+	[SerializeField] private EventReference _slowMotionSFX;
 	private PostProcessingController _postProcessingController => PostProcessingController.instance;
 
 	public static SlowMotion instance;
@@ -14,7 +16,7 @@ public class SlowMotion : MonoBehaviour {
 
 	public IEnumerator TriggerSlowMotion(float strength, float time) {
 		Time.timeScale = strength;
-		GameManager.instance.soundManager._vfxAudioSource.PlayOneShot(_slowMotionSFX, 1);
+		SoundManager.PlayOneShot(_slowMotionSFX);
 		StartCoroutine(SwitchPostProcessing(0.1f));
 		yield return new WaitForSeconds(time);
 		Time.timeScale = 1;

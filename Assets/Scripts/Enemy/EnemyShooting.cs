@@ -110,9 +110,8 @@ public class EnemyShooting : MonoBehaviour
             return;//If gun isnt recharged - return.
         isRecharged = false;
         _recharge = 1;//recharge timer reset.
-
-        gunScript.GetComponent<AudioSource>().pitch = Random.Range(0.3f, 2f);
-        gunScript.GetComponent<AudioSource>().PlayOneShot(gunScript.shotSound);
+        
+        SoundManager.PlayOneShot(gunScript.shotSound);
 
         SpawnBullet();
     }

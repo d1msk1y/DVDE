@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (collision.collider.CompareTag("Wall"))
         {
-            GameManager.instance.soundManager._vfxAudioSource.PlayOneShot(GameManager.instance.soundManager.hitWall);
+            SoundManager.PlayOneShot(SoundManager.instance.hitWall);
         }
     }
 

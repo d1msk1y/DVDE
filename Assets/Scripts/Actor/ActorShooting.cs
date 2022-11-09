@@ -231,7 +231,7 @@ public class ActorShooting : MonoBehaviour
             return;
         }
         //gunScript.audioSource.pitch = Random.Range(0.6f, 1.5f);
-        gunScript.audioSource.PlayOneShot(gunScript.shotSound);
+        SoundManager.PlayOneShot(gunScript.shotSound);
         GameManager.instance.ShakeOnce(gunScript.shakeForce);
         rb.AddForce(-_firePos.right * _recoilForce, ForceMode2D.Impulse);
         SpawnBullet();
@@ -243,7 +243,7 @@ public class ActorShooting : MonoBehaviour
         }
         if (ammos <= 0)
         {
-            GameManager.instance.soundManager._vfxAudioSource.PlayOneShot(gunScript.noAmmoSound);
+            SoundManager.PlayOneShot(gunScript.noAmmoSound);
         }
         GameManager.instance.UiManager.SetAmmoStats(ammos, gunScript.ammos + extraAmmos);
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using EZCameraShake;
+using FMODUnity;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
     [Header("Reborn")]
     public GameObject angel;
     public ParticleSystem angelParticles;
-    public AudioClip auraClip;
+    public EventReference auraClip;
 
     [Header("Skills")]
     public bool isRage;
@@ -60,7 +61,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
-            soundManager.LowPassFrequencyCutOff();
+            soundManager.SwitchLowPassFrequency();
 
         if (Input.GetKeyDown(KeyCode.X)) {
             PlayerPrefs.DeleteAll();
@@ -187,7 +188,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(InterpolatePostProcess(standart, rage));
         player.EnterRageMode();
         glitchEffect.enabled = true;
-        soundManager._glitchSource.Play();
+        // SoundManager._glitchSource.Play();
         isRage = true;
 
         StartCoroutine(ExitRageMode(rageTime));
@@ -201,7 +202,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         isRage = false;
         player.ExitRageMode();
-        soundManager._glitchSource.Stop();
+        // soundManager._glitchSource.Stop();
         StartCoroutine(InterpolatePostProcess(rage, standart));
     }
 
@@ -218,17 +219,15 @@ public class GameManager : MonoBehaviour
         isCurrentBattle = false;
         UiManager.HideGameOverCanavas();
         scoreManager.ResetScore();
-        soundManager.PlayMenuOST();
         OnRestart?.Invoke();
     }
 
     public void GameOver()
     {
         scoreManager.SummarizeScore();
+        soundManager.SwitchLowPassFrequency();
         UiManager.ShowGameOverCanavas();
-        //soundManager.LowPassFrequencyCutOff();
         UiManager.playerLevelBarGameOver.UpdateBar();
-        StartCoroutine(soundManager.SmoothOffAudio(soundManager._soundtrackAudioSource));
         statsManager.UpdateStats();
         OnGameOver?.Invoke();
     }
@@ -239,7 +238,7 @@ public class GameManager : MonoBehaviour
         Instantiate(angelParticles, UiManager.mainUiCanvas.transform.position,
             Quaternion.identity);
         lvlManager.ClearLevel();
-        soundManager._vfxAudioSource.PlayOneShot(auraClip);
+        SoundManager.PlayOneShot(auraClip);
     }
 
     private IEnumerator AngelSpawn()
