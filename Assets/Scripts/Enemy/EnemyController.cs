@@ -1,6 +1,8 @@
 using UnityEngine;
 using Pathfinding;
+using System;
 using System.Collections;
+using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
@@ -50,7 +52,6 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        _astar.Scan();
         if (_playerRigidBody == null)
             return;
         _aIDestinationSetter.target = _playerRigidBody.gameObject.transform;
@@ -210,12 +211,8 @@ public class EnemyController : MonoBehaviour
             Die();
             Destroy(collision.gameObject);
         }
-        if (collision.collider.tag == "Knife")
-        {
+        if (collision.collider.tag == "Knife") {
             _entityHealth.TakeDamage(collision.gameObject.GetComponentInChildren<Gun>().damage, _spriteRenderer);
-            /* if(enabled && gameObject != null)
-                 _rigidBody.AddForce(collision.transform.right
-                     * collision.gameObject.GetComponentInParent<Gun>().pushForce, ForceMode2D.Impulse);*/
         }
     }
 }

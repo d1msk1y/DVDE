@@ -23,8 +23,8 @@ public class SlowMotion : MonoBehaviour {
 	}
 
 	private IEnumerator SwitchPostProcessing(float time) {
-		StartCoroutine(_postProcessingController.InterpolatePostProcess(_postProcessingController.DefaultVolume, _postProcessingController.SlowMotionVolume));
+		StartCoroutine(_postProcessingController.InterpolateDown(_postProcessingController.DefaultVolume));
 		yield return new WaitForSeconds(time);
-		StartCoroutine(_postProcessingController.InterpolatePostProcess(_postProcessingController.SlowMotionVolume, _postProcessingController.DefaultVolume));
+		StartCoroutine(_postProcessingController.InterpolateUp(_postProcessingController.DefaultVolume));
 	}
 }

@@ -5414,7 +5414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunIndex: 0
-  weaponType: 1
+  weaponType: 5
   shotSound:
     Guid:
       Data1: 0
@@ -5447,7 +5447,7 @@ MonoBehaviour:
   rechargeSpeed: 0
   bulletLifetime: 0
   shakeForce: {x: 0, y: 0, z: 0, w: 0}
-  damage: 100
+  damage: 20
   pushForce: 100
   ammos: 0
 --- !u!95 &2766419376159808571

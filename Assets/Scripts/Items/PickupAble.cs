@@ -134,7 +134,7 @@ public class PickupAble : Interactable
         onUnlock?.Invoke();
         SetLockVisuals();
         SetPriceCanvas();
-        if(GameManager.instance.scoreManager.initialLevel < LvlToUnlock)GameManager.instance.unlocksLog.CreateMessage(_name + " UNLOCKED!");
+        if(GameManager.instance.scoreManager.initialLevel < LvlToUnlock)GameManager.instance.unlocksLog.PrintMessage(_name + " UNLOCKED!");
     }
     #endregion
 

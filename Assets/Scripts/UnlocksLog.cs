@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
@@ -17,8 +18,10 @@ public class UnlocksLog : MonoBehaviour
         GameManager.instance.OnGameOver += ResetLog;
     }
 
-    public void CreateMessage (string text)
-    {
+    public void PrintMessage (string text) => StartCoroutine(CreateMessage(text));
+
+    private IEnumerator CreateMessage(string text) {
+        yield return new WaitForSeconds(0.1f);
         var message = Instantiate(_messageThumbnail, Vector3.zero, quaternion.identity, _content);
         _messages.Add(message);
         message.GetComponentInChildren<Text>().text = text;

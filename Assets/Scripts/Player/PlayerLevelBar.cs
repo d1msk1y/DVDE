@@ -56,7 +56,7 @@ public class PlayerLevelBar : MonoBehaviour
         GameManager.instance.scoreManager.CurrentLevel = levelIndex;
 
         currentScoreTrans = prevScore;
-        if (GameManager.instance.scoreManager.receivedScore == 0)
+        if (GameManager.instance.scoreManager.ReceivedScore == 0)
             prevScore = lastScore; currentScoreTrans = prevScore;
 
         var emission = particles.emission;
@@ -69,7 +69,7 @@ public class PlayerLevelBar : MonoBehaviour
 
     public void UpdateBar()
     {
-        float particleEmision = GameManager.instance.scoreManager.receivedScore * particleEmisionMultiplier;
+        float particleEmision = GameManager.instance.scoreManager.ReceivedScore * particleEmisionMultiplier;
         if (particleEmision > maxParticleEmision)
             particleEmision = maxParticleEmision;
         else if (particleEmision < minParticleEmision)

@@ -18,10 +18,6 @@ public class GunPickUp : PickupAble
     private new void Update()
     {
         base.Update();
-        if (player.shootingScript.ammos <= 0 && distance < interactRadius)
-        {
-            PickUp();
-        }
     }
 
     public override void PickUp()

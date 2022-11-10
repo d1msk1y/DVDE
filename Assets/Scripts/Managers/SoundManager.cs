@@ -1,28 +1,27 @@
+using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 
 public class SoundManager : MonoBehaviour {
     [Header("Audio sources")]
-    [SerializeField] private StudioEventEmitter _soundtrackEmitter;
-    public static StudioEventEmitter soundtrackEmitter;
+    private EventInstance _soundtrackInstance;
     public EventReference[] soundTracks;
+    private int _soundtrackIndex;
 
 
     [Header("LowPassFilter properties")]
-    [SerializeField] private float _minLowPasFilterCutOff;
     [SerializeField] private float _lowPasFilterCutOffSpeed;
     [SerializeField] private bool _isLowPassFilterCutOffDowned;
     private float _lowPassFrequency;
     private float _lowPassTarget;
 
     [Header("Other")]
-    public EventReference withdrawalSound;
     public EventReference hitWall;
     public EventReference actorDeath;
     public EventReference select;
-    public EventReference bulletHit;
 
     public static SoundManager instance;
     private float LowPassFrequency {
@@ -35,26 +34,28 @@ public class SoundManager : MonoBehaviour {
 
     private void Start() {
         instance = this;
-        soundtrackEmitter = _soundtrackEmitter;
         RandomizeTrack();
         StartSoundtrack();
 
     }
 
+
+    public static void PlayOneShot(EventReference eventReference) => RuntimeManager.PlayOneShot(eventReference);
     private void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.Tab)) {
             StartSoundtrack();
         }
+        #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.L)) {
             SwitchLowPassFrequency();
         }
+        #endif
         LowPassFrequency = Mathf.Lerp(LowPassFrequency, _lowPassTarget, _lowPasFilterCutOffSpeed);
 
         CheckSoundtrack();
     }
-
-    public static void PlayOneShot(EventReference eventReference) => RuntimeManager.PlayOneShot(eventReference);
     public void SwitchLowPassFrequency() {
         if (_isLowPassFilterCutOffDowned) {
             _lowPassTarget = 1;
@@ -67,18 +68,25 @@ public class SoundManager : MonoBehaviour {
     
     private void CheckSoundtrack() {
         FMOD.Studio.PLAYBACK_STATE state;
-        soundtrackEmitter.EventInstance.getPlaybackState(out state);
+        _soundtrackInstance.getPlaybackState(out state);
         if(state == FMOD.Studio.PLAYBACK_STATE.STOPPED)
             StartSoundtrack();
     }
 
-    private void RandomizeTrack() => soundtrackEmitter.EventReference = soundTracks[Random.Range(0, soundTracks.Length)];
+    private void RandomizeTrack() {
+        var initialSoundTrackIndex = _soundtrackIndex;
+        for (var i = 0; initialSoundTrackIndex == _soundtrackIndex;) {
+            _soundtrackIndex = Random.Range(0, soundTracks.Length);    
+        }
+        EventReference soundTrack = soundTracks[_soundtrackIndex];
+        _soundtrackInstance = RuntimeManager.CreateInstance(soundTrack);
+    }
 
 
     private void StartSoundtrack()//Start battle ost n' mute menu ost
     {
-        soundtrackEmitter.Stop();
+        _soundtrackInstance.stop(STOP_MODE.ALLOWFADEOUT);
         RandomizeTrack();
-        soundtrackEmitter.Play();
+        _soundtrackInstance.start();
     }
 }

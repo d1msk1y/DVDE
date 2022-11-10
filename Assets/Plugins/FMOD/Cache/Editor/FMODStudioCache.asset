@@ -24,34 +24,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-9148405751249440740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/Morning
-  m_EditorClassIdentifier: 
-  Path: event:/OST/Morning
-  Guid:
-    Data1: 1520973403
-    Data2: 1210995982
-    Data3: -488815992
-    Data4: 144244649
-  Banks:
-  - {fileID: -8057629444877641825}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 148271
---- !u!114 &-8890145262263824785
+--- !u!114 &-8891656326756569071
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,21 +34,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Raceway/Tempo
+  m_Name: parameter:/Raceway/Melody
   m_EditorClassIdentifier: 
-  Name: Tempo
+  Name: Melody
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0
+  Default: 1
   ID:
-    data1: 3828552285
-    data2: 232660883
+    data1: 1422533973
+    data2: 1495782318
   Type: 0
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-8841191592025242431
+--- !u!114 &-8766641959447156810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,11 +72,11 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -8292338031963310100}
-  - {fileID: 8084795535430327369}
-  - {fileID: 3028410129933207446}
-  - {fileID: 7964485429668457656}
-  - {fileID: 2778181036705742582}
+  - {fileID: -310257036946441276}
+  - {fileID: 1811828344916265008}
+  - {fileID: -5720757638731637313}
+  - {fileID: 4767498765319228986}
+  - {fileID: -3069051581751900073}
   MinDistance: 1
   MaxDistance: 20
   Length: 211992
@@ -127,6 +100,30 @@ MonoBehaviour:
   ID:
     data1: 1433345521
     data2: 3218318724
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-8495916014110949894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Neon Lights Neon Dreams/Tempo
+  m_EditorClassIdentifier: 
+  Name: Tempo
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3828552285
+    data2: 232660883
   Type: 0
   IsGlobal: 1
   Labels: []
@@ -159,7 +156,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-8359115687145470457
+--- !u!114 &-8058859177411952969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,45 +165,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Raceway/Bass
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/Crystals
   m_EditorClassIdentifier: 
-  Name: Bass
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 242898078
-    data2: 3676622552
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-8292338031963310100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Eyes To See It/Instruments
-  m_EditorClassIdentifier: 
-  Name: Instruments
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 1433345521
-    data2: 3218318724
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
+  Path: event:/OST/Crystals
+  Guid:
+    Data1: -1283238886
+    Data2: 1183609092
+    Data3: -1670521471
+    Data4: -1982814552
+  Banks:
+  - {fileID: -8057629444877641825}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 282226
 --- !u!114 &-8057629444877641825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,10 +198,10 @@ MonoBehaviour:
   Path: C:/Users/yatce/Documents/FMOD Studio/FMOD/DVDE/Build/Desktop/OST.bank
   Name: OST
   StudioPath: bank:/OST
-  lastModified: 638036069560053198
+  lastModified: 638037108044804082
   FileSizes:
   - Name: Desktop
-    Value: 34935904
+    Value: 65485664
   Exists: 1
 --- !u!114 &-7379755122644112480
 MonoBehaviour:
@@ -309,6 +285,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 115
+--- !u!114 &-6905373747861391473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Neon Lights Neon Dreams/Melody
+  m_EditorClassIdentifier: 
+  Name: Melody
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1422533973
+    data2: 1495782318
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-6893859554426019107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +387,102 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-6247841914418184796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Neon Lights Neon Dreams/Instruments
+  m_EditorClassIdentifier: 
+  Name: Instruments
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1433345521
+    data2: 3218318724
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-6108590820204864085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Neon Lights Neon Dreams/Bass
+  m_EditorClassIdentifier: 
+  Name: Bass
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 242898078
+    data2: 3676622552
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5990016857810791163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dreaming Out Loud/Bass
+  m_EditorClassIdentifier: 
+  Name: Bass
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 242898078
+    data2: 3676622552
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5858688831326853195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dreaming Out Loud/Melody
+  m_EditorClassIdentifier: 
+  Name: Melody
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1422533973
+    data2: 1495782318
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-5796795300601669689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +503,30 @@ MonoBehaviour:
   ID:
     data1: 3317081814
     data2: 283192292
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5720757638731637313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Eyes To See It/Drums
+  m_EditorClassIdentifier: 
+  Name: Drums
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 3243034278
+    data2: 2725456509
   Type: 0
   IsGlobal: 1
   Labels: []
@@ -466,6 +586,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 288
+--- !u!114 &-4133126092897151468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/U Know U Know/Drums
+  m_EditorClassIdentifier: 
+  Name: Drums
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 3243034278
+    data2: 2725456509
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-3490353648384715503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,6 +713,62 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-3069051581751900073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Eyes To See It/Bass
+  m_EditorClassIdentifier: 
+  Name: Bass
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 242898078
+    data2: 3676622552
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-2555753474280310885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/Raceway
+  m_EditorClassIdentifier: 
+  Path: event:/OST/Raceway
+  Guid:
+    Data1: 1423849517
+    Data2: 1156895989
+    Data3: -2066000991
+    Data4: 421201273
+  Banks:
+  - {fileID: -8057629444877641825}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6440224424825207574}
+  - {fileID: -8891656326756569071}
+  - {fileID: 6468980925783607257}
+  - {fileID: 1925513827797741800}
+  - {fileID: 4035242502738896402}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 219552
 --- !u!114 &-2503333964978998552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,33 +796,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 396
---- !u!114 &-2462609739083340624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/Dust
-  m_EditorClassIdentifier: 
-  Path: event:/OST/Dust
-  Guid:
-    Data1: 1466430378
-    Data2: 1164504079
-    Data3: 1501115013
-    Data4: 445375857
-  Banks:
-  - {fileID: -8057629444877641825}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 166582
 --- !u!114 &-2408003574228396831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,6 +816,30 @@ MonoBehaviour:
   ID:
     data1: 3317081814
     data2: 283192292
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1551581063161593117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dreaming Out Loud/Tempo
+  m_EditorClassIdentifier: 
+  Name: Tempo
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3828552285
+    data2: 232660883
   Type: 0
   IsGlobal: 1
   Labels: []
@@ -698,6 +895,38 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-706926180740669963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/Dreaming Out Loud
+  m_EditorClassIdentifier: 
+  Path: event:/OST/Dreaming Out Loud
+  Guid:
+    Data1: 1959911591
+    Data2: 1286437860
+    Data3: -859948108
+    Data4: -904241691
+  Banks:
+  - {fileID: -8057629444877641825}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1551581063161593117}
+  - {fileID: 4489357348738450236}
+  - {fileID: 6234952748068725715}
+  - {fileID: -5990016857810791163}
+  - {fileID: -5858688831326853195}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 192600
 --- !u!114 &-616472580386023195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,7 +954,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2128
---- !u!114 &-119445048822749730
+--- !u!114 &-310257036946441276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -734,24 +963,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/Crystals
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Eyes To See It/Instruments
   m_EditorClassIdentifier: 
-  Path: event:/OST/Crystals
-  Guid:
-    Data1: -1283238886
-    Data2: 1183609092
-    Data3: -1670521471
-    Data4: -1982814552
-  Banks:
-  - {fileID: -8057629444877641825}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 282226
+  Name: Instruments
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1433345521
+    data2: 3218318724
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,16 +1014,19 @@ MonoBehaviour:
   - {fileID: -2503333964978998552}
   - {fileID: -6923835551202584744}
   - {fileID: 3122616261201992276}
-  - {fileID: -119445048822749730}
-  - {fileID: 5919189193529565599}
-  - {fileID: -9148405751249440740}
-  - {fileID: 7050797866725646840}
-  - {fileID: -2462609739083340624}
-  - {fileID: -8841191592025242431}
   - {fileID: -7379755122644112480}
   - {fileID: -3490353648384715503}
   - {fileID: -4762838865789228776}
   - {fileID: -8484824112590995527}
+  - {fileID: -8058859177411952969}
+  - {fileID: 572673533363285275}
+  - {fileID: -2555753474280310885}
+  - {fileID: 4694790392656095733}
+  - {fileID: 8196159818835346522}
+  - {fileID: -706926180740669963}
+  - {fileID: 2013540739943177030}
+  - {fileID: -8766641959447156810}
+  - {fileID: 4011326019368832743}
   EditorParameters:
   - {fileID: -3176018069425034884}
   - {fileID: 771611904481976194}
@@ -809,8 +1038,40 @@ MonoBehaviour:
   - {fileID: 7584520308957910320}
   StringsBanks:
   - {fileID: 4002310730000593452}
-  cacheTime: 638036069560479778
+  cacheTime: 638037108045224918
   cacheVersion: 131593
+--- !u!114 &572673533363285275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/U Know U Know
+  m_EditorClassIdentifier: 
+  Path: event:/OST/U Know U Know
+  Guid:
+    Data1: -955248086
+    Data2: 1243025236
+    Data3: -1179174732
+    Data4: -147252895
+  Banks:
+  - {fileID: -8057629444877641825}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2274055273998916498}
+  - {fileID: 2225364960391096387}
+  - {fileID: 8233041056591213438}
+  - {fileID: -4133126092897151468}
+  - {fileID: 4027406139032513530}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 206376
 --- !u!114 &771611904481976194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,7 +1150,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 340
---- !u!114 &2778181036705742582
+--- !u!114 &1811828344916265008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -899,21 +1160,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Eyes To See It/Bass
+  m_Name: parameter:/Eyes To See It/Tempo
   m_EditorClassIdentifier: 
-  Name: Bass
+  Name: Tempo
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 1
+  Default: 0
   ID:
-    data1: 242898078
-    data2: 3676622552
+    data1: 3828552285
+    data2: 232660883
   Type: 0
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &3028410129933207446
+--- !u!114 &1925513827797741800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -923,7 +1184,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Eyes To See It/Drums
+  m_Name: parameter:/Raceway/Drums
   m_EditorClassIdentifier: 
   Name: Drums
   StudioPath: 
@@ -933,6 +1194,81 @@ MonoBehaviour:
   ID:
     data1: 3243034278
     data2: 2725456509
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &2013540739943177030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/Dust
+  m_EditorClassIdentifier: 
+  Path: event:/OST/Dust
+  Guid:
+    Data1: 1466430378
+    Data2: 1164504079
+    Data3: 1501115013
+    Data4: 445375857
+  Banks:
+  - {fileID: -8057629444877641825}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 166582
+--- !u!114 &2225364960391096387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/U Know U Know/Melody
+  m_EditorClassIdentifier: 
+  Name: Melody
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1422533973
+    data2: 1495782318
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &2274055273998916498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/U Know U Know/Bass
+  m_EditorClassIdentifier: 
+  Name: Bass
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 242898078
+    data2: 3676622552
   Type: 0
   IsGlobal: 1
   Labels: []
@@ -964,6 +1300,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 435
+--- !u!114 &3541726407593993709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Neon Lights Neon Dreams/Drums
+  m_EditorClassIdentifier: 
+  Name: Drums
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 3243034278
+    data2: 2725456509
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &3684874287299984163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1006,10 +1366,114 @@ MonoBehaviour:
   Path: C:/Users/yatce/Documents/FMOD Studio/FMOD/DVDE/Build/Desktop/SFX.strings.bank
   Name: SFX.strings
   StudioPath: bank:/SFX.strings
-  lastModified: 638036069560479778
+  lastModified: 638037108045224918
   FileSizes:
   - Name: Desktop
-    Value: 2394
+    Value: 2552
+  Exists: 1
+--- !u!114 &4011326019368832743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/Neon Lights Neon Dreams
+  m_EditorClassIdentifier: 
+  Path: event:/OST/Neon Lights Neon Dreams
+  Guid:
+    Data1: 47496177
+    Data2: 1117256696
+    Data3: -1439519857
+    Data4: 2073165771
+  Banks:
+  - {fileID: -8057629444877641825}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -6247841914418184796}
+  - {fileID: 3541726407593993709}
+  - {fileID: -8495916014110949894}
+  - {fileID: -6108590820204864085}
+  - {fileID: -6905373747861391473}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 178200
+--- !u!114 &4027406139032513530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/U Know U Know/Instruments
+  m_EditorClassIdentifier: 
+  Name: Instruments
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1433345521
+    data2: 3218318724
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &4035242502738896402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Raceway/Instruments
+  m_EditorClassIdentifier: 
+  Name: Instruments
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1433345521
+    data2: 3218318724
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &4489357348738450236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dreaming Out Loud/Drums
+  m_EditorClassIdentifier: 
+  Name: Drums
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 3243034278
+    data2: 2725456509
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &4694639831269277411
 MonoBehaviour:
@@ -1038,6 +1502,57 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 454
+--- !u!114 &4694790392656095733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/Morning
+  m_EditorClassIdentifier: 
+  Path: event:/OST/Morning
+  Guid:
+    Data1: 1520973403
+    Data2: 1210995982
+    Data3: -488815992
+    Data4: 144244649
+  Banks:
+  - {fileID: -8057629444877641825}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 148271
+--- !u!114 &4767498765319228986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Eyes To See It/Melody
+  m_EditorClassIdentifier: 
+  Name: Melody
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1422533973
+    data2: 1495782318
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &5225798037292945161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,30 +1580,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 321
---- !u!114 &5293853986156197989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Raceway/Instruments
-  m_EditorClassIdentifier: 
-  Name: Instruments
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 1433345521
-    data2: 3218318724
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
 --- !u!114 &5618206310502451795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1140,38 +1631,6 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &5919189193529565599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/Raceway
-  m_EditorClassIdentifier: 
-  Path: event:/OST/Raceway
-  Guid:
-    Data1: 1423849517
-    Data2: 1156895989
-    Data3: -2066000991
-    Data4: 421201273
-  Banks:
-  - {fileID: -8057629444877641825}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -8359115687145470457}
-  - {fileID: 8396271439609678126}
-  - {fileID: -8890145262263824785}
-  - {fileID: 8043888879773275010}
-  - {fileID: 5293853986156197989}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 219552
 --- !u!114 &6000340376366050333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1199,7 +1658,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 412
---- !u!114 &7050797866725646840
+--- !u!114 &6234952748068725715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1208,24 +1667,69 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/Hydrogen
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dreaming Out Loud/Instruments
   m_EditorClassIdentifier: 
-  Path: event:/OST/Hydrogen
-  Guid:
-    Data1: -1233602650
-    Data2: 1138897228
-    Data3: 1798353030
-    Data4: 1683701861
-  Banks:
-  - {fileID: -8057629444877641825}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 277629
+  Name: Instruments
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1433345521
+    data2: 3218318724
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6440224424825207574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Raceway/Bass
+  m_EditorClassIdentifier: 
+  Name: Bass
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 242898078
+    data2: 3676622552
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6468980925783607257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Raceway/Tempo
+  m_EditorClassIdentifier: 
+  Name: Tempo
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3828552285
+    data2: 232660883
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &7106193349695810273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,12 +1772,12 @@ MonoBehaviour:
   Path: C:/Users/yatce/Documents/FMOD Studio/FMOD/DVDE/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638036069560454744
+  lastModified: 638037108045204889
   FileSizes:
   - Name: Desktop
     Value: 544992
   Exists: 1
---- !u!114 &7964485429668457656
+--- !u!114 &8196159818835346522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1282,22 +1786,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Eyes To See It/Melody
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/Hydrogen
   m_EditorClassIdentifier: 
-  Name: Melody
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 1422533973
-    data2: 1495782318
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &8043888879773275010
+  Path: event:/OST/Hydrogen
+  Guid:
+    Data1: -1233602650
+    Data2: 1138897228
+    Data3: 1798353030
+    Data4: 1683701861
+  Banks:
+  - {fileID: -8057629444877641825}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 277629
+--- !u!114 &8233041056591213438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1307,31 +1814,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Raceway/Drums
-  m_EditorClassIdentifier: 
-  Name: Drums
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 3243034278
-    data2: 2725456509
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &8084795535430327369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Eyes To See It/Tempo
+  m_Name: parameter:/U Know U Know/Tempo
   m_EditorClassIdentifier: 
   Name: Tempo
   StudioPath: 
@@ -1341,30 +1824,6 @@ MonoBehaviour:
   ID:
     data1: 3828552285
     data2: 232660883
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &8396271439609678126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Raceway/Melody
-  m_EditorClassIdentifier: 
-  Name: Melody
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 1422533973
-    data2: 1495782318
   Type: 0
   IsGlobal: 1
   Labels: []

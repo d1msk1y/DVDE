@@ -20,6 +20,7 @@ public class ScoreManager : MonoBehaviour
     private int _currentLevel;
 
     [Header("Score")]
+    [SerializeField] private float _scoreMultiplier;
     public int receivedScore;
     public int maxReceivedScore;
     public int totalScore;
@@ -60,6 +61,11 @@ public class ScoreManager : MonoBehaviour
             onCoinsChange?.Invoke();
         }
     }
+    public int ReceivedScore {
+        get => receivedScore;
+
+        private set => receivedScore = (int)(value*_scoreMultiplier);
+    }
 
     [Header("Player stats")]
     public int enemiesKilled;
@@ -67,6 +73,7 @@ public class ScoreManager : MonoBehaviour
     private void Awake()
     {
         GameManager.instance.OnRestart += SetInitialLevel;
+        GameManager.instance.OnGameOver += ResetScoreModifier;
         GetPlayerKeys();
         GameManager.instance.OnRestart += GetPlayerKeys;
         SetInitialLevel();
@@ -107,7 +114,7 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int score)
     {
-        receivedScore += score * _currentScoreMultiplier;
+        ReceivedScore += score * _currentScoreMultiplier;
     }
 
     #region Combo
@@ -141,7 +148,7 @@ public class ScoreManager : MonoBehaviour
             timer -= 0.1f;
 
             if (timer <= 0 && txtToDestroy != null)
-                ResetScoreModifier(_scoreMultiplierTxt.transform.parent.gameObject);
+                ResetScoreModifier();
             if (timer < startShiverOn && txtToDestroy != null)
             {
                 if (isShaved != true)
@@ -174,8 +181,8 @@ public class ScoreManager : MonoBehaviour
 
         _scoreMultiplierTxt.text = "X" + _currentScoreMultiplier;
     }
-    private void ResetScoreModifier(GameObject todestroy)
-    {
+    private void ResetScoreModifier() {
+        GameObject todestroy = _scoreMultiplierTxt.transform.parent.gameObject;
         _currentScoreMultiplier = 1;
         _randomPos = Vector3.zero;
         if (todestroy != null)
@@ -246,18 +253,19 @@ public class ScoreManager : MonoBehaviour
 
     public void SummarizeScore()
     {
+        
 
-        if (receivedScore > maxReceivedScore)
-            maxReceivedScore = receivedScore;
+        if (ReceivedScore > maxReceivedScore)
+            maxReceivedScore = ReceivedScore;
 
-        if (receivedScore > 0)
+        if (ReceivedScore > 0)
             lastScore = totalScore;
 
-        totalScore += receivedScore;
+        totalScore += ReceivedScore;
         GameManager.instance.statsManager.totalEnemiesKilled += enemiesKilled;
 
         GameManager.instance.UiManager.coinsReceivedTxt.text = "COINS RECEIVED: 0";
-        receivedCoins = (receivedScore / 10) * 3;
+        receivedCoins = (ReceivedScore / 10) * 3;
         GameManager.instance.statsManager.earnedCoins += receivedCoins;
         StartCoroutine(countCoins());
 
@@ -308,7 +316,7 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateGameOverTxt()
     {
-        GameManager.instance.UiManager.receivedScoreGameOverTxt.text = "SCORE: " + receivedScore;
+        GameManager.instance.UiManager.receivedScoreGameOverTxt.text = "SCORE: " + ReceivedScore;
         GameManager.instance.UiManager.maxReceivedScoreGameOverTxt.text = "HIGHSCORE: " + maxReceivedScore;
         GameManager.instance.UiManager.totalScoreGameOverTxt.text = "TOTAL SCORE: " + totalScore;
         GameManager.instance.UiManager.enemiesKilledGameOverTxt.text = "ENEMIES KILLED: " + enemiesKilled;
@@ -317,7 +325,7 @@ public class ScoreManager : MonoBehaviour
     public void ResetScore()
     {
         enemiesKilled = 0;
-        receivedScore = 0;
+        ReceivedScore = 0;
         receivedCoins = 0;
     }
 }

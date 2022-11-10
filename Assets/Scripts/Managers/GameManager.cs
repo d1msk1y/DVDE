@@ -60,19 +60,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.Q))
             soundManager.SwitchLowPassFrequency();
 
         if (Input.GetKeyDown(KeyCode.X)) {
             PlayerPrefs.DeleteAll();
         }
-        if (Input.GetKeyDown(KeyCode.Y)) {
-            StartCoroutine(InterpolatePostProcess(standart, rage));
-        }
-        if (Input.GetKeyDown(KeyCode.T)) {
-            StartCoroutine(InterpolatePostProcess(rage, standart));
-        }
-
+#endif
     }
 
     private void Start() {

@@ -77,7 +77,6 @@ public class LvlManager : MonoBehaviour
         GameManager.instance.aStarManager.AStar.Scan();
         GameManager.instance.isCurrentBattle = true;
         GameManager.instance.isGameStarted = true;
-
     }
 
     private void SpawnNewLevel()
@@ -93,6 +92,7 @@ public class LvlManager : MonoBehaviour
         _newLvl.GetComponent<LvlController>().currentLevelStage = currentLevelStage;
         GameManager.instance.aStarManager.UpdateAstarPosition(new Vector3(_newLvl.transform.position.x, _newLvl.transform.position.y, 0));
         GameManager.instance.isGameStarted = true;
+        GameManager.instance.ScanAstar();
     }
 
     private void SetLevelComplexity()

@@ -110,7 +110,7 @@ public class UiManager : MonoBehaviour
 
     public void UpdateScoreStats()
     {
-        receivedScoreGameOverTxt.text = "Score: " + GameManager.instance.scoreManager.receivedScore;
+        receivedScoreGameOverTxt.text = "Score: " + GameManager.instance.scoreManager.ReceivedScore;
         maxReceivedScoreGameOverTxt.text = "HighScore " + GameManager.instance.scoreManager.maxReceivedScore;
     }
 

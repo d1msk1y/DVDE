@@ -1,7 +1,4 @@
 using FMODUnity;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public enum WeaponType
@@ -42,4 +39,26 @@ public class Gun : MonoBehaviour
     public int damage;
     public float pushForce;
     public int ammos;
+
+    public Gun(Gun gunProperties) {
+        gunIndex = gunProperties.gunIndex;
+        weaponType = gunProperties.weaponType;
+        shotSound = gunProperties.shotSound;
+        noAmmoSound = gunProperties.noAmmoSound;
+        gunPickUpSound = gunProperties.gunPickUpSound;
+        firePos = gunProperties.firePos;
+        gun2Throw = gunProperties.gun2Throw;
+        gun2PickUp = gunProperties.gun2PickUp;
+        bullet = gunProperties.bullet;
+        bulletColorOverride = gunProperties.bulletColorOverride;
+        gunName = gunProperties.gunName;
+        recoilForce = gunProperties.recoilForce;
+        bulletSpeed = gunProperties.bulletSpeed;
+        rechargeSpeed = gunProperties.rechargeSpeed;
+        bulletLifetime = gunProperties.bulletLifetime;
+        shakeForce = gunProperties.shakeForce;
+        damage = gunProperties.damage;
+        pushForce = gunProperties.pushForce;
+        ammos = gunProperties.ammos;
+    }
 }
