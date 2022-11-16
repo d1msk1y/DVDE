@@ -98,8 +98,11 @@ public class PickupAble : Interactable
         if (IsUnlocked == 0 && itemType == PickupType.Buyable)
             return;
         base.Update();
-        if (Input.GetKeyDown(KeyCode.E) && distance < interactRadius)
-        {
+        CheckPickUpInput();
+    }
+    internal virtual void CheckPickUpInput() {
+
+        if (Input.GetKeyDown(KeyCode.E) && distance < interactRadius) {
             PickUp();
         }
     }

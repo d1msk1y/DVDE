@@ -161,12 +161,12 @@ public class Bullet : MonoBehaviour
         curDamage.GetComponentInChildren<Text>().text = "- " + damage;//Setting a damage info to instantiated damage stats object.
         curDamage.GetComponentInChildren<Text>().color = parent.GetComponent<SpriteRenderer>().color;//Setting a damage info to instantiated damage stats object.
 
-        GameObject critTXT = null;
-        if(critChance == 1)
-            critTXT = Instantiate(criticalDamageTxt, transform.position, Quaternion.identity, GameManager.instance.UiManager.mainUiCanvas.transform);//Critical damage instantiate
+        // GameObject critTXT = null;
+        // if(critChance == 1)
+            // critTXT = Instantiate(criticalDamageTxt, transform.position, Quaternion.identity, GameManager.instance.UiManager.mainUiCanvas.transform);//Critical damage instantiate
+        // Destroy(critTXT, 1.5f);
 
         Destroy(curDamage, 1.5f);
-        Destroy(critTXT, 1.5f);
     }
 
 }

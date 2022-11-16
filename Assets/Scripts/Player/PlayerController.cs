@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
         _startColor = GetComponent<SpriteRenderer>().color;
     }
 
-    private void LateUpdate() {
+    private void Update() {
         if (!isAlive)
             return;
         

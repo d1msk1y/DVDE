@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,8 +32,14 @@ public class UiManager : MonoBehaviour
     public Text coinsReceivedTxt;
     public PlayerLevelBar playerLevelBarGameOver;
 
+    public static UiManager instance;
+
     [Header("Shop UI")]
     public Text[] coinsTXTs;
+
+    private void Awake() {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -91,10 +98,8 @@ public class UiManager : MonoBehaviour
         _ammoTxt.text = "AMMO: " + currentAmmo + "/" + maxAmmo;
     }
 
-    public void SetGunName(string name)
-    {
-        _gunNameTxt.text = name;
-    }
+    public void SetPtsCount(int pts) => _gunNameTxt.text =  "PTS: " + pts;
+
     #endregion
 
     #region Controlls

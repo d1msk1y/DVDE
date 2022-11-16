@@ -1,5 +1,4 @@
-﻿using FMOD;
-using FMODUnity;
+﻿using FMODUnity;
 using System.Collections;
 using UnityEngine;
 public class RigidBodyDash : MonoBehaviour, IAbility {

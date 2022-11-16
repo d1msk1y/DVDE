@@ -64,7 +64,10 @@ public class ScoreManager : MonoBehaviour
     public int ReceivedScore {
         get => receivedScore;
 
-        private set => receivedScore = (int)(value*_scoreMultiplier);
+        private set {
+            receivedScore = (int)(value*_scoreMultiplier);
+            UiManager.instance.SetPtsCount(receivedScore);
+        }
     }
 
     [Header("Player stats")]

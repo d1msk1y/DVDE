@@ -38,6 +38,16 @@ public class GunPickUp : PickupAble
         GameManager.instance.UiManager.pickUpButton.gameObject.SetActive(false);
     }
 
+    internal override void CheckPickUpInput() {
+        if (itemType == PickupType.Buyable) {
+            base.CheckPickUpInput();
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse1) && distance < interactRadius) {
+            PickUp();
+        }
+    }
+
     protected override void Buy()
     {
         base.Buy();

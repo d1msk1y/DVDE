@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -27,7 +26,6 @@ public class DiscoReactive : MonoBehaviour
             if(timer > updateRate && GameManager.instance.isCurrentBattle) {
                 var tempVolume = GetLevel();
                 tempVolume *= volumeDivider;
-
                 tempVolume = Mathf.Clamp(tempVolume, sizeBounds.x, sizeBounds.y);
 
                 if(tempVolume > _volume) {
@@ -47,7 +45,7 @@ public class DiscoReactive : MonoBehaviour
     }
 
     private void Update() {
-        if (!GameManager.instance.isCurrentBattle && CircleSizeVolume != 0) {
+        if (!GameManager.instance.isCurrentBattle && CircleSizeVolume > 0) {
             SizeFalloff();
         }
     }

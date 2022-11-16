@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,9 +11,8 @@ public class HealthBar : MonoBehaviour
 
     public EntityHealth entityHealth;
 
-    private bool isShieldBarActive = false;
-
-    private bool isShieldBarPopDowned = false;
+    private bool _isShieldBarActive;
+    private bool _isShieldBarPopDowned;
 
     private void OnEnable()
     {
@@ -24,10 +22,10 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
-        float shieldBarAmount = (float)entityHealth.shield / entityHealth.maxShield;
+        var shieldBarAmount = (float)entityHealth.shield / entityHealth.maxShield;
         shieldBarImg.fillAmount = Mathf.Lerp(shieldBarImg.fillAmount, shieldBarAmount, 0.3f);
 
-        float healthBarAmount = (float)entityHealth.Health / entityHealth.maxHealth;
+        var healthBarAmount = (float)entityHealth.Health / entityHealth.maxHealth;
         healthBarImg.fillAmount = Mathf.Lerp(healthBarImg.fillAmount, healthBarAmount, 0.3f);
     }
 
@@ -39,7 +37,7 @@ public class HealthBar : MonoBehaviour
             StartCoroutine(ShieldBarPopDown());
         }
 
-        if (entityHealth.shield != entityHealth.startShield || entityHealth.shield > 0 && isShieldBarPopDowned)
+        if (entityHealth.shield != entityHealth.startShield || entityHealth.shield > 0 && _isShieldBarPopDowned)
         {
             if (entityHealth.shield <= 0)
                 return;
@@ -49,10 +47,10 @@ public class HealthBar : MonoBehaviour
 
     private IEnumerator ShieldBarPopDown()
     {
-        isShieldBarPopDowned = true;
-        if (!isShieldBarActive && !isShieldBarPopDowned)
+        _isShieldBarPopDowned = true;
+        if (!_isShieldBarActive && !_isShieldBarPopDowned)
             yield return null;
-        isShieldBarActive = false;
+        _isShieldBarActive = false;
 #pragma warning disable CS0618 // Type or member is obsolete
         if (shieldBar.gameObject.active)
 #pragma warning restore CS0618 // Type or member is obsolete
@@ -67,11 +65,11 @@ public class HealthBar : MonoBehaviour
 
     private void ShieldBarPopUp()
     {
-        isShieldBarPopDowned = false;
-        if (isShieldBarActive)
+        _isShieldBarPopDowned = false;
+        if (_isShieldBarActive)
             return;
         shieldBar.SetActive(true);
-        isShieldBarActive = true;
+        _isShieldBarActive = true;
         shieldBarAnimator.Play("ShieldBarPopUp");
     }
 }

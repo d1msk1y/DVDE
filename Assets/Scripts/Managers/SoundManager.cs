@@ -20,6 +20,7 @@ public class SoundManager : MonoBehaviour {
 
     [Header("Other")]
     public EventReference hitWall;
+    public EventReference pickUp;
     public EventReference actorDeath;
     public EventReference select;
 

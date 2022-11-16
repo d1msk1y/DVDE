@@ -95,8 +95,6 @@ public class LvlController : MonoBehaviour
         {
             StartCoroutine(l_Door.CloseTheDoor());//Left door close.
         }
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

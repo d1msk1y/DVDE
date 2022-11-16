@@ -198,7 +198,7 @@ MonoBehaviour:
   Path: C:/Users/yatce/Documents/FMOD Studio/FMOD/DVDE/Build/Desktop/OST.bank
   Name: OST
   StudioPath: bank:/OST
-  lastModified: 638037108044804082
+  lastModified: 638041451471884473
   FileSizes:
   - Name: Desktop
     Value: 65485664
@@ -1038,7 +1038,7 @@ MonoBehaviour:
   - {fileID: 7584520308957910320}
   StringsBanks:
   - {fileID: 4002310730000593452}
-  cacheTime: 638037108045224918
+  cacheTime: 638041451472305248
   cacheVersion: 131593
 --- !u!114 &572673533363285275
 MonoBehaviour:
@@ -1366,7 +1366,7 @@ MonoBehaviour:
   Path: C:/Users/yatce/Documents/FMOD Studio/FMOD/DVDE/Build/Desktop/SFX.strings.bank
   Name: SFX.strings
   StudioPath: bank:/SFX.strings
-  lastModified: 638037108045224918
+  lastModified: 638041451472305248
   FileSizes:
   - Name: Desktop
     Value: 2552
@@ -1772,7 +1772,7 @@ MonoBehaviour:
   Path: C:/Users/yatce/Documents/FMOD Studio/FMOD/DVDE/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638037108045204889
+  lastModified: 638041451472285227
   FileSizes:
   - Name: Desktop
     Value: 544992

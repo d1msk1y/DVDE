@@ -14,10 +14,7 @@ public abstract class Detonator : MonoBehaviour
 
 	internal EntityScanner entityScanner;
 
-	internal virtual void OnEnable()
-	{
-		entityScanner = new EntityScanner(damageRadius, _vulnerable, transform);
-	}
+	internal virtual void OnEnable() => entityScanner = new EntityScanner(damageRadius, _vulnerable, transform);
 
 	public virtual void Detonate()
 	{

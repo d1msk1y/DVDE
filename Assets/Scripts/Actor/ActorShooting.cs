@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -176,7 +177,6 @@ public class ActorShooting : MonoBehaviour
             extraAmmosPercent = PlayerPrefs.GetFloat(GameManager.instance.dataManager.specsKeys[3]);
         extraAmmos = (int)(gunScript.ammos * (extraAmmosPercent / 100f));
         SetGunProperties();
-        GameManager.instance.UiManager.SetGunName(gun2Give.gunName);
         GameManager.instance.UiManager.SetAmmoStats(ammos, gunScript.ammos);
     }
 
@@ -202,6 +202,7 @@ public class ActorShooting : MonoBehaviour
         }
         instantiate = Instantiate(gunScript.gun2PickUp.gameObject, _firePos.position, Quaternion.identity);
         var gunProps = Instantiate(gunScript, Vector3.up * 1000, quaternion.identity, instantiate.transform);
+        RuntimeManager.PlayOneShot(SoundManager.instance.pickUp);
         gunProps.ammos = ammos;
         instantiate.transform.rotation = new Quaternion(0, 0, 0, 0);
         instantiate.GetComponent<GunPickUp>().gunProperties = gunProps;

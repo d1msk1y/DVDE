@@ -1353,7 +1353,7 @@ Transform:
   m_Children:
   - {fileID: 238028192}
   m_Father: {fileID: 609587729}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &44104388
 MonoBehaviour:
@@ -1384,7 +1384,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.776, y: 1}
+    m_SensorSize: {x: 1.7772278, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14677,7 +14677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialLevel: 0
-  _scoreMultiplier: 0.5
+  _scoreMultiplier: 1.2
   receivedScore: 0
   maxReceivedScore: 0
   totalScore: 0
@@ -24071,6 +24071,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1452103490}
   - {fileID: 44104387}
   m_Father: {fileID: 956137343}
   m_RootOrder: 0
@@ -26710,7 +26711,7 @@ GameObject:
   - component: {fileID: 750439288}
   - component: {fileID: 750439287}
   m_Layer: 5
-  m_Name: Gun Name
+  m_Name: PTS Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26725,7 +26726,7 @@ RectTransform:
   m_GameObject: {fileID: 750439285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.53435, y: 0.53435, z: 0.53435}
+  m_LocalScale: {x: 0.29819936, y: 0.29819936, z: 0.29819936}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1536133910}
@@ -26733,8 +26734,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 147, y: 173}
-  m_SizeDelta: {x: 478.72, y: 82.61}
+  m_AnchoredPosition: {x: 210, y: 168}
+  m_SizeDelta: {x: 478.72, y: 222.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &750439287
 MonoBehaviour:
@@ -26758,18 +26759,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7eed14f8c622048439883c9d035aa244, type: 3}
-    m_FontSize: 48
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 68
+    m_MinSize: 8
+    m_MaxSize: 80
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SHOTGUN
+  m_Text: 'PTS: 0'
 --- !u!222 &750439288
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34619,7 +34620,7 @@ Transform:
   - {fileID: 1174619735}
   - {fileID: 1662213071}
   m_Father: {fileID: 956137343}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &879363075
 GameObject:
@@ -41209,7 +41210,6 @@ Transform:
   - {fileID: 609587729}
   - {fileID: 1881444897}
   - {fileID: 519420032}
-  - {fileID: 1452103490}
   - {fileID: 1366092383}
   - {fileID: 876886711}
   m_Father: {fileID: 0}
@@ -49238,7 +49238,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 956137343}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1368391412
 PrefabInstance:
@@ -51090,8 +51090,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 956137343}
-  m_RootOrder: 3
+  m_Father: {fileID: 609587729}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1452103491
 MonoBehaviour:
@@ -52917,7 +52917,7 @@ MonoBehaviour:
       Data3: -1179174732
       Data4: -147252895
     Path: event:/OST/U Know U Know
-  _lowPasFilterCutOffSpeed: 0.2
+  _lowPasFilterCutOffSpeed: 0.1
   _isLowPassFilterCutOffDowned: 1
   hitWall:
     Guid:
@@ -52926,6 +52926,13 @@ MonoBehaviour:
       Data3: -881528423
       Data4: 1202947475
     Path: event:/SFX/Actor/actor_bounce
+  pickUp:
+    Guid:
+      Data1: -84135313
+      Data2: 1237085732
+      Data3: 1463286924
+      Data4: -392363887
+    Path: event:/SFX/Guns/gun_pickup
   actorDeath:
     Guid:
       Data1: -1434610402
@@ -53786,7 +53793,7 @@ RectTransform:
   m_GameObject: {fileID: 1586928926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.53435, y: 0.53435, z: 0.53435}
+  m_LocalScale: {x: 0.29819936, y: 0.29819936, z: 0.29819936}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1536133910}
@@ -53794,8 +53801,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -142, y: 173}
-  m_SizeDelta: {x: 482.34, y: 82.61}
+  m_AnchoredPosition: {x: -210, y: 168}
+  m_SizeDelta: {x: 482.34, y: 222.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1586928928
 MonoBehaviour:
@@ -53819,11 +53826,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7eed14f8c622048439883c9d035aa244, type: 3}
-    m_FontSize: 48
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 68
+    m_MinSize: 8
+    m_MaxSize: 80
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -63158,7 +63165,7 @@ MonoBehaviour:
   ammos: 10
   extraAmmos: 10
   extraAmmosPercent: 10
-  _damageOverride: 1.5
+  _damageOverride: 1.2
   damageModifier: 10
   aimLength: 10
   shotParticle: {fileID: 5536939204925810771, guid: 42cadaabb76edda4d9ac64005fae2090, type: 3}

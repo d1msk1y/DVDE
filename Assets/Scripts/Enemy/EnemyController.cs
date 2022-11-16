@@ -160,8 +160,7 @@ public class EnemyController : MonoBehaviour
         GameManager.instance.scoreManager.AddComboPoint(1);
 
         GameManager.instance.scoreManager.CheckDoubleKill();
-
-        // StartCoroutine(RemoveEnemyFromList());
+        
         GameManager.instance.lvlManager.lvlController.CurrentEnemiesInAction.Remove(gameObject);
         SoundManager.PlayOneShot(SoundManager.instance.actorDeath);
         Destroy(gameObject);
