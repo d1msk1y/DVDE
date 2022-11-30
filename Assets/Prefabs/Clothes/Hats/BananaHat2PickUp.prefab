@@ -57,11 +57,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 394fb5b582a09704b8e21ea57172e62e, type: 3}
   defaultSprite: {fileID: 21300000, guid: 9d788f26f089f864f8d8047f5f81f5e7, type: 3}
   _lvlToUnlock: 0
+  _isUnlocked: 0
   price: 5000
   BoughtPrefsKey: Is bought Banan hat
   isBought: 0
   spriteRenderer: {fileID: 0}
-  itemCanvas: {fileID: 6154623135432961523, guid: 6c8ff7ded091b084bb277e3ca8990cb9, type: 3}
+  itemCanvas: {fileID: 0}
+  itemCanvasPF: {fileID: 0}
   clothIndex: 5
   clothType: 0
   clothItem: {fileID: 6166282527787218738, guid: d1d6a0a0331688e4a81895514aab2817, type: 3}

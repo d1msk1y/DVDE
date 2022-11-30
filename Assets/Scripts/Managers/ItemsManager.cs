@@ -35,27 +35,7 @@ public class ItemsManager : MonoBehaviour
     {
         purchasedWeapons = checkPurchasedGuns();
     }
-    /*
-        private void RandomAOrB()
-        {
-            int random = Random.Range(0, 2);
-            if(random == 1)
-            {
 
-            }
-           PrintA();
-        }
-
-        private void PrintA()
-        {
-            Debug.Log("A");
-        }
-
-        private void PrintB()
-        {
-            Debug.Log("B");
-        }*/
-    
     public List<Gun> checkPurchasedGuns()
     {
         List<Gun> purchasedGunsCalc = new List<Gun>();

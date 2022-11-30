@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3309900389754423625}
   - component: {fileID: 4062047058757812056}
-  - component: {fileID: 7678850204675652233}
+  - component: {fileID: 1597630049869579393}
   m_Layer: 5
   m_Name: Lvl2Unlock
   m_TagString: Untagged
@@ -105,7 +105,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8970380289851672130}
   m_CullTransparentMesh: 1
---- !u!114 &7678850204675652233
+--- !u!114 &1597630049869579393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

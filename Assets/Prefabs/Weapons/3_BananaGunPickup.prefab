@@ -143,11 +143,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: a622bf73404f05a46b391ec5d4ec9fd8, type: 3}
   defaultSprite: {fileID: 21300000, guid: 1ea08d0e56dd7094f99da71b89217d88, type: 3}
   _lvlToUnlock: 3
+  _isUnlocked: 0
   price: 8000
   BoughtPrefsKey: IsBoughtBananaGun
   isBought: 0
   spriteRenderer: {fileID: 0}
-  itemCanvas: {fileID: 6154623135432961523, guid: 6c8ff7ded091b084bb277e3ca8990cb9, type: 3}
+  itemCanvas: {fileID: 0}
+  itemCanvasPF: {fileID: 6154623135432961523, guid: 6c8ff7ded091b084bb277e3ca8990cb9, type: 3}
   speech: 'BANANA GUN
 
     AYO BANANA? MONKE GOES YUMMY!'

@@ -57,11 +57,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: 5a729e1796a07774fba939a87b32d50f, type: 3}
   defaultSprite: {fileID: 21300000, guid: bcfa9f11896ba9c4faf3402502dc49a5, type: 3}
   _lvlToUnlock: 0
+  _isUnlocked: 0
   price: 1000
   BoughtPrefsKey: Is bought Disco Glasses
   isBought: 0
   spriteRenderer: {fileID: 0}
-  itemCanvas: {fileID: 6154623135432961523, guid: 6c8ff7ded091b084bb277e3ca8990cb9, type: 3}
+  itemCanvas: {fileID: 0}
+  itemCanvasPF: {fileID: 0}
   clothIndex: 4
   clothType: 1
   clothItem: {fileID: 8001669408123992797, guid: 9bf6da0cdf2918e43b3cff2dc69e77aa, type: 3}
@@ -138,12 +140,12 @@ SpriteRenderer:
   m_SortingLayerID: 43806555
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bcfa9f11896ba9c4faf3402502dc49a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f732fa53d9be354cb7120c94e8f0cb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7, y: 0.75}
+  m_Size: {x: 0.38, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

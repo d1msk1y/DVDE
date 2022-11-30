@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3088816420511200906
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _text
+      value: 
+      objectReference: {fileID: 1718583578265672553}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.data[0]
+      value: This is DVDE HUB. A place you are apparently going to explore after
+        this dialogue.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.data[1]
+      value: Welcome to DVDE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.data[2]
+      value: Your mission is to clear all those rooms.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.data[3]
+      value: I mean, you're actually aren't able to clean all of them, cuz they're
+        procedurally generated, there is no way u actually do that.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.data[4]
+      value: And yeah. Check out some stuff in the shop, there might be something
+        interesting.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.data[0]._text
+      value: This is DVDE HUB. A place you apparenly going to skip
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.data[1]._text
+      value: Here and there u can upgrade and... why am I saying this to you...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.data[2]._text
+      value: Nevermind, just go end explore it by yourself
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.data[0].isSkipAllowed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.data[1].isSkipAllowed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.data[2].isSkipAllowed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 855.6499
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 477.729
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731818, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_Name
+      value: HUB
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731818, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+--- !u!114 &1718583578265672553 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4396652896820588003, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+  m_PrefabInstance: {fileID: 3088816420511200906}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

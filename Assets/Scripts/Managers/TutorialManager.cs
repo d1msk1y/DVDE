@@ -1,61 +1,72 @@
 ﻿using System.Collections;
 using UnityEngine;
 public class TutorialManager : MonoBehaviour {
-	[SerializeField] private GameObject[] _popUps;
-	private int _popUpIndex;
-	private int PopUpIndex {
-		get => _popUpIndex;
-		set {
-			_popUpIndex = value;
-			UpdatePopUps();
+	[SerializeField] private Dialogue _dialogue;
+
+	private int PopUpIndex => _dialogue.CurrentMessageIndex;
+	private bool _isSwitching;
+	private bool _isStarted;
+
+	private void NextMessage() => _dialogue.SkipMessage();
+
+	public void StartTutorial() {
+		if (GameManager.instance.IsFirstTime == 0) {
+			return;
 		}
+		_isStarted = true;
 	}
-
-	private void UpdatePopUps() {
-		for (var i = 0; i < _popUps.Length; i++) {
-			_popUps[i].SetActive(i == _popUpIndex);
+	private void Update() {
+		if (_isSwitching || !_isStarted) {
+			return;
 		}
+		CheckMovementInput();
+		CheckPickUpInput();
+		CheckShootingInput();
+		CheckDropInput();
 	}
 
-	private void Update() => CheckIndex();
-
-	private void CheckIndex() {
-		//WASD
-		StartCoroutine(CheckMovementInput());
-		//Pickup gun
-		StartCoroutine(CheckPickUpInput());
-		//Aim shoot
-		StartCoroutine(CheckShootingInput());
-		//Drop gun
-		StartCoroutine(CheckDropInput());
-		//Space - Dash
+	private void NextStep() {
+		if (_isSwitching) {
+			return;
+		}
+		StartCoroutine(DelaySwitching());
+		NextMessage();
 	}
-	private IEnumerator CheckMovementInput() {
+
+	private IEnumerator DelaySwitching() {
+		_isSwitching = true;
+		Debug.Log("Switching");
+		yield return new WaitForSeconds(1f);
+		_isSwitching = false;
+		StartTutorial();
+	}
+
+	#region Step Checks
+	
+	private void CheckMovementInput() {
 		var input = Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0;
-		if (input || PopUpIndex != 0) yield break;
-		yield return new WaitForSeconds(0.5f);
-		PopUpIndex++;
+		if (input || PopUpIndex != 0) return;
+		NextStep();
 	}
 
 	//Player must have no gun before!
-	private IEnumerator CheckPickUpInput() {
-		var input = Input.GetKeyDown(KeyCode.Mouse0) || PlayerController.instance.shootingScript.gunScript == null;
-		if (!input || PopUpIndex != 1) yield break;
-		yield return new WaitForSeconds(0.5f);
-		PopUpIndex++;
+	private void CheckPickUpInput() {
+		var input = Input.GetKeyDown(KeyCode.Mouse1) || PlayerController.instance.shootingScript.gunScript == null;
+		if (!input || PopUpIndex != 1) return;
+		NextStep();
 	}
 
-	private IEnumerator CheckShootingInput() {
+	private void CheckShootingInput() {
 		var input = Input.GetAxis("Fire1") > 0;
-		if(!input || _popUpIndex != 2) yield break;
-		yield return new WaitForSeconds(0.5f);
-		PopUpIndex++;
+		if(!input || PopUpIndex != 2) return;
+		NextStep();
 	}
 
-	private IEnumerator CheckDropInput() {
+	private void CheckDropInput() {
 		var input = Input.GetKeyDown(KeyCode.Mouse1);
-		if (!input || _popUpIndex != 3) yield break;
-		yield return new WaitForSeconds(0.5f);
-		PopUpIndex++;
+		if (!input || PopUpIndex != 3) return;
+		NextStep();
 	}
+
+	#endregion
 }

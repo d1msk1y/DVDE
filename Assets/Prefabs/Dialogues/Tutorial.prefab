@@ -1,0 +1,258 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5016766067188148501
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _text
+      value: 
+      objectReference: {fileID: 8690591220471514358}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _skipWithSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrasess.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.data[0]
+      value: To move use WASD.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.data[1]
+      value: Press RMB to pick up the gun.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.data[2]
+      value: Use LMB to shoot.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.data[3]
+      value: To drop the gun use RMB again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.data[4]
+      value: You're free to go. Now let me introduce you to HUB
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _messages.Array.data[5]
+      value: You're free to go. Now let me introduce you to HUB
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.data[0]._text
+      value: Can you move with WASD?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.data[1]._text
+      value: Try to pick up this gun with RMB.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.data[2]._text
+      value: Well, can you shoot with it on LMB?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.data[3]._text
+      value: Nice job, I guess u can even drop it. Try pressing RMB again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.data[4]._text
+      value: Yes, everything works. Now lets see what we've got in the HUB.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrasess.Array.data[0]._text
+      value: To move use WASD.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrasess.Array.data[1]._text
+      value: Press RMB to pick up the gun.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrasess.Array.data[2]._text
+      value: Use LMB to shoot.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrasess.Array.data[3]._text
+      value: To drop the gun use RMB again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrasess.Array.data[4]._text
+      value: You're free to go. Now let me introduce you to HUB
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrases.Array.data[4].isSkipAllowed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _phrasess.Array.data[4].isSkipAllowed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: OnDialogueClose.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: OnDialogueClose.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: OnDialogueClose.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: OnDialogueClose.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: OnDialogueClose.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: OnDialogueClose.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetPlayerPosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: OnDialogueClose.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: OnDialogueClose.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: OnDialogueClose.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: OnDialogueClose.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: OnDialogueClose.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Transform, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731816, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: OnDialogueClose.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 855.6499
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 477.729
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731817, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731818, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_Name
+      value: Tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652895181731818, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396652896820588004, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+      propertyPath: _hasEndNote
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+--- !u!114 &8690591220471514358 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4396652896820588003, guid: df087e06d0a2ba7418ed470a7e91be2d, type: 3}
+  m_PrefabInstance: {fileID: 5016766067188148501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

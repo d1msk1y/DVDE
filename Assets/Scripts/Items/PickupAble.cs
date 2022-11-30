@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -77,6 +78,7 @@ public class PickupAble : Interactable
 
         if (itemType == PickupType.Buyable || itemType == PickupType.UpgradeAble) {
             GameManager.instance.scoreManager.onLevelUp += ValidateAccess;
+            Debug.Log(name + "sUBSCRIBED");
             GameManager.instance.OnGameOver += ValidateAccess;
             ValidateAccess();
             SetLockVisuals();
@@ -88,11 +90,11 @@ public class PickupAble : Interactable
     {
         if (itemType == PickupType.Buyable && IsUnlocked == 1 && isBought == 0 ||
             itemType == PickupType.UpgradeAble && IsUnlocked == 1) {
-            itemCanvas = Instantiate(itemCanvasPF, transform.position, Quaternion.identity, transform);
+            if(itemCanvas == null)
+                itemCanvas = Instantiate(itemCanvasPF, transform.position, Quaternion.identity, transform);
             itemCanvas.GetComponentInChildren<Text>().text = price + "$";
         }
     }
-
     protected new void Update()
     {
         if (IsUnlocked == 0 && itemType == PickupType.Buyable)
@@ -229,6 +231,7 @@ public class PickupAble : Interactable
         PlayerPrefs.SetInt("Total coins", GameManager.instance.scoreManager.TotalCoins);
 
         Instantiate(GameManager.instance.itemsManager.buyParticle, transform.position, Quaternion.identity);
+        Destroy(itemCanvas);
 
     }
 

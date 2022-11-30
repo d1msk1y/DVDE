@@ -53,7 +53,6 @@ public class PlayerLevelBar : MonoBehaviour
             prevNeededScore = PlayerPrefs.GetInt("Prev needed score");
         }
         levelIndex = PlayerPrefs.GetInt(GameManager.instance.statsManager.keys[8]);
-        GameManager.instance.scoreManager.CurrentLevel = levelIndex;
 
         currentScoreTrans = prevScore;
         if (GameManager.instance.scoreManager.ReceivedScore == 0)

@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public DataManager dataManager;
     public StatsManager statsManager;
     public UnlocksLog unlocksLog;
+    public TutorialManager tutorialManager;
 
     public GlitchEffect glitchEffect;
 
@@ -42,10 +43,8 @@ public class GameManager : MonoBehaviour
     [Header("Game info")]
     public bool isCurrentBattle;
     public bool isGameStarted = false;
-
-    [Header("Controlls")]
-    public float movementSensivity;
-    public float aimingSensivity;
+    public int IsFirstTime { get; set; }
+    
 
     public static GameManager instance;
 
@@ -72,6 +71,7 @@ public class GameManager : MonoBehaviour
 
     private void Start() {
         ScanAstar();
+        CheckIsPlayingFirstTime();
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 0;
     }
@@ -205,6 +205,18 @@ public class GameManager : MonoBehaviour
 
     #region Game manage
 
+    private void CheckIsPlayingFirstTime() {
+        IsFirstTime = PlayerPrefs.HasKey("Is playing first time") ? PlayerPrefs.GetInt("Is playing first time") : 1;
+        if (IsFirstTime == 0) return;
+        tutorialManager.StartTutorial();
+        DialogueManager.instance.StartIntroDialogue();
+        PlayerController.instance.shootingScript.GiveWeapon(PlayerController.instance.shootingScript.knife);
+        PlayerController.instance.transform.position = new Vector3(-100, 50);
+        IsFirstTime = 0;
+        PlayerPrefs.SetInt("Is playing first time", IsFirstTime);
+        
+    }
+
     public void Restart(Transform restartPosition)
     {
         PlayerController.instance.Restart(restartPosition);
@@ -216,6 +228,8 @@ public class GameManager : MonoBehaviour
         scoreManager.ResetScore();
         OnRestart?.Invoke();
     }
+
+    public void SetPlayerPosition (Transform spawnPoint) => player.transform.position = spawnPoint.position;
 
     public void GameOver()
     {

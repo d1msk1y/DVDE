@@ -27,14 +27,20 @@ public class Box : Destructible
 
     [SerializeField] private GameObject[] randomGuns;
 
+    private bool _isBroken;
+
     private void Start()
     {
         gunItem = randomGuns[Random.Range(0, randomGuns.Length)];
     }
 
-    public override void Destruct()
+    protected override void Destruct()
     {
+        if (_isBroken) {
+            return;
+        }
         DropItems();
+        _isBroken = true;
         base.Destruct();
     }
 

@@ -40,7 +40,7 @@ public class HeroUpgrade : PickupAble
     public new void Start()
     {
         base.Start();
-        
+
         if (PlayerPrefs.HasKey(stagePrefsKey))
         {
             _currentStage = PlayerPrefs.GetInt(stagePrefsKey);

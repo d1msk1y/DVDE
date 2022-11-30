@@ -9,8 +9,11 @@ public class ScoreManager : MonoBehaviour
     public int CurrentLevel {
         get => _currentLevel;
         set {
-            if (value - _currentLevel > 0) onLevelUp?.Invoke();
+            var initValue = _currentLevel;
+            
             _currentLevel = value;
+            
+            if (value > initValue) onLevelUp?.Invoke();
             PlayerPrefs.SetInt(GameManager.instance.statsManager.keys[8], value); //Set level index
            
         }

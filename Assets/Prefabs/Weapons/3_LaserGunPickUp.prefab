@@ -58,11 +58,13 @@ MonoBehaviour:
   outlinedSprite: {fileID: 21300000, guid: cfca2cb64f4a180469176b39a6e92b0a, type: 3}
   defaultSprite: {fileID: 21300000, guid: 0b442f70e203a1f4caeb205ed09ee9df, type: 3}
   _lvlToUnlock: 0
+  _isUnlocked: 0
   price: 0
   BoughtPrefsKey: IsBoughtLaserGun
   isBought: 0
   spriteRenderer: {fileID: 0}
-  itemCanvas: {fileID: 6154623135432961523, guid: 6c8ff7ded091b084bb277e3ca8990cb9, type: 3}
+  itemCanvas: {fileID: 0}
+  itemCanvasPF: {fileID: 6154623135432961523, guid: 6c8ff7ded091b084bb277e3ca8990cb9, type: 3}
   speech: 
   speechNPC: {fileID: 0}
   _speechBaloon: 1

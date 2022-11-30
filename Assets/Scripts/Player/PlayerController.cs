@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
     private bool _isSecondLifeUsed;
     private float _startModifier;
 
+    public bool IsInputBlocked { get; set; }
+    
     [HideInInspector] public Rigidbody2D _rigidBody;
     public static PlayerController instance;
 
@@ -35,7 +37,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
-        if (!isAlive)
+        if (!isAlive || IsInputBlocked)
             return;
         
         if (Input.GetButton("Fire1"))

@@ -198,7 +198,7 @@ MonoBehaviour:
   Path: C:/Users/yatce/Documents/FMOD Studio/FMOD/DVDE/Build/Desktop/OST.bank
   Name: OST
   StudioPath: bank:/OST
-  lastModified: 638041451471884473
+  lastModified: 638051900085249036
   FileSizes:
   - Name: Desktop
     Value: 65485664
@@ -1027,6 +1027,8 @@ MonoBehaviour:
   - {fileID: 2013540739943177030}
   - {fileID: -8766641959447156810}
   - {fileID: 4011326019368832743}
+  - {fileID: 4955343256680871740}
+  - {fileID: 5583073078402942788}
   EditorParameters:
   - {fileID: -3176018069425034884}
   - {fileID: 771611904481976194}
@@ -1038,7 +1040,7 @@ MonoBehaviour:
   - {fileID: 7584520308957910320}
   StringsBanks:
   - {fileID: 4002310730000593452}
-  cacheTime: 638041451472305248
+  cacheTime: 638051900085679860
   cacheVersion: 131593
 --- !u!114 &572673533363285275
 MonoBehaviour:
@@ -1366,10 +1368,10 @@ MonoBehaviour:
   Path: C:/Users/yatce/Documents/FMOD Studio/FMOD/DVDE/Build/Desktop/SFX.strings.bank
   Name: SFX.strings
   StudioPath: bank:/SFX.strings
-  lastModified: 638041451472305248
+  lastModified: 638051900085679860
   FileSizes:
   - Name: Desktop
-    Value: 2552
+    Value: 2656
   Exists: 1
 --- !u!114 &4011326019368832743
 MonoBehaviour:
@@ -1553,6 +1555,33 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &4955343256680871740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Other/Type_typewriter
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Other/Type_typewriter
+  Guid:
+    Data1: -1532733788
+    Data2: 1238399514
+    Data3: -1729181568
+    Data4: 992410292
+  Banks:
+  - {fileID: 7584520308957910320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17
 --- !u!114 &5225798037292945161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1580,6 +1609,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 321
+--- !u!114 &5583073078402942788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Other/Type_boop
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Other/Type_boop
+  Guid:
+    Data1: -1506968674
+    Data2: 1301880235
+    Data3: -1536014412
+    Data4: -1859980433
+  Banks:
+  - {fileID: 7584520308957910320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 115
 --- !u!114 &5618206310502451795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,10 +1828,10 @@ MonoBehaviour:
   Path: C:/Users/yatce/Documents/FMOD Studio/FMOD/DVDE/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638041451472285227
+  lastModified: 638051900085659840
   FileSizes:
   - Name: Desktop
-    Value: 544992
+    Value: 618688
   Exists: 1
 --- !u!114 &8196159818835346522
 MonoBehaviour:

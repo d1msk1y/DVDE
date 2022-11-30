@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void Update() {
+        if (PlayerController.instance.IsInputBlocked) {
+            return;
+        }
+        
         _moveDirection.x = Input.GetAxis("Horizontal");
         _moveDirection.y = Input.GetAxis("Vertical");
 
