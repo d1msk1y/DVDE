@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -47,13 +48,16 @@ public class Dialogue : MonoBehaviour {
 		if (!_typewriter.IsTextCompleted) {
 			_typewriter.SkipTyping();
 		} else {
-			NextMessage();
+			StartCoroutine(NextMessage());
 		}
 	}
 
-	private void NextMessage() {
+	private IEnumerator NextMessage()
+	{
+		yield return new WaitForSeconds(_phrases[CurrentMessageIndex].endDelay);
 		CurrentMessageIndex++;
 		SetText(_phrases[CurrentMessageIndex]._text);
+		_phrases[CurrentMessageIndex].OnStart?.Invoke();
 		_typewriter.HasEndNote = _phrases[CurrentMessageIndex].isSkipAllowed;
 	}
 

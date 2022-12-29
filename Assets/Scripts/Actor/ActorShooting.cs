@@ -83,6 +83,7 @@ public class ActorShooting : MonoBehaviour
 
     public void DestroyWeapon() {
         Destroy(gunScript);
+        GiveWeapon(knife);
     }
 
     private void CheckHandler() {
@@ -184,7 +185,7 @@ public class ActorShooting : MonoBehaviour
         GameManager.instance.UiManager.SetAmmoStats(ammos, gunScript.ammos);
     }
 
-    public void ThrowGun(GameObject gun2Throw)
+    public void ThrowGun()
     {
         if (gunScript == null || gunScript.CompareTag("Knife"))
             return;
@@ -263,7 +264,7 @@ public class ActorShooting : MonoBehaviour
         }
         SetBulletProperties(gameObject.GetComponent<Bullet>());
     }
-
+    
     public void ClearAllLines()
     {
         ClearLineRenderer(_lineRenderer);
