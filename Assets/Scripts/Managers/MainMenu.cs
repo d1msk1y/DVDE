@@ -31,7 +31,7 @@ public class MainMenu : MonoBehaviour
 
     private static bool IsGameFromScratch()
     {
-        return !PlayerPrefs.HasKey("Is playing first time");
+        return PlayerPrefs.HasKey("Is playing first time");
     }
 
     public void StartGame() {
@@ -49,7 +49,7 @@ public class MainMenu : MonoBehaviour
     private void ShowTip() => tipTxt.text = tips[Random.Range(0, tips.Length)];
 
     private static IEnumerator AsyncLoad() {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(6);
         var asyncLoad = SceneManager.LoadSceneAsync(1);
         while (!asyncLoad.isDone) {
             yield return null;

@@ -211,7 +211,6 @@ public class GameManager : MonoBehaviour
         tutorialManager.StartTutorial();
         DialogueManager.instance.StartIntroDialogue();
         PlayerController.instance.shootingScript.DestroyWeapon();
-        PlayerController.instance.shootingScript.GiveWeapon(PlayerController.instance.shootingScript.knife);
         PlayerController.instance.transform.position = new Vector3(-100, 50);
         IsFirstTime = 0;
         PlayerPrefs.SetInt("Is playing first time", IsFirstTime);

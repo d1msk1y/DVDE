@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour {
 
     public void ExitRageMode() => shootingScript.damageModifier = _startModifier;
 
-    public void ThrowGun() => shootingScript.ThrowGun(shootingScript.gunScript.gun2Throw);
+    public void ThrowGun() => shootingScript.ThrowGun();
 
     private void GiveCloth() {
         if (clothSlotController.glassesIndex == -1 && clothSlotController.hatIndex == -1)
