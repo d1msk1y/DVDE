@@ -82,6 +82,7 @@ public class UiManager : MonoBehaviour
     {
         hud.SetActive(true);
     }
+
     #endregion
 
     public void UpdateCostTxts()

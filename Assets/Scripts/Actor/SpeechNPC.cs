@@ -27,7 +27,7 @@ public class SpeechNPC : Interactable
 
     private void Mumble() => SoundManager.PlayOneShot(_speechClips[GameManager.instance.Chance(0, _speechClips.Length)]);
 
-    public override void OnReachZoneEnter()
+    protected override void OnReachZoneEnter()
     {
         if (isActive)
             return;
@@ -39,7 +39,7 @@ public class SpeechNPC : Interactable
         Say(speechTXT);
     }
 
-    public override void OnReachZoneExit()
+    protected override void OnReachZoneExit()
     {
         if (!isActive)
             return;

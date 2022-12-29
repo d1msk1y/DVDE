@@ -74,10 +74,8 @@ public class HealItem : Interactable
         GameManager.instance.scoreManager.AddScore(useFulAmount);
     }
 
-    public override void OnReachZoneEnter()
+    protected override void OnReachZoneEnter()
     {
-        base.OnReachZoneEnter();
-
         transform.position = Vector2.Lerp(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
     }
 

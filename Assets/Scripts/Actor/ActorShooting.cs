@@ -81,6 +81,10 @@ public class ActorShooting : MonoBehaviour
         CheckHandler();
     }
 
+    public void DestroyWeapon() {
+        Destroy(gunScript);
+    }
+
     private void CheckHandler() {
         if (_gunHandler.transform.rotation.z > -0.7 && _gunHandler.transform.rotation.z < 0.7) {
             _handlerScale = new Vector3(1f, 1f, 1f);
@@ -274,16 +278,19 @@ public class ActorShooting : MonoBehaviour
 
     private void SetBulletProperties(Bullet curBullet)
     {
-        var num = gunScript.damage * damageModifier * _damageOverride;
-        _damage = (int)num;
-        curBullet.damage = _damage;
-        curBullet.bulletSpeed = _bulletSpeed;
-        curBullet.shootingScript = this;
-        curBullet.parent = gameObject;
-        curBullet.lifeTime = _bulletLifetime;
-        curBullet.criticalDamageChance = criticalDamageChance;
-        curBullet.trailRenderer.startWidth *= _bulletScaleModifier;
-        SetBulletColor(curBullet);
+        if (curBullet is Bullet) {
+
+            var num = gunScript.damage*damageModifier*_damageOverride;
+            _damage = (int)num;
+            curBullet.damage = _damage;
+            curBullet.bulletSpeed = _bulletSpeed;
+            curBullet.shootingScript = this;
+            curBullet.parent = gameObject;
+            curBullet.lifeTime = _bulletLifetime;
+            curBullet.criticalDamageChance = criticalDamageChance;
+            curBullet.trailRenderer.startWidth *= _bulletScaleModifier;
+            SetBulletColor(curBullet);
+        }
         Instantiate(shotParticle, _firePos.position, Quaternion.identity);
     }
 

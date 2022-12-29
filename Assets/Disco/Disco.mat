@@ -39,7 +39,7 @@ Material:
     m_Ints: []
     m_Floats:
     - PixelSnap: 0
-    - _CircleSize: 0
+    - _CircleSize: 0.18261616
     - _ColorChangeTime: 0.1
     - _EnableExternalAlpha: 0
     - _Opacity: 0.2

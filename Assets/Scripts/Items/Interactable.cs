@@ -42,11 +42,11 @@ public class Interactable : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public virtual void OnReachZoneEnter()
+    protected virtual void OnReachZoneEnter()
     {
     }
 
-    public virtual void OnReachZoneExit()
+    protected virtual void OnReachZoneExit()
     {
     }
 

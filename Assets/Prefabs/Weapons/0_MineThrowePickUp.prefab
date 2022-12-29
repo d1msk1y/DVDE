@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3987580997158592762}
   - component: {fileID: 4945453753910527714}
   m_Layer: 9
-  m_Name: 0_BananaGunPickUp
+  m_Name: 0_MineThrowePickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,8 +56,8 @@ MonoBehaviour:
   scaleUpAmount: 0.5
   isAutomized: 1
   itemType: 0
-  outlinedSprite: {fileID: 21300000, guid: a622bf73404f05a46b391ec5d4ec9fd8, type: 3}
-  defaultSprite: {fileID: 21300000, guid: 1ea08d0e56dd7094f99da71b89217d88, type: 3}
+  outlinedSprite: {fileID: 21300000, guid: be8ac7c98634bcc4b954c64eb670e185, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 90bdced375b3d3a4c97315c1aac31c62, type: 3}
   _lvlToUnlock: 0
   _isUnlocked: 0
   price: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   speech: 
   speechNPC: {fileID: 0}
   _speechBaloon: 0
-  gunProperties: {fileID: 9098946617528409337, guid: b61fbc48153e58f45aa1310886cc5ff2, type: 3}
+  gunProperties: {fileID: 9098946617528409337, guid: b9214c92713347a449d58e15e3bce8e6, type: 3}
 --- !u!50 &4054015733805805682
 Rigidbody2D:
   serializedVersion: 4
@@ -152,8 +152,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8228841667869914968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.14, y: -0.74, z: 0}
-  m_LocalScale: {x: 30.905897, y: 30.905897, z: 30.905897}
+  m_LocalPosition: {x: -0.14, y: -0.4, z: 0}
+  m_LocalScale: {x: 4.056977, y: 4.056977, z: 4.056977}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2958298959038754523}
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1ea08d0e56dd7094f99da71b89217d88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90bdced375b3d3a4c97315c1aac31c62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

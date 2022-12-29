@@ -50,9 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cd754b872f4377bf1aa7ff1917b662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skipWithSpace: 1
   _text: {fileID: 4396652896820588003}
-  _messages: []
+  _phrases: []
   OnDialogueClose:
     m_PersistentCalls:
       m_Calls: []
@@ -274,8 +273,7 @@ MonoBehaviour:
       Data3: -1729181568
       Data4: 992410292
     Path: event:/SFX/Other/Type_typewriter
-  _hasEndNote: 1
   delayBeforeStart: 0
-  timeBtwChars: 0.02
+  timeBtwChars: 0.005
   leadingChar: 
   leadingCharBeforeDelay: 0

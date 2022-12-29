@@ -94,7 +94,7 @@ public class HeroUpgrade : PickupAble
         SoundManager.PlayOneShot(GameManager.instance.soundManager.select);
     }
 
-    public override void OnReachZoneEnter()
+    protected override void OnReachZoneEnter()
     {
         base.OnReachZoneEnter();
 
@@ -105,7 +105,7 @@ public class HeroUpgrade : PickupAble
         speechNPC.Say(speech);
     }
 
-    public override void OnReachZoneExit()
+    protected override void OnReachZoneExit()
     {
         base.OnReachZoneExit();
 

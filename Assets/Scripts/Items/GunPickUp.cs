@@ -55,7 +55,7 @@ public class GunPickUp : PickupAble
             GameManager.instance.itemsManager.checkPurchasedGuns();
     }
 
-    public override void OnReachZoneEnter()
+    protected override void OnReachZoneEnter()
     {
         base.OnReachZoneEnter();
 
@@ -66,7 +66,7 @@ public class GunPickUp : PickupAble
         speechNPC.Say(speech);
     }
 
-    public override void OnReachZoneExit()
+    protected override void OnReachZoneExit()
     {
         base.OnReachZoneExit();
 

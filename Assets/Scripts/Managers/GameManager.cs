@@ -210,6 +210,7 @@ public class GameManager : MonoBehaviour
         if (IsFirstTime == 0) return;
         tutorialManager.StartTutorial();
         DialogueManager.instance.StartIntroDialogue();
+        PlayerController.instance.shootingScript.DestroyWeapon();
         PlayerController.instance.shootingScript.GiveWeapon(PlayerController.instance.shootingScript.knife);
         PlayerController.instance.transform.position = new Vector3(-100, 50);
         IsFirstTime = 0;

@@ -51,7 +51,7 @@ public class PickupAble : Interactable
 
     public delegate void PickupAbleHandler();
     public event PickupAbleHandler onUnlock;
-
+    
     private void Awake()
     {
         if (PlayerPrefs.HasKey(BoughtPrefsKey))
@@ -78,7 +78,6 @@ public class PickupAble : Interactable
 
         if (itemType == PickupType.Buyable || itemType == PickupType.UpgradeAble) {
             GameManager.instance.scoreManager.onLevelUp += ValidateAccess;
-            Debug.Log(name + "sUBSCRIBED");
             GameManager.instance.OnGameOver += ValidateAccess;
             ValidateAccess();
             SetLockVisuals();
@@ -159,7 +158,7 @@ public class PickupAble : Interactable
             yield return null;
         }
     }
-    public override void OnReachZoneEnter()
+    protected override void OnReachZoneEnter()
     {
         if (isInReachZone)
             return;
@@ -173,7 +172,7 @@ public class PickupAble : Interactable
             animator.SetBool("isNear", true);
     }
 
-    public override void OnReachZoneExit()
+    protected override void OnReachZoneExit()
     {
         if (!isInReachZone)
             return;
